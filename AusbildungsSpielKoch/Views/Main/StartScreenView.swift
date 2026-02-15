@@ -318,76 +318,112 @@ struct HalbjahrButtonContent: View {
     let unlockHint: String
     var isComingSoon: Bool = false
 
+    private var titleColor: Color {
+        if isComingSoon { return color.opacity(0.5) }
+        if locked { return .gray }
+        return .white
+    }
+
+    private var subtitleText: String {
+        if isComingSoon { return "Kommt im n\u{00E4}chsten Update" }
+        if locked { return unlockHint }
+        return subtitle
+    }
+
+    private var subtitleColor: Color {
+        if isComingSoon { return color.opacity(0.3) }
+        return .gray
+    }
+
+    private var fillColor: Color {
+        if isComingSoon { return color.opacity(0.03) }
+        if locked { return Color.gray.opacity(0.05) }
+        return Color.white.opacity(0.08)
+    }
+
+    private var strokeColor: Color {
+        if isComingSoon { return color.opacity(0.15) }
+        if locked { return Color.gray.opacity(0.15) }
+        return color.opacity(0.3)
+    }
+
     var body: some View {
         HStack(spacing: 16) {
-            if isComingSoon {
-                Image(systemName: "clock.badge")
-                    .font(.system(size: 28))
-                    .foregroundColor(color.opacity(0.5))
-                    .frame(width: 50)
-            } else {
-                Image(systemName: locked ? "lock.fill" : icon)
-                    .font(.system(size: 32))
-                    .foregroundColor(locked ? .gray : color)
-                    .frame(width: 50)
-            }
-
-            VStack(alignment: .leading, spacing: 2) {
-                HStack(spacing: 8) {
-                    Text(title)
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundColor(isComingSoon ? color.opacity(0.5) : (locked ? .gray : .white))
-
-                    if isComingSoon {
-                        Text("BALD")
-                            .font(.system(size: 9, weight: .black, design: .rounded))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 2)
-                            .background(
-                                Capsule()
-                                    .fill(color.opacity(0.4))
-                            )
-                    }
-                }
-                Text(isComingSoon ? "Kommt im n\u{00E4}chsten Update" : (locked ? unlockHint : subtitle))
-                    .font(.system(size: 13, weight: .medium, design: .rounded))
-                    .foregroundColor(isComingSoon ? color.opacity(0.3) : .gray)
-            }
-
+            iconView
+            labelView
             Spacer()
-
-            if isComingSoon {
-                Image(systemName: "info.circle")
-                    .foregroundColor(color.opacity(0.4))
-                    .font(.system(size: 16))
-            } else if !locked {
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
-                    .font(.system(size: 14, weight: .bold))
-            }
+            trailingView
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 16)
-        .background(
-            RoundedRectangle(cornerRadius: 15)
-                .fill(isComingSoon ? color.opacity(0.03) : (locked ? Color.gray.opacity(0.05) : Color.white.opacity(0.08)))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                        .stroke(
-                            isComingSoon ? color.opacity(0.15) : (locked ? Color.gray.opacity(0.15) : color.opacity(0.3)),
-                            lineWidth: isComingSoon ? 1 : 1
-                        )
-                        .overlay(
-                            isComingSoon ?
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(color.opacity(0.08), lineWidth: 1)
-                                .shadow(color: color.opacity(0.1), radius: 4)
-                            : nil
-                        )
-                )
-        )
-        .accessibilityLabel(isComingSoon ? "\(title), \(subtitle), kommt bald" : (locked ? "\(title), gesperrt, \(unlockHint)" : "\(title), \(subtitle)"))
+        .background(backgroundView)
+        .accessibilityLabel(accessibilityText)
+    }
+
+    @ViewBuilder
+    private var iconView: some View {
+        if isComingSoon {
+            Image(systemName: "clock.badge")
+                .font(.system(size: 28))
+                .foregroundColor(color.opacity(0.5))
+                .frame(width: 50)
+        } else {
+            Image(systemName: locked ? "lock.fill" : icon)
+                .font(.system(size: 32))
+                .foregroundColor(locked ? .gray : color)
+                .frame(width: 50)
+        }
+    }
+
+    @ViewBuilder
+    private var labelView: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            HStack(spacing: 8) {
+                Text(title)
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundColor(titleColor)
+
+                if isComingSoon {
+                    Text("BALD")
+                        .font(.system(size: 9, weight: .black, design: .rounded))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(Capsule().fill(color.opacity(0.4)))
+                }
+            }
+            Text(subtitleText)
+                .font(.system(size: 13, weight: .medium, design: .rounded))
+                .foregroundColor(subtitleColor)
+        }
+    }
+
+    @ViewBuilder
+    private var trailingView: some View {
+        if isComingSoon {
+            Image(systemName: "info.circle")
+                .foregroundColor(color.opacity(0.4))
+                .font(.system(size: 16))
+        } else if !locked {
+            Image(systemName: "chevron.right")
+                .foregroundColor(.gray)
+                .font(.system(size: 14, weight: .bold))
+        }
+    }
+
+    private var backgroundView: some View {
+        RoundedRectangle(cornerRadius: 15)
+            .fill(fillColor)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(strokeColor, lineWidth: 1)
+            )
+    }
+
+    private var accessibilityText: String {
+        if isComingSoon { return "\(title), \(subtitle), kommt bald" }
+        if locked { return "\(title), gesperrt, \(unlockHint)" }
+        return "\(title), \(subtitle)"
     }
 }
 
