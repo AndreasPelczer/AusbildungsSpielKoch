@@ -1,21 +1,22 @@
 # PROJECT_STATUS.md - Aktueller Projektstatus
 
 > **Diese Datei wird von jeder Claude-Session aktualisiert.**
-> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (Matjes-Rebranding)
+> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (Cleanup)
 
 ---
 
 ## Aktueller Zustand
 
-### Phase: Matjes-Rebranding abgeschlossen! 20-Level-System steht.
+### Phase: Cleanup — Altes Matjes-Projekt entfernt
 
 Die App ist funktionsfähig und bei Apple eingereicht.
-- App heißt jetzt **"Matjes, der kleine Hering"** (Anspielung auf "Der junge Koch" + "Hering"-Lexikon)
+- App heißt **"Matjes, der kleine Hering"** (Anspielung auf "Der junge Koch" + "Hering"-Lexikon)
 - **20 Level** in 2 Lehrjahren (statt 30 in 3)
 - 1. Lehrjahr (Level 1-10): Handkuratierte Fragen
 - 2. Lehrjahr (Level 11-20): Level 11 handkuratiert + Level 12-20 automatisch generiert
 - Bloom-Taxonomie: Erkennen → Zuordnen → Wissen → Anwenden → Bewerten
-- Jeder Levelstart generiert ~25–50 verschiedene Fragen, 10 werden zufällig ausgewählt
+- **Prüfungsmodul** (Commis-Prüfung + Bossfight) implementiert
+- **Cleanup**: Alter `Matjes/`-Ordner mit separatem Xcode-Projekt entfernt (kollidierte mit Hauptprojekt)
 
 ---
 
@@ -41,6 +42,8 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 | 2026-02-15 | LexikonQuizGenerator: Level 12–20 automatisch generiert | Claude |
 | 2026-02-15 | QuestionLoader: Generierte Fragen integriert | Claude |
 | 2026-02-15 | **Matjes-Rebranding: UI, 20-Level-System, JSON-Umbenennung** | Claude |
+| 2026-02-15 | Prüfungsmodul: Commis-Prüfung + Bossfight | Claude |
+| 2026-02-15 | **Cleanup: Alten Matjes/-Ordner entfernt (Target-Kollisionen behoben)** | Claude |
 
 ---
 
@@ -106,14 +109,10 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 ## Offene Aufgaben
 
 ### P0 - Nächste Schritte
+- [x] ~~Alten Matjes/-Ordner entfernen (Target-Kollisionen)~~ ✅
+- [x] ~~Commis-Prüfung + Bossfight implementieren~~ ✅
 - [ ] **Andreas prüft Level 4–11 Fragen fachlich** (120 neue Fragen!)
 - [ ] **Level 12–20 in Xcode testen** (LexikonQuizGenerator)
-- [ ] **Xcode-Projekt aktualisieren** (JSON-Datei umbenannt: `iMOPS_Koch_Fragen_Level1-3.json` → `Matjes_Fragen_Level1-11.json`)
-
-### P1 - Prüfungsmodul
-- [ ] Commis-Prüfung implementieren (Endgegner, Timer, gemischte Fragen)
-- [ ] Bossfight implementieren (80 Fragen / 60 Min., alle Kategorien)
-- [ ] Bestanden/Nicht bestanden Logik
 
 ### P2 - App-Features
 - [ ] Fortschritts-Dashboard (Stärken/Schwächen)
@@ -132,12 +131,11 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 
 1. **App heißt "Matjes, der kleine Hering"** — Xcode-Projekt bleibt `AusbildungsSpielKoch`
 2. **20 Level** in 2 Lehrjahren (Level 1-10 + Level 11-20)
-3. **JSON umbenannt**: `Matjes_Fragen_Level1-11.json` (früher `iMOPS_Koch_Fragen_Level1-3.json`)
-4. **Andreas muss in Xcode**: Die umbenannte JSON-Datei im Xcode-Projekt aktualisieren (alte Referenz entfernen, neue hinzufügen)
+3. **Prüfungsmodul** ist implementiert (Commis-Prüfung + Bossfight)
+4. **Alter Matjes/-Ordner** wurde entfernt — nur `AusbildungsSpielKoch.xcodeproj` ist aktiv
 5. **LexikonQuizGenerator.swift** generiert Level 12–20 automatisch aus Lexikon-Daten
-6. **QuestionLoader** lädt JSON-Fragen (1–11) UND generierte Fragen (12–20)
-7. **Nächstes großes Feature**: Prüfungsmodul (Commis-Prüfung + Bossfight)
+6. **Nächstes großes Feature**: Fortschritts-Dashboard oder 6-Halbjahre-Struktur
 
 ---
 
-*Nächste Aktualisierung: Nach Prüfungsmodul-Implementierung*
+*Nächste Aktualisierung: Nach nächstem Feature*
