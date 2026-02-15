@@ -106,6 +106,17 @@ class ProgressManager: ObservableObject {
         starsForLevel(exam.unlockLevel) >= 1
     }
 
+    /// Prüft ob ein Halbjahr freigeschaltet ist (letztes Level des vorherigen Halbjahrs muss ≥1★ haben)
+    func isHalbjahrUnlocked(_ halbjahr: Int) -> Bool {
+        switch halbjahr {
+        case 1: return true
+        case 2: return starsForLevel(5) >= 1
+        case 3: return starsForLevel(10) >= 1
+        case 4: return starsForLevel(15) >= 1
+        default: return false
+        }
+    }
+
     func resetAllProgress() {
         progress = [:]
         examResults = [:]

@@ -32,8 +32,8 @@ struct ExamConfig: Identifiable {
         fragenAnzahl: 30,
         dauerMinuten: 20,
         bestehensgrenzeProzent: 70,
-        levelRange: 1...10,
-        unlockLevel: 10
+        levelRange: 1...15,
+        unlockLevel: 15
     )
 
     static let bossfight = ExamConfig(
