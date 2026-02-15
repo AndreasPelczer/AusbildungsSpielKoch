@@ -115,6 +115,28 @@ struct StartScreenView: View {
                     .opacity(buttonsVisible ? 1 : 0)
                     .offset(y: buttonsVisible ? 0 : 30)
 
+                    // Prüfungen
+                    VStack(spacing: 12) {
+                        ForEach(ExamConfig.allExams) { exam in
+                            let isUnlocked = progressManager.isExamUnlocked(exam)
+                            let bestResult = progressManager.examResult(for: exam.id)
+
+                            if isUnlocked {
+                                NavigationLink(destination: ExamGameView(
+                                    config: exam,
+                                    allQuestions: allQuestions
+                                )) {
+                                    ExamButton(exam: exam, bestResult: bestResult)
+                                }
+                            } else {
+                                ExamButton(exam: exam, bestResult: nil, locked: true)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 8)
+                    .opacity(footerVisible ? 1 : 0)
+
                     Spacer()
 
                     // Alle Level Button (nur wenn mehrere Lehrjahre vorhanden)
@@ -220,5 +242,68 @@ struct LehrjahrButton<Destination: View>: View {
             )
         }
         .accessibilityLabel("\(title), \(subtitle)")
+    }
+}
+
+// MARK: - Prüfungs-Button
+struct ExamButton: View {
+    let exam: ExamConfig
+    let bestResult: ExamResult?
+    var locked: Bool = false
+
+    var body: some View {
+        HStack(spacing: 16) {
+            Image(systemName: locked ? "lock.fill" : exam.icon)
+                .font(.system(size: 28))
+                .foregroundColor(locked ? .gray : exam.color)
+                .frame(width: 50)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(exam.name)
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundColor(locked ? .gray : .white)
+
+                if locked {
+                    Text("Level \(exam.unlockLevel) abschließen")
+                        .font(.system(size: 13, weight: .medium, design: .rounded))
+                        .foregroundColor(.gray)
+                } else if let result = bestResult {
+                    HStack(spacing: 6) {
+                        Image(systemName: result.passed ? "checkmark.circle.fill" : "xmark.circle.fill")
+                            .foregroundColor(result.passed ? .green : .red)
+                            .font(.caption)
+                        Text("Bestes: \(Int(result.percentage))%")
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
+                            .foregroundColor(result.passed ? .green : .red)
+                    }
+                } else {
+                    Text("\(exam.fragenAnzahl) Fragen · \(exam.dauerMinuten) Min.")
+                        .font(.system(size: 13, weight: .medium, design: .rounded))
+                        .foregroundColor(.gray)
+                }
+            }
+
+            Spacer()
+
+            if !locked {
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 14, weight: .bold))
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(locked ? Color.gray.opacity(0.05) : exam.color.opacity(0.08))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(
+                            locked ? Color.gray.opacity(0.15) : exam.color.opacity(0.3),
+                            lineWidth: locked ? 1 : 2
+                        )
+                )
+        )
+        .accessibilityLabel(locked ? "\(exam.name), gesperrt" : "\(exam.name), \(exam.subtitle)")
     }
 }
