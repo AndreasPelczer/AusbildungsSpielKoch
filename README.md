@@ -1,6 +1,8 @@
 # Matjes, der kleine Hering 🐟
 
-**Das Ausbildungsspiel der Küche für Köchinnen und Köche**
+**Das Ausbildungsspiel der Küche**
+
+*für Köchinnen und Köche*
 
 Matjes ist eine Lern-App für Kochlehrlinge im deutschsprachigen Raum. Die App vermittelt Warenkunde und Küchenwissen durch ein gamifiziertes Quizsystem, das die zweijährige Ausbildung (4 Halbjahre) nach IHK-Rahmenplan begleitet.
 
