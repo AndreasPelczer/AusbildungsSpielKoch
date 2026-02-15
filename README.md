@@ -9,7 +9,7 @@ Matjes ist eine Lern-App für Kochlehrlinge im deutschsprachigen Raum. Die App v
 
 ## Konzept
 
-Lehrlinge durchlaufen **6 Halbjahre** mit steigendem Schwierigkeitsgrad. Jedes Halbjahr endet mit einer Prüfung. Am Ende der Ausbildung wartet der **Bossfight** – eine simulierte Abschlussprüfung über alle Kategorien und Level.
+Lehrlinge durchlaufen **6 Halbjahre** mit steigendem Schwierigkeitsgrad. Es gibt eine Zwischenprüfung *Endgegner Halbzeit* am Ende der Ausbildung wartet der **Bossfight** – eine simulierte Abschlussprüfung über alle Kategorien und Level.
 
 ### Fragenlevel (Bloom-Taxonomie)
 
