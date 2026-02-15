@@ -30,6 +30,8 @@ struct LevelGridView: View {
         case 2: return "2. Halbjahr"
         case 3: return "3. Halbjahr"
         case 4: return "4. Halbjahr"
+        case 5: return "5. Halbjahr"
+        case 6: return "6. Halbjahr"
         default: return "Alle Level"
         }
     }
@@ -40,6 +42,8 @@ struct LevelGridView: View {
         case 2: return "Warenkunde"
         case 3: return "Vertiefung"
         case 4: return "Anwenden & Bewerten"
+        case 5: return "Pr\u{00FC}fungsvorbereitung"
+        case 6: return "Meisterklasse"
         default: return "Level 1-20"
         }
     }

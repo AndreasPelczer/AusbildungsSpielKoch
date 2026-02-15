@@ -118,6 +118,8 @@ class ProgressManager: ObservableObject {
                 return result.passed
             }
             return false
+        case 5: return starsForLevel(20) >= 1
+        case 6: return starsForLevel(25) >= 1
         default: return false
         }
     }
