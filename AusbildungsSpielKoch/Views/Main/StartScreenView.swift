@@ -16,6 +16,7 @@ struct StartScreenView: View {
     @State private var headerVisible = false
     @State private var contentVisible = false
     @State private var cursorVisible = true
+    @State private var showComingSoonAlert = false
 
     /// Halbjahr-Konfiguration mit Level-Ranges
     private struct HalbjahrConfig {
@@ -26,6 +27,18 @@ struct StartScreenView: View {
         let color: Color
         let levelRange: ClosedRange<Int>
         let unlockHint: String
+        let isComingSoon: Bool
+
+        init(number: Int, title: String, subtitle: String, icon: String, color: Color, levelRange: ClosedRange<Int>, unlockHint: String, isComingSoon: Bool = false) {
+            self.number = number
+            self.title = title
+            self.subtitle = subtitle
+            self.icon = icon
+            self.color = color
+            self.levelRange = levelRange
+            self.unlockHint = unlockHint
+            self.isComingSoon = isComingSoon
+        }
     }
 
     private let halbjahre: [HalbjahrConfig] = [
@@ -33,6 +46,8 @@ struct StartScreenView: View {
         HalbjahrConfig(number: 2, title: "2. Halbjahr", subtitle: "Warenkunde", icon: "2.circle.fill", color: .blue, levelRange: 6...10, unlockHint: "Level 5 abschlie\u{00DF}en"),
         HalbjahrConfig(number: 3, title: "3. Halbjahr", subtitle: "Vertiefung", icon: "3.circle.fill", color: .purple, levelRange: 11...15, unlockHint: "Level 10 abschlie\u{00DF}en"),
         HalbjahrConfig(number: 4, title: "4. Halbjahr", subtitle: "Anwenden & Bewerten", icon: "4.circle.fill", color: .orange, levelRange: 16...20, unlockHint: "Commis-Pr\u{00FC}fung bestehen"),
+        HalbjahrConfig(number: 5, title: "5. Halbjahr", subtitle: "Pr\u{00FC}fungsvorbereitung", icon: "5.circle.fill", color: .cyan, levelRange: 21...25, unlockHint: "Level 20 abschlie\u{00DF}en", isComingSoon: true),
+        HalbjahrConfig(number: 6, title: "6. Halbjahr", subtitle: "Meisterklasse", icon: "6.circle.fill", color: .red, levelRange: 26...30, unlockHint: "Level 25 abschlie\u{00DF}en", isComingSoon: true),
     ]
 
     private var availableLevels: Set<Int> {
@@ -113,7 +128,13 @@ struct StartScreenView: View {
                             // Halbjahr 4
                             halbjahrRow(halbjahre[3])
 
-                            // Bossfight (nach Halbjahr 4)
+                            // Halbjahr 5 (Coming Soon)
+                            halbjahrRow(halbjahre[4])
+
+                            // Halbjahr 6 (Coming Soon)
+                            halbjahrRow(halbjahre[5])
+
+                            // Bossfight (nach Halbjahr 6)
                             examRow(ExamConfig.bossfight)
                         }
                         .padding(.horizontal, 20)
@@ -187,6 +208,11 @@ struct StartScreenView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .bottom)
             }
+            .alert("Kommt bald! \u{1F41F}", isPresented: $showComingSoonAlert) {
+                Button("Alles klar!", role: .cancel) { }
+            } message: {
+                Text("Dieses Halbjahr wird mit einem der n\u{00E4}chsten Updates freigeschaltet. Matjes arbeitet daran!")
+            }
             .toolbar(.hidden, for: .navigationBar)
             .onAppear {
                 withAnimation(.easeOut(duration: 0.5)) {
@@ -214,34 +240,50 @@ struct StartScreenView: View {
 
     @ViewBuilder
     private func halbjahrRow(_ config: HalbjahrConfig) -> some View {
-        let hasQuestions = config.levelRange.contains(where: { availableLevels.contains($0) })
-        let isUnlocked = progressManager.isHalbjahrUnlocked(config.number)
-
-        if hasQuestions {
-            if isUnlocked {
-                NavigationLink(destination: LevelGridView(
-                    halbjahr: config.number,
-                    levelRange: config.levelRange,
-                    allQuestions: allQuestions
-                )) {
-                    HalbjahrButtonContent(
-                        title: config.title,
-                        subtitle: config.subtitle,
-                        icon: config.icon,
-                        color: config.color,
-                        locked: false,
-                        unlockHint: ""
-                    )
-                }
-            } else {
+        if config.isComingSoon {
+            Button {
+                showComingSoonAlert = true
+            } label: {
                 HalbjahrButtonContent(
                     title: config.title,
                     subtitle: config.subtitle,
                     icon: config.icon,
                     color: config.color,
-                    locked: true,
-                    unlockHint: config.unlockHint
+                    locked: false,
+                    unlockHint: "",
+                    isComingSoon: true
                 )
+            }
+        } else {
+            let hasQuestions = config.levelRange.contains(where: { availableLevels.contains($0) })
+            let isUnlocked = progressManager.isHalbjahrUnlocked(config.number)
+
+            if hasQuestions {
+                if isUnlocked {
+                    NavigationLink(destination: LevelGridView(
+                        halbjahr: config.number,
+                        levelRange: config.levelRange,
+                        allQuestions: allQuestions
+                    )) {
+                        HalbjahrButtonContent(
+                            title: config.title,
+                            subtitle: config.subtitle,
+                            icon: config.icon,
+                            color: config.color,
+                            locked: false,
+                            unlockHint: ""
+                        )
+                    }
+                } else {
+                    HalbjahrButtonContent(
+                        title: config.title,
+                        subtitle: config.subtitle,
+                        icon: config.icon,
+                        color: config.color,
+                        locked: true,
+                        unlockHint: config.unlockHint
+                    )
+                }
             }
         }
     }
@@ -274,26 +316,52 @@ struct HalbjahrButtonContent: View {
     let color: Color
     let locked: Bool
     let unlockHint: String
+    var isComingSoon: Bool = false
 
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: locked ? "lock.fill" : icon)
-                .font(.system(size: 32))
-                .foregroundColor(locked ? .gray : color)
-                .frame(width: 50)
+            if isComingSoon {
+                Image(systemName: "clock.badge")
+                    .font(.system(size: 28))
+                    .foregroundColor(color.opacity(0.5))
+                    .frame(width: 50)
+            } else {
+                Image(systemName: locked ? "lock.fill" : icon)
+                    .font(.system(size: 32))
+                    .foregroundColor(locked ? .gray : color)
+                    .frame(width: 50)
+            }
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(title)
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundColor(locked ? .gray : .white)
-                Text(locked ? unlockHint : subtitle)
+                HStack(spacing: 8) {
+                    Text(title)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundColor(isComingSoon ? color.opacity(0.5) : (locked ? .gray : .white))
+
+                    if isComingSoon {
+                        Text("BALD")
+                            .font(.system(size: 9, weight: .black, design: .rounded))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(
+                                Capsule()
+                                    .fill(color.opacity(0.4))
+                            )
+                    }
+                }
+                Text(isComingSoon ? "Kommt im n\u{00E4}chsten Update" : (locked ? unlockHint : subtitle))
                     .font(.system(size: 13, weight: .medium, design: .rounded))
-                    .foregroundColor(.gray)
+                    .foregroundColor(isComingSoon ? color.opacity(0.3) : .gray)
             }
 
             Spacer()
 
-            if !locked {
+            if isComingSoon {
+                Image(systemName: "info.circle")
+                    .foregroundColor(color.opacity(0.4))
+                    .font(.system(size: 16))
+            } else if !locked {
                 Image(systemName: "chevron.right")
                     .foregroundColor(.gray)
                     .font(.system(size: 14, weight: .bold))
@@ -303,16 +371,23 @@ struct HalbjahrButtonContent: View {
         .padding(.vertical, 16)
         .background(
             RoundedRectangle(cornerRadius: 15)
-                .fill(locked ? Color.gray.opacity(0.05) : Color.white.opacity(0.08))
+                .fill(isComingSoon ? color.opacity(0.03) : (locked ? Color.gray.opacity(0.05) : Color.white.opacity(0.08)))
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
                         .stroke(
-                            locked ? Color.gray.opacity(0.15) : color.opacity(0.3),
-                            lineWidth: 1
+                            isComingSoon ? color.opacity(0.15) : (locked ? Color.gray.opacity(0.15) : color.opacity(0.3)),
+                            lineWidth: isComingSoon ? 1 : 1
+                        )
+                        .overlay(
+                            isComingSoon ?
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(color.opacity(0.08), lineWidth: 1)
+                                .shadow(color: color.opacity(0.1), radius: 4)
+                            : nil
                         )
                 )
         )
-        .accessibilityLabel(locked ? "\(title), gesperrt, \(unlockHint)" : "\(title), \(subtitle)")
+        .accessibilityLabel(isComingSoon ? "\(title), \(subtitle), kommt bald" : (locked ? "\(title), gesperrt, \(unlockHint)" : "\(title), \(subtitle)"))
     }
 }
 
