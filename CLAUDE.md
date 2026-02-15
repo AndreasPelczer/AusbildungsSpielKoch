@@ -54,27 +54,44 @@ AusbildungsSpielKoch/
 │   │
 │   ├── Models/
 │   │   ├── Question.swift             ← Fragen-Datenmodell
-│   │   └── LevelProgress.swift        ← Fortschritts-Modell (Sterne)
+│   │   ├── LevelProgress.swift        ← Fortschritts-Modell (Sterne)
+│   │   ├── Produkt.swift              ← Produkt-Datenmodell (Lexikon)
+│   │   ├── Garmethode.swift           ← Garmethoden-Datenmodell (Lexikon)
+│   │   └── Sauce.swift                ← Saucen-Datenmodell (Lexikon)
 │   │
 │   ├── ViewModels/
 │   │   └── GameViewModel.swift        ← Spiel-Logik (10 Fragen/Level)
 │   │
 │   ├── Views/
 │   │   ├── Main/
+│   │   │   ├── MainTabView.swift      ← Tab-Navigation (Quiz + Lexikon)
 │   │   │   ├── StartScreenView.swift  ← Startbildschirm (3 Lehrjahre)
 │   │   │   ├── LevelGridView.swift    ← Level-Auswahl (Raster)
 │   │   │   ├── LevelGameView.swift    ← Quiz-Spielansicht
 │   │   │   └── ResultView.swift       ← Ergebnis + Sterne + Konfetti
+│   │   ├── Lexikon/
+│   │   │   ├── LexikonHomeView.swift      ← Lexikon Hauptansicht + Suche
+│   │   │   ├── ProduktListView.swift      ← Produkte nach Kategorie
+│   │   │   ├── ProduktDetailView.swift    ← Produkt-Detail (Nährwerte etc.)
+│   │   │   ├── GarmethodeListView.swift   ← Garmethoden nach Typ
+│   │   │   ├── GarmethodeDetailView.swift ← Garmethoden-Detail
+│   │   │   ├── SauceListView.swift        ← Saucen nach Typ
+│   │   │   └── SauceDetailView.swift      ← Saucen-Detail
 │   │   └── Components/
 │   │       └── AnswerButton.swift     ← Wiederverwendbarer Antwort-Button
 │   │
 │   ├── Helpers/
 │   │   ├── QuestionLoader.swift       ← JSON-Fragen laden & cachen
+│   │   ├── LexikonLoader.swift        ← Lexikon-JSON laden (Produkte, Garen, Saucen)
 │   │   ├── ProgressManager.swift      ← UserDefaults-Fortschritt
 │   │   └── SoundManager.swift         ← Audio + Haptik
 │   │
 │   ├── Resources/
-│   │   ├── iMOPS_Koch_Fragen_Level1-3.json  ← 45 Fragen (Level 1-3)
+│   │   ├── iMOPS_Koch_Fragen_Level1-3.json  ← 166 Fragen (Level 1-11)
+│   │   ├── Koch_Produkte.json               ← 134 Produkte
+│   │   ├── Koch_Garmethoden.json            ← 20 Garmethoden
+│   │   ├── Koch_Saucen.json                 ← 20 Saucen
+│   │   ├── Koch_Pruefungskonzept.json       ← Prüfungsstruktur
 │   │   └── Audio/
 │   │       ├── correct.mp3            ← ⚠️ VON ANDREAS MANUELL HINZUFÜGEN
 │   │       ├── wrong.mp3              ← ⚠️ VON ANDREAS MANUELL HINZUFÜGEN

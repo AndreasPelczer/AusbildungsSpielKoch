@@ -1,7 +1,7 @@
 # PROJECT_STATUS.md - Aktueller Projektstatus
 
 > **Diese Datei wird von jeder Claude-Session aktualisiert.**
-> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i
+> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (Lexikon-Tab)
 
 ---
 
@@ -34,6 +34,7 @@ Prüfungskonzept (Zwischen- und Abschlussprüfungen) definiert.
 | 2026-02-15 | **Level 10: 15 Fragen (Garmethoden)** | Claude |
 | 2026-02-15 | **Level 11: 15 Fragen (Saucenkunde)** | Claude |
 | 2026-02-15 | **Prüfungskonzept gespeichert** (Koch_Pruefungskonzept.json) | Andreas+Claude |
+| 2026-02-15 | **Lexikon-Tab implementiert** (Produkte, Garmethoden, Saucen durchsuchbar) | Claude |
 
 ---
 
@@ -96,8 +97,8 @@ Prüfungskonzept (Zwischen- und Abschlussprüfungen) definiert.
 
 ### P2 - App-Features
 - [ ] Prüfungsmodul implementieren (Timer, Zufallsfragen, Bestanden/Nicht bestanden)
-- [ ] Lexikon-Tab in der App
-- [ ] Warenkunde-Bereich (Produkte, Garmethoden, Saucen anzeigen)
+- [x] ~~Lexikon-Tab in der App~~ ERLEDIGT
+- [x] ~~Warenkunde-Bereich (Produkte, Garmethoden, Saucen anzeigen)~~ ERLEDIGT
 
 ### P3 - Später
 - [ ] 3. Lehrjahr (Level 21-30)
