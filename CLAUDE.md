@@ -9,9 +9,11 @@
 
 | Feld | Wert |
 |------|------|
-| **App-Name** | AusbildungsSpielKoch |
+| **App-Markenname** | **Matjes, der kleine Hering** |
+| **Xcode-Projektname** | AusbildungsSpielKoch (nicht ändern!) |
 | **Repo** | `AndreasPelczer/AusbildungsSpielKoch` |
 | **Zweck** | Quiz-Lernspiel für Koch/Köchin-Azubis (IHK) |
+| **Namenserklärung** | Anspielung auf "Der junge Koch" + "Hering" (das Lexikon) |
 | **Sprache** | Swift / SwiftUI |
 | **Architektur** | MVVM |
 | **iOS-Minimum** | 17.0 |
@@ -22,22 +24,26 @@
 
 ---
 
-## 2. VERBOTENE NAMEN - KRITISCH
+## 2. NAMENSREGELN - KRITISCH
 
-Diese Namen stammen aus alten Projekten und dürfen **NIRGENDWO** mehr auftauchen:
+### Verbotene Namen (aus alten Projekten)
 
 | Verboten | Warum |
 |----------|-------|
 | `millonen` / `millonen.xcodeproj` | Alter Xcode-Projektname, verursachte Icon-Probleme |
 | `KitchenMillionaire` | Alter interner Codename |
-| `Matjes` | Alter App-Markenname (nur noch als Icon-Dateiname ok) |
-| `Ausbildungsspiel` (ohne "Koch"/"SpielKoch") | Altes Repo, nicht mehr aktiv |
+| `Codiclodi` | Alter Arbeitsname, nicht mehr verwenden |
+| `Ausbildungsspiel` (allein, ohne Kontext) | Zu generisch, altes Repo |
 
-**Korrekte Benennung:**
-- App-Struct: `AusbildungsSpielKochApp`
-- Dateipräfix: `AusbildungsSpielKoch`
-- Ordnername: `AusbildungsSpielKoch/`
-- In UI-Texten: "Ausbildungsspiel Koch" oder "Küchenfachkunde Quiz"
+### Korrekte Benennung
+
+| Kontext | Name |
+|---------|------|
+| **In der UI / App Store** | "Matjes, der kleine Hering" oder "Matjes" |
+| **Untertitel** | "Das Ausbildungsspiel der Küche" |
+| **Xcode-Projekt / Struct** | `AusbildungsSpielKoch` / `AusbildungsSpielKochApp` (nicht ändern!) |
+| **Dateipräfix** | `AusbildungsSpielKoch` (Swift-Dateien) oder `Matjes_` (Ressourcen) |
+| **Ordnername** | `AusbildungsSpielKoch/` |
 
 ---
 
@@ -65,8 +71,8 @@ AusbildungsSpielKoch/
 │   ├── Views/
 │   │   ├── Main/
 │   │   │   ├── MainTabView.swift      ← Tab-Navigation (Quiz + Lexikon)
-│   │   │   ├── StartScreenView.swift  ← Startbildschirm (3 Lehrjahre)
-│   │   │   ├── LevelGridView.swift    ← Level-Auswahl (Raster)
+│   │   │   ├── StartScreenView.swift  ← Startbildschirm (2 Lehrjahre)
+│   │   │   ├── LevelGridView.swift    ← Level-Auswahl (Raster, 20 Level)
 │   │   │   ├── LevelGameView.swift    ← Quiz-Spielansicht
 │   │   │   └── ResultView.swift       ← Ergebnis + Sterne + Konfetti
 │   │   ├── Lexikon/
@@ -82,12 +88,13 @@ AusbildungsSpielKoch/
 │   │
 │   ├── Helpers/
 │   │   ├── QuestionLoader.swift       ← JSON-Fragen laden & cachen
+│   │   ├── LexikonQuizGenerator.swift ← Automatische Fragen (Level 12-20, Bloom)
 │   │   ├── LexikonLoader.swift        ← Lexikon-JSON laden (Produkte, Garen, Saucen)
 │   │   ├── ProgressManager.swift      ← UserDefaults-Fortschritt
 │   │   └── SoundManager.swift         ← Audio + Haptik
 │   │
 │   ├── Resources/
-│   │   ├── iMOPS_Koch_Fragen_Level1-3.json  ← 166 Fragen (Level 1-11)
+│   │   ├── Matjes_Fragen_Level1-11.json     ← 166 Fragen (Level 1-11)
 │   │   ├── Koch_Produkte.json               ← 134 Produkte
 │   │   ├── Koch_Garmethoden.json            ← 20 Garmethoden
 │   │   ├── Koch_Saucen.json                 ← 20 Saucen
@@ -183,24 +190,45 @@ git pull origin main
 ### Datenfluss
 ```
 JSON-Datei → QuestionLoader → GameViewModel → Views
+                  ↓
+          LexikonQuizGenerator (Level 12-20, Bloom-Taxonomie)
                                     ↕
                               ProgressManager → UserDefaults
                               SoundManager → AVAudioPlayer
 ```
 
+### Level-System (20 Level)
+- **2 Lehrjahre**: 1. (Level 1-10), 2. (Level 11-20)
+- Level 1-11: Handkuratierte Fragen aus `Matjes_Fragen_Level1-11.json`
+- Level 12-20: Automatisch generiert via `LexikonQuizGenerator` (Bloom-Taxonomie)
+
+### Bloom-Taxonomie (Level 12-20)
+| Level | Bloom-Stufe | Beschreibung |
+|-------|-------------|--------------|
+| 12-13 | ERKENNEN | Produkte/Methoden/Saucen identifizieren |
+| 14-15 | ZUORDNEN | Kategorien und Typen zuweisen |
+| 16-17 | WISSEN | Fakten abrufen (Lagerung, Temperatur, Allergene) |
+| 18-19 | ANWENDEN | Praxissituationen lösen |
+| 20 | BEWERTEN | Aussagen beurteilen, Fehler erkennen |
+
 ### Spiel-Mechanik
-- 3 Lehrjahre: 1. (Level 1-10), 2. (Level 11-20), 3. (Level 21-30)
 - 10 Fragen pro Level (zufällig aus Pool)
 - 4 Antworten (A, B, C, D) - werden gemischt
 - Sterne: 0-1 Fehler = 3★, 2-3 Fehler = 2★, 4-5 Fehler = 1★, 6+ Fehler = 0★
 - Level wird freigeschaltet wenn vorheriges Level ≥ 1★
 - Erklärung wird bei falscher Antwort angezeigt
 
-### Aktueller Fragenbestand
-- Level 1: 15 Fragen (Hygiene & Lebensmittelsicherheit)
-- Level 2: 15 Fragen (Küchenbrigade & Arbeitsabläufe)
-- Level 3: 15 Fragen (Warenkunde & Schnitttechniken)
-- Level 4-30: Noch keine Fragen vorhanden
+### Fragenbestand
+- **Level 1-11**: 166 handkuratierte Fragen (JSON)
+- **Level 12-20**: ~400 automatisch generierte Fragen (LexikonQuizGenerator)
+- **Gesamt**: ~566 Fragen
+
+### Datenbanken
+| Datei | Einträge |
+|-------|----------|
+| Koch_Produkte.json | 134 Produkte |
+| Koch_Garmethoden.json | 20 Garmethoden |
+| Koch_Saucen.json | 20 Saucen |
 
 ---
 
@@ -208,10 +236,10 @@ JSON-Datei → QuestionLoader → GameViewModel → Views
 
 | Problem | Status | Lösung |
 |---------|--------|--------|
-| App-Icon wird nicht angezeigt im Store | Gelöst durch Neustart | Neues Projekt hat sauberen Asset-Katalog |
-| Alte Namens-Relikte im Code | Gelöst | Bei Code-Migration bereinigt |
-| Nur 3 von 30 Leveln haben Fragen | Offen | Fragen-JSON erweitern |
+| App-Icon wird nicht angezeigt im Store | Gelöst | Neues Projekt hat sauberen Asset-Katalog |
+| Alte Namens-Relikte im Code | Gelöst | Bei Matjes-Rebranding bereinigt |
 | Audio-Dateien fehlen noch im Repo | Offen | Andreas muss sie manuell hinzufügen |
+| Prüfungsmodul (Commis-Prüfung, Bossfight) | Offen | Nächstes Feature |
 
 ---
 
@@ -246,5 +274,20 @@ Der PR-Link ist das Ergebnis. Andreas klickt "Merge". Fertig.
 
 ---
 
+## 9. Zukunftsvision (von Andreas)
+
+> "Matjes, der kleine Hering – Das Ausbildungsspiel der Küche"
+
+- **6 Halbjahre** nach IHK-Rahmenplan
+- **Commis-Prüfung** = Endgegner (Ende jedes Halbjahres)
+- **Bossfight** = Abschlussprüfung (80 Fragen / 60 Min.)
+- **Fortschritts-Dashboard** – Stärken/Schwächen
+- **Schwachstellen-Training** – Gezieltes Üben
+- **Zertifikate** – PDF bei bestandener Prüfung
+- **Ausbilder-Reports** – Automatische Fortschrittsberichte
+- **Abo-Modell** – 1 Monat kostenlos, danach monatlich/jährlich
+
+---
+
 *Letzte Aktualisierung: 2026-02-15*
-*Session: claude/setup-chef-quiz-game-Jyg7i*
+*Session: claude/setup-chef-quiz-game-Jyg7i (Matjes-Rebranding)*

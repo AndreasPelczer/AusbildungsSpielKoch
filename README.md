@@ -116,8 +116,9 @@ Verfügbar für iOS (geplant). Kategorie: Bildung / Essen & Trinken.
 - [x] Saucenkunde (Level 10) ausarbeiten
 - [x] Prüfungskonzept (Commis-Prüfung + Bossfight)
 - [x] App Store Beschreibung
+- [x] LexikonQuizGenerator bauen (9 Levels, Bloom-Taxonomie)
+- [x] Matjes-Rebranding (UI, 20 Level-System, JSON-Umbenennung)
 - [ ] Fachliches OK für Level 4+5 Fragen
-- [ ] LexikonQuizGenerator bauen (9 Levels, Bloom-Taxonomie)
 - [ ] 6 Halbjahre nach IHK-Rahmenplan strukturieren
 - [ ] UI/UX Design
 - [ ] Backend + Datenbank aufsetzen

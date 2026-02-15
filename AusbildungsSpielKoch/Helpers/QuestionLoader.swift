@@ -19,7 +19,7 @@ class QuestionLoader {
 
         // 1. JSON-Fragen laden (Level 1–11)
         var questions: [Question] = []
-        if let url = Bundle.main.url(forResource: "iMOPS_Koch_Fragen_Level1-3", withExtension: "json") {
+        if let url = Bundle.main.url(forResource: "Matjes_Fragen_Level1-11", withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 questions = try JSONDecoder().decode([Question].self, from: data)

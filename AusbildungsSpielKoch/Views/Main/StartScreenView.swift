@@ -29,8 +29,7 @@ struct StartScreenView: View {
 
     private let lehrjahre: [LehrjahrConfig] = [
         LehrjahrConfig(number: 1, title: "1. Lehrjahr", subtitle: "Grundlagen", icon: "1.circle.fill", color: .green, levelRange: 1...10),
-        LehrjahrConfig(number: 2, title: "2. Lehrjahr", subtitle: "Aufbau", icon: "2.circle.fill", color: .blue, levelRange: 11...20),
-        LehrjahrConfig(number: 3, title: "3. Lehrjahr", subtitle: "Spezialisierung", icon: "3.circle.fill", color: .purple, levelRange: 21...30),
+        LehrjahrConfig(number: 2, title: "2. Lehrjahr", subtitle: "Vertiefung", icon: "2.circle.fill", color: .blue, levelRange: 11...20),
     ]
 
     /// Nur Lehrjahre anzeigen, die mindestens ein Level mit Fragen haben
@@ -64,22 +63,21 @@ struct StartScreenView: View {
                 VStack(spacing: 0) {
                     // Header
                     VStack(spacing: 8) {
-                        Image(systemName: "flame.fill")
+                        Text("🐟")
                             .font(.system(size: 50))
-                            .foregroundColor(.orange)
-                            .shadow(color: .orange.opacity(flameGlow ? 0.8 : 0.3), radius: flameGlow ? 20 : 8)
+                            .shadow(color: .blue.opacity(flameGlow ? 0.8 : 0.3), radius: flameGlow ? 20 : 8)
                             .scaleEffect(flameGlow ? 1.08 : 1.0)
                             .accessibilityHidden(true)
 
-                        Text("Ausbildungsspiel")
+                        Text("Matjes")
                             .font(.system(size: 36, weight: .black, design: .rounded))
                             .foregroundColor(.white)
 
-                        Text("Koch")
+                        Text("der kleine Hering")
                             .font(.system(size: 22, weight: .bold, design: .rounded))
                             .foregroundColor(.orange)
 
-                        Text("Koch / Köchin")
+                        Text("Das Ausbildungsspiel der Küche")
                             .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundColor(.gray)
                             .padding(.top, 2)
@@ -88,7 +86,7 @@ struct StartScreenView: View {
                     .opacity(headerVisible ? 1 : 0)
                     .offset(y: headerVisible ? 0 : -20)
                     .accessibilityElement(children: .combine)
-                    .accessibilityLabel("Ausbildungsspiel Koch, Koch und Köchin")
+                    .accessibilityLabel("Matjes, der kleine Hering, Das Ausbildungsspiel der Küche")
 
                     Spacer()
 
@@ -156,7 +154,7 @@ struct StartScreenView: View {
                     headerVisible = true
                 }
 
-                // Flamme pulsieren
+                // Fisch pulsieren
                 withAnimation(.easeInOut(duration: 2.0).repeatForever(autoreverses: true)) {
                     flameGlow = true
                 }
