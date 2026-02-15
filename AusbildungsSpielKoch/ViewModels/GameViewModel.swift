@@ -54,6 +54,13 @@ class GameViewModel: ObservableObject {
     init(level: Int, allQuestions: [Question]) {
         self.level = level
         self.allQuestions = allQuestions
+        _questions = Published(wrappedValue: [])
+        _currentIndex = Published(wrappedValue: 0)
+        _errors = Published(wrappedValue: 0)
+        _selectedAnswer = Published(wrappedValue: nil)
+        _answerState = Published(wrappedValue: .waiting)
+        _isLevelComplete = Published(wrappedValue: false)
+        _shuffledAnswers = Published(wrappedValue: [])
         startLevel()
     }
 

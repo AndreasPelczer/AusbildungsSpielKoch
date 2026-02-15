@@ -102,47 +102,62 @@ AusbildungsSpielKoch/
 
 ## 4. Git-Workflow
 
+### ⚠️ WICHTIGSTE REGEL: Andreas kennt kein Git und will kein Git lernen.
+Wenn Andreas ein Git-Problem hat, gib ihm **MAXIMAL EINEN einzigen Befehl** zum Kopieren.
+Keine Erklärungen, keine Alternativen, keine mehrstufigen Anleitungen.
+Wenn ein Befehl nicht klappt, gib den nächsten EINZELNEN Befehl.
+
+### 🚨 FEHLER AUS VERGANGENEN SESSIONS - NICHT WIEDERHOLEN!
+Diese Fehler haben Stunden gekostet. LIES DAS BEVOR DU ANDREAS IRGENDWAS SAGST:
+
+| Fehler | Warum falsch | Was stattdessen |
+|--------|-------------|-----------------|
+| `git push origin main` wenn Andreas auf claude/-Branch ist | "src refspec main does not match any" - es gibt lokal keinen main Branch | `git push origin HEAD:main` |
+| Andreas mehrstufige Git-Befehle geben (stash, rebase, merge) | Er kennt kein Git, das verwirrt und frustriert | EINEN Befehl, der alles macht |
+| `git pull` vorschlagen wenn unstaged changes existieren | "cannot pull with rebase: You have unstaged changes" | Erst committen: `git add -A && git commit -m "Update"` dann pullen |
+| Mehrere Lösungsvorschläge anbieten | Andreas will EINE Lösung, nicht Optionen | Den besten Befehl geben. Punkt. |
+| Davon ausgehen, dass vorherige Sessions Wissen weitergegeben haben | Jede Session startet bei NULL. Kein Gedächtnis. | IMMER diese CLAUDE.md lesen. Alles steht hier. |
+| Klug sein wollen statt einfach sein | Komplexe Git-Operationen eskalieren | Der dümmste Befehl der funktioniert ist der beste |
+
 ### 4.1 Grundregeln
-- **Andreas** erstellt das Xcode-Projekt und verwaltet Icons/Bilder
-- **Claude** schreibt Code, erstellt Dokumentation, committed und pushed
-- **Niemals** auf `main` direkt pushen
-- **Immer** auf einem `claude/`-Branch arbeiten
+- **Andreas** arbeitet lokal in Xcode und pusht über Xcode oder einfache Terminal-Befehle
+- **Claude** arbeitet auf `claude/`-Branches (Systemvorgabe)
+- **Nach jeder fertigen Aufgabe** erstellt Claude einen Pull Request (PR) auf `main`
+- **Andreas muss NIE** einen merge, rebase, stash oder conflict resolution machen
 
-### 4.2 Branch-Konvention
+### 4.2 Claudes Workflow (JEDE Session)
 ```
-claude/<beschreibung>-<sessionId>
+1. git fetch origin main
+2. git merge origin/main (eigenen Branch aktuell halten)
+3. Aufgabe erledigen
+4. Commit + Push auf claude/-Branch
+5. PR erstellen mit: gh pr create --base main --title "..." --body "..."
+6. Andreas den PR-Link geben → er klickt "Merge" auf GitHub
+7. Andreas holt sich den neuen Stand: git pull origin main
 ```
-Beispiel: `claude/add-game-logic-xK4mP`
 
-### 4.3 Push-Workflow
+### 4.3 Wenn Andreas lokale Änderungen hat und pushen will
+Claude gibt ihm NUR diesen einen Befehl:
 ```bash
-# 1. Branch erstellen (falls nötig)
-git checkout -b claude/<branchname>
-
-# 2. Änderungen stagen (EINZELNE Dateien, nie git add -A)
-git add AusbildungsSpielKoch/Models/Question.swift
-git add AusbildungsSpielKoch/ViewModels/GameViewModel.swift
-
-# 3. Commit mit klarer Nachricht
-git commit -m "Add Question model and GameViewModel with quiz logic"
-
-# 4. Push mit upstream-tracking
-git push -u origin claude/<branchname>
-
-# 5. Bei Netzwerkfehler: bis zu 4 Retries (2s, 4s, 8s, 16s Pause)
+git add -A && git commit -m "Update" && git push origin HEAD:main
 ```
-
-### 4.4 Pull-Workflow (Sync von Andreas' Änderungen)
+Falls "out of date"-Fehler: Erst diesen Befehl, dann nochmal pushen:
 ```bash
-git fetch origin main
-git merge origin/main
-# Oder: git pull origin main
+git pull origin main --no-rebase --no-edit
 ```
+
+### 4.4 Wenn Andreas Claudes Änderungen lokal haben will
+NUR dieser eine Befehl:
+```bash
+git pull origin main
+```
+(Weil Claude per PR alles auf main merged hat.)
 
 ### 4.5 Konflikte
 - **Niemals** `--force` oder `--hard` ohne Andreas' explizite Erlaubnis
-- Bei Konflikten: Andreas informieren und gemeinsam lösen
+- Claude löst Konflikte SELBST, niemals Andreas
 - Bilder/Assets: Andreas hat Vorrang (er erstellt sie in Xcode)
+- Wenn ein Konflikt auf Andreas' Seite entsteht: Claude sagt ihm **einen einzigen Befehl**
 
 ---
 
@@ -190,14 +205,18 @@ Jede neue Session sollte folgende Schritte durchführen:
 ```
 □ 1. CLAUDE.md lesen (diese Datei)
 □ 2. PROJECT_STATUS.md lesen (aktueller Stand)
-□ 3. git log --oneline -10 (letzte Änderungen prüfen)
-□ 4. git status (lokaler Zustand)
-□ 5. git fetch origin main (Sync mit GitHub)
-□ 6. Eigenen claude/-Branch erstellen
-□ 7. Aufgabe bearbeiten
-□ 8. PROJECT_STATUS.md aktualisieren
-□ 9. Commit + Push
+□ 3. git fetch origin main && git merge origin/main (IMMER zuerst synchronisieren!)
+□ 4. Eigenen claude/-Branch erstellen (falls nötig)
+□ 5. Aufgabe erledigen
+□ 6. Commit + Push auf claude/-Branch
+□ 7. PR erstellen auf main (gh pr create)
+□ 8. Andreas den PR-Link geben
+□ 9. PROJECT_STATUS.md aktualisieren
 ```
+
+### WICHTIG: Am Ende IMMER einen PR erstellen!
+Claude lässt Andreas NIEMALS mit Branch-Wirrwarr allein.
+Der PR-Link ist das Ergebnis. Andreas klickt "Merge". Fertig.
 
 ---
 
