@@ -10,7 +10,7 @@ import SwiftUI
 struct LevelGridView: View {
     @EnvironmentObject var progressManager: ProgressManager
 
-    let lehrjahr: Int // 0 = alle
+    let halbjahr: Int // 0 = alle
     let levelRange: ClosedRange<Int>
     let allQuestions: [Question]
 
@@ -25,17 +25,21 @@ struct LevelGridView: View {
     }
 
     private var headerTitle: String {
-        switch lehrjahr {
-        case 1: return "1. Lehrjahr"
-        case 2: return "2. Lehrjahr"
+        switch halbjahr {
+        case 1: return "1. Halbjahr"
+        case 2: return "2. Halbjahr"
+        case 3: return "3. Halbjahr"
+        case 4: return "4. Halbjahr"
         default: return "Alle Level"
         }
     }
 
     private var headerSubtitle: String {
-        switch lehrjahr {
+        switch halbjahr {
         case 1: return "Grundlagen"
-        case 2: return "Vertiefung"
+        case 2: return "Warenkunde"
+        case 3: return "Vertiefung"
+        case 4: return "Anwenden & Bewerten"
         default: return "Level 1-20"
         }
     }
