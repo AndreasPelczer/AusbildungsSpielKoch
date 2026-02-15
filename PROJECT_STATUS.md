@@ -1,22 +1,32 @@
 # PROJECT_STATUS.md - Aktueller Projektstatus
 
 > **Diese Datei wird von jeder Claude-Session aktualisiert.**
-> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (Cleanup)
+> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (4-Halbjahre-Umbau)
 
 ---
 
 ## Aktueller Zustand
 
-### Phase: Cleanup — Altes Matjes-Projekt entfernt
+### Phase: 4-Halbjahre-Struktur implementiert
 
 Die App ist funktionsfähig und bei Apple eingereicht.
 - App heißt **"Matjes, der kleine Hering"** (Anspielung auf "Der junge Koch" + "Hering"-Lexikon)
-- **20 Level** in 2 Lehrjahren (statt 30 in 3)
-- 1. Lehrjahr (Level 1-10): Handkuratierte Fragen
-- 2. Lehrjahr (Level 11-20): Level 11 handkuratiert + Level 12-20 automatisch generiert
+- **20 Level** in **4 Halbjahren** (je 5 Level)
+- **Sequentielle Freischaltung**: Halbjahr 2 erst nach Level 5, etc.
+- **Commis-Prüfung** nach Halbjahr 3 (Level 15), **Bossfight** nach Halbjahr 4 (Level 20)
 - Bloom-Taxonomie: Erkennen → Zuordnen → Wissen → Anwenden → Bewerten
-- **Prüfungsmodul** (Commis-Prüfung + Bossfight) implementiert
-- **Cleanup**: Alter `Matjes/`-Ordner mit separatem Xcode-Projekt entfernt (kollidierte mit Hauptprojekt)
+
+### Halbjahr-Struktur
+
+| Block | Level | Inhalt | Freischaltung |
+|-------|-------|--------|---------------|
+| **1. Halbjahr** | 1-5 | Grundlagen | Immer offen |
+| **2. Halbjahr** | 6-10 | Warenkunde | Nach Level 5 |
+| **3. Halbjahr** | 11-15 | Vertiefung | Nach Level 10 |
+| **Commis-Prüfung** | — | 30 Fragen / 20 Min. | Nach Level 15 |
+| **4. Halbjahr** | 16-20 | Anwenden & Bewerten | Nach Level 15 |
+| **Bossfight** | — | 50 Fragen / 40 Min. | Nach Level 20 |
+| *5.+6. Halbjahr* | *später* | *IHK-Erweiterung* | *kommt noch* |
 
 ---
 
@@ -41,43 +51,45 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 | 2026-02-15 | Lexikon-Tab implementiert | Claude |
 | 2026-02-15 | LexikonQuizGenerator: Level 12–20 automatisch generiert | Claude |
 | 2026-02-15 | QuestionLoader: Generierte Fragen integriert | Claude |
-| 2026-02-15 | **Matjes-Rebranding: UI, 20-Level-System, JSON-Umbenennung** | Claude |
+| 2026-02-15 | Matjes-Rebranding: UI, 20-Level-System, JSON-Umbenennung | Claude |
 | 2026-02-15 | Prüfungsmodul: Commis-Prüfung + Bossfight | Claude |
-| 2026-02-15 | **Cleanup: Alten Matjes/-Ordner entfernt (Target-Kollisionen behoben)** | Claude |
+| 2026-02-15 | Cleanup: Alten Matjes/-Ordner entfernt | Claude |
+| 2026-02-15 | LexikonQuizGenerator: Unicode-Fehler behoben | Claude |
+| 2026-02-15 | **4-Halbjahre-Umbau: StartScreen, LevelGrid, ExamConfig, ProgressManager** | Claude |
 
 ---
 
 ## Fragenbestand
 
-### 1. Lehrjahr (handgeschrieben, JSON: `Matjes_Fragen_Level1-11.json`)
+### Halbjahr 1 + 2 (handgeschrieben, JSON: `Matjes_Fragen_Level1-11.json`)
 
-| Level | Anzahl | Thema | Status |
-|-------|--------|-------|--------|
-| 1 | 15 | Hygiene & Arbeitsschutz | ✅ |
-| 2 | 15 | Küchenbrigade & Arbeitsabläufe | ✅ |
-| 3 | 16 | Warenkunde & Schnitttechniken | ✅ |
-| 4 | 15 | Grundlegende Arbeitstechniken I | ✅ |
-| 5 | 15 | Warenkunde vertieft (Lagerung, Allergene) | ✅ |
-| 6 | 15 | Fleisch & Innereien | ✅ |
-| 7 | 15 | Fisch & Meeresfrüchte | ✅ |
-| 8 | 15 | Milchprodukte & Käse | ✅ |
-| 9 | 15 | Gewürze | ✅ |
-| 10 | 15 | Garmethoden | ✅ |
+| Level | HJ | Anzahl | Thema | Status |
+|-------|----|--------|-------|--------|
+| 1 | 1 | 15 | Hygiene & Arbeitsschutz | ✅ |
+| 2 | 1 | 15 | Küchenbrigade & Arbeitsabläufe | ✅ |
+| 3 | 1 | 16 | Warenkunde & Schnitttechniken | ✅ |
+| 4 | 1 | 15 | Grundlegende Arbeitstechniken I | ✅ |
+| 5 | 1 | 15 | Warenkunde vertieft (Lagerung, Allergene) | ✅ |
+| 6 | 2 | 15 | Fleisch & Innereien | ✅ |
+| 7 | 2 | 15 | Fisch & Meeresfrüchte | ✅ |
+| 8 | 2 | 15 | Milchprodukte & Käse | ✅ |
+| 9 | 2 | 15 | Gewürze | ✅ |
+| 10 | 2 | 15 | Garmethoden | ✅ |
 
-### 2. Lehrjahr
+### Halbjahr 3 + 4
 
-| Level | Quelle | Bloom-Stufe | Thema | Pool-Größe |
-|-------|--------|-------------|-------|------------|
-| 11 | JSON | — | Saucenkunde | 15 |
-| 12 | Generator | ERKENNEN | Produkte identifizieren | ~30 |
-| 13 | Generator | ERKENNEN | Garmethoden & Saucen identifizieren | ~50 |
-| 14 | Generator | ZUORDNEN | Produkte → Kategorien zuordnen | ~35 |
-| 15 | Generator | ZUORDNEN | Garmethoden & Saucen → Typen zuordnen | ~50 |
-| 16 | Generator | WISSEN | Lagerung, Allergene, Nährwerte | ~35 |
-| 17 | Generator | WISSEN | Temperaturen, Garmedien, Saucen-Basis | ~70 |
-| 18 | Generator | ANWENDEN | Garmethode wählen, Allergene prüfen | ~55 |
-| 19 | Generator | ANWENDEN | Ableitungen, Praxistipps, Klassiker | ~25 |
-| 20 | Generator | BEWERTEN | Falschaussagen finden, Eignung beurteilen | ~55 |
+| Level | HJ | Quelle | Bloom-Stufe | Thema | Pool-Größe |
+|-------|----|--------|-------------|-------|------------|
+| 11 | 3 | JSON | — | Saucenkunde | 15 |
+| 12 | 3 | Generator | ERKENNEN | Produkte identifizieren | ~30 |
+| 13 | 3 | Generator | ERKENNEN | Garmethoden & Saucen identifizieren | ~50 |
+| 14 | 3 | Generator | ZUORDNEN | Produkte → Kategorien zuordnen | ~35 |
+| 15 | 3 | Generator | ZUORDNEN | Garmethoden & Saucen → Typen zuordnen | ~50 |
+| 16 | 4 | Generator | WISSEN | Lagerung, Allergene, Nährwerte | ~35 |
+| 17 | 4 | Generator | WISSEN | Temperaturen, Garmedien, Saucen-Basis | ~70 |
+| 18 | 4 | Generator | ANWENDEN | Garmethode wählen, Allergene prüfen | ~55 |
+| 19 | 4 | Generator | ANWENDEN | Ableitungen, Praxistipps, Klassiker | ~25 |
+| 20 | 4 | Generator | BEWERTEN | Falschaussagen finden, Eignung beurteilen | ~55 |
 
 **Gesamt: 166 feste + ~400 generierte Fragen = ~566 Fragen**
 
@@ -99,25 +111,28 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 
 > "Matjes, der kleine Hering – Das Ausbildungsspiel der Küche"
 
-- **6 Halbjahre** nach IHK-Rahmenplan
-- **Commis-Prüfung** = Endgegner (Ende jedes Halbjahres)
-- **Bossfight** = Abschlussprüfung (80 Fragen / 60 Min.)
+- **6 Halbjahre** nach IHK-Rahmenplan (4 implementiert, 5+6 kommen)
+- **Commis-Prüfung** = Zwischenprüfung nach Halbjahr 3
+- **Bossfight** = Abschlussprüfung nach Halbjahr 4
 - Karrierepfad: Commis → Demi-Chef → Chef de Partie → Sous-Chef → Küchenchef
+- Andreas kümmert sich um mehr Fragen-Content
 
 ---
 
 ## Offene Aufgaben
 
 ### P0 - Nächste Schritte
-- [x] ~~Alten Matjes/-Ordner entfernen (Target-Kollisionen)~~ ✅
+- [x] ~~Alten Matjes/-Ordner entfernen~~ ✅
 - [x] ~~Commis-Prüfung + Bossfight implementieren~~ ✅
+- [x] ~~4-Halbjahre-Struktur mit Freischaltung~~ ✅
 - [ ] **Andreas prüft Level 4–11 Fragen fachlich** (120 neue Fragen!)
 - [ ] **Level 12–20 in Xcode testen** (LexikonQuizGenerator)
+- [ ] **Andreas: Mehr Fragen-Content für später**
 
 ### P2 - App-Features
 - [ ] Fortschritts-Dashboard (Stärken/Schwächen)
 - [ ] Schwachstellen-Training (gezieltes Üben)
-- [ ] 6-Halbjahre-Struktur nach IHK-Rahmenplan
+- [ ] Halbjahr 5+6 (IHK-Erweiterung)
 
 ### P3 - Später
 - [ ] Zertifikate (PDF bei bestandener Prüfung)
@@ -130,11 +145,11 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 ## Hinweise für die nächste Session
 
 1. **App heißt "Matjes, der kleine Hering"** — Xcode-Projekt bleibt `AusbildungsSpielKoch`
-2. **20 Level** in 2 Lehrjahren (Level 1-10 + Level 11-20)
-3. **Prüfungsmodul** ist implementiert (Commis-Prüfung + Bossfight)
-4. **Alter Matjes/-Ordner** wurde entfernt — nur `AusbildungsSpielKoch.xcodeproj` ist aktiv
-5. **LexikonQuizGenerator.swift** generiert Level 12–20 automatisch aus Lexikon-Daten
-6. **Nächstes großes Feature**: Fortschritts-Dashboard oder 6-Halbjahre-Struktur
+2. **20 Level** in **4 Halbjahren** (je 5 Level, sequentiell freigeschaltet)
+3. **Prüfungen**: Commis nach HJ3 (Level 15), Bossfight nach HJ4 (Level 20)
+4. **LevelGridView** Parameter heißt jetzt `halbjahr` (nicht mehr `lehrjahr`)
+5. **LexikonQuizGenerator.swift** verwendet Unicode-Escapes für deutsche Anführungszeichen
+6. **Halbjahr 5+6** sind vorbereitet aber noch nicht implementiert
 
 ---
 
