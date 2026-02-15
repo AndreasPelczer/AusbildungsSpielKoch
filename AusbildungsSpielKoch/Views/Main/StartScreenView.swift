@@ -15,6 +15,7 @@ struct StartScreenView: View {
     @State private var flameGlow = false
     @State private var headerVisible = false
     @State private var contentVisible = false
+    @State private var cursorVisible = true
 
     /// Halbjahr-Konfiguration mit Level-Ranges
     private struct HalbjahrConfig {
@@ -150,6 +151,39 @@ struct StartScreenView: View {
                     }
                 }
             }
+            // iMOPS Wasserzeichen + Signatur
+            .overlay(alignment: .bottom) {
+                HStack(alignment: .bottom) {
+                    // ;=)_ Signatur unten links
+                    HStack(spacing: 0) {
+                        Text(";=)")
+                            .font(.system(size: 11, weight: .medium, design: .monospaced))
+                            .foregroundColor(.green.opacity(0.4))
+                        Text("_")
+                            .font(.system(size: 11, weight: .medium, design: .monospaced))
+                            .foregroundColor(.green.opacity(cursorVisible ? 0.6 : 0.0))
+                    }
+
+                    Spacer()
+
+                    // iMOPS Logo dezent
+                    VStack(spacing: 1) {
+                        RoundedRectangle(cornerRadius: 1)
+                            .fill(Color.orange.opacity(0.15))
+                            .frame(width: 20, height: 2)
+                        Text("\u{2303}")
+                            .font(.system(size: 8))
+                            .foregroundColor(.orange.opacity(0.15))
+                            .offset(y: -2)
+                        Text("iMOPS")
+                            .font(.system(size: 7, weight: .bold, design: .rounded))
+                            .foregroundColor(.orange.opacity(0.15))
+                            .offset(y: -4)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+            }
             .toolbar(.hidden, for: .navigationBar)
             .onAppear {
                 withAnimation(.easeOut(duration: 0.5)) {
@@ -164,6 +198,10 @@ struct StartScreenView: View {
                     withAnimation(.easeOut(duration: 0.5)) {
                         contentVisible = true
                     }
+                }
+
+                withAnimation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
+                    cursorVisible.toggle()
                 }
             }
         }
