@@ -13,8 +13,9 @@ struct AusbildungsSpielKochApp: App {
 
     var body: some Scene {
         WindowGroup {
-            StartScreenView()
+            MainTabView()
                 .environmentObject(progressManager)
+                .preferredColorScheme(.dark)
         }
     }
 }
