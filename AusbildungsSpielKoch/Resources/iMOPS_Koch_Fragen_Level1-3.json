@@ -950,5 +950,215 @@
     "answers": ["Ja, gleiche Pflanzenfamilie", "NEIN — botanisch nicht verwandt, schmecken aber ähnlich (Anethol)", "Sternanis ist getrockneter Anis", "Anis ist gemahlener Sternanis"],
     "correctIndex": 1,
     "erklaerung": "Botanisch NICHT verwandt! Sternanis (Illiciaceae, China) und Anis (Doldenblütler, Mittelmeer) schmecken nur ähnlich — beide enthalten Anethol. Sternanis: asiatische Küche, Pho, Glühwein. Anis: Backwaren, Ouzo, Pastis."
+  },
+  {
+    "level": 10,
+    "text": "Bei welcher Garmethode schwimmt das Lebensmittel komplett in heißem Fett?",
+    "answers": ["Sautieren", "Frittieren", "Dämpfen", "Pochieren"],
+    "correctIndex": 1,
+    "erklaerung": "Frittieren = schwimmend in heißem Fett (140–180°C) garen. Goldene Kruste, schnelle Garung. Nicht verwechseln mit Kurzbraten (wenig Fett in der Pfanne). Über 180°C entsteht das schädliche Acrylamid!"
+  },
+  {
+    "level": 10,
+    "text": "Blanchieren: Was passiert NACH dem kochenden Wasser?",
+    "answers": ["Direkt servieren", "Sofort in Eiswasser abschrecken", "10 Minuten weiterkochen", "In Öl braten"],
+    "correctIndex": 1,
+    "erklaerung": "Blanchieren = kurz in kochendes Wasser, dann SOFORT in Eiswasser abschrecken. Das stoppt den Garprozess und erhält Farbe, Biss und Nährstoffe. Ohne Abschrecken gart das Gemüse nach!"
+  },
+  {
+    "level": 10,
+    "text": "Pochieren — bei welcher Temperatur?",
+    "answers": ["100°C (sprudelnd)", "65–80°C (unter dem Siedepunkt)", "200°C", "0–4°C"],
+    "correctIndex": 1,
+    "erklaerung": "Pochieren = sanft garen UNTER dem Siedepunkt. 65–80°C — das Wasser 'zittert' nur, keine Blasen! Schonendste feuchte Garmethode. Perfekt für Eier, Fisch und zartes Geflügel."
+  },
+  {
+    "level": 10,
+    "text": "Schmoren ist eine 'kombinierte' Garmethode. Was wird kombiniert?",
+    "answers": ["Zwei verschiedene Öle", "Erst trocken anbraten, dann in Flüssigkeit langsam garen", "Ofen und Herd gleichzeitig", "Salz und Zucker"],
+    "correctIndex": 1,
+    "erklaerung": "Erst TROCKEN (scharf anbraten = Maillard-Reaktion = Röstaromen), dann FEUCHT (in Flüssigkeit bei 150–170°C im Ofen langsam garen). Das Kollagen wird zu Gelatine — zähes Fleisch wird butterzart."
+  },
+  {
+    "level": 10,
+    "text": "Die Pfanne ist nicht heiß genug beim Kurzbraten. Was passiert?",
+    "answers": ["Das Fleisch wird besonders zart", "Das Fleisch gart im eigenen Saft und wird grau statt braun", "Es schmeckt besonders würzig", "Kein Unterschied"],
+    "correctIndex": 1,
+    "erklaerung": "Kalte Pfanne = kein Maillard = keine Kruste. Das Fleisch verliert Saft, kocht darin und wird grau statt knusprig-braun. Pfanne MUSS richtig heiß sein bevor das Fleisch reinkommt!"
+  },
+  {
+    "level": 10,
+    "text": "Pommes zweistufig frittieren — wie?",
+    "answers": ["Zweimal bei 180°C", "Erst bei 140°C garen, dann bei 180°C knusprig ausbacken", "Erst bei 200°C, dann bei 100°C", "Erst im Ofen, dann frittieren"],
+    "correctIndex": 1,
+    "erklaerung": "Profi-Technik: 1. Durchgang bei 140°C = garen (weich innen). 2. Durchgang bei 180°C = Kruste (knusprig außen). Ergebnis: innen cremig, außen goldbraun. Restaurant-Qualität!"
+  },
+  {
+    "level": 10,
+    "text": "Was ist die Maillard-Reaktion?",
+    "answers": ["Eine französische Kochtechnik", "Eine Bräunungsreaktion zwischen Zucker und Aminosäuren ab ca. 140°C", "Das Ausflocken von Eiweiß", "Eine Konservierungsmethode"],
+    "correctIndex": 1,
+    "erklaerung": "Maillard = die wichtigste Reaktion in der Küche! Ab ca. 140°C reagieren Zucker mit Aminosäuren → braune Farbe + hunderte Aromastoffe (Röstaromen). Steak, Brot, Kaffee — alles Maillard!"
+  },
+  {
+    "level": 10,
+    "text": "Dünsten vs. Kochen — wann ist Dünsten besser?",
+    "answers": ["Nie, Kochen ist immer besser", "Bei zartem Gemüse und Fisch — erhält mehr Nährstoffe und Farbe", "Nur bei Fleisch", "Kochen und Dünsten sind dasselbe"],
+    "correctIndex": 1,
+    "erklaerung": "Dünsten = im eigenen Saft mit wenig Fett unter 100°C. Weniger Wasser = weniger Nährstoffverlust. Farbe, Textur und Geschmack bleiben besser erhalten als beim Kochen in viel Wasser."
+  },
+  {
+    "level": 10,
+    "text": "Sous-vide: Was ist der größte Vorteil?",
+    "answers": ["Es geht schneller", "Exakteste Temperaturkontrolle — kein Übergaren möglich", "Es ist billiger", "Man braucht weniger Gewürze"],
+    "correctIndex": 1,
+    "erklaerung": "Sous-vide = vakuumiert im Wasserbad auf 0,1°C genau. Das Steak kann nicht über die Zieltemperatur hinaus garen! Kein Flüssigkeitsverlust (alles im Beutel). Nachher kurz anbraten für die Kruste."
+  },
+  {
+    "level": 10,
+    "text": "Kalträuchern vs. Heißräuchern — der Unterschied?",
+    "answers": ["Kein Unterschied", "Kalt (15–25°C) konserviert, Produkt bleibt roh. Heiß (60–120°C) gart gleichzeitig", "Nur die Holzart ist anders", "Kalträuchern ist schneller"],
+    "correctIndex": 1,
+    "erklaerung": "Kalträuchern: 15–25°C, Tage lang, Produkt bleibt roh (Lachs, Schinken). Heißräuchern: 60–120°C, Stunden, Produkt wird gleichzeitig gegart (Forelle, Makrele). Kein Nadelholz verwenden (Harz = bitter)!"
+  },
+  {
+    "level": 10,
+    "text": "Beim Dämpfen — warum darf das Wasser das Gargut nicht berühren?",
+    "answers": ["Weil es sonst verbrennt", "Damit Nährstoffe und Geschmack im Lebensmittel bleiben", "Nur aus optischen Gründen", "Weil Dampf heißer ist als Wasser"],
+    "correctIndex": 1,
+    "erklaerung": "Beim Wasserkontakt würden wasserlösliche Vitamine (B, C) und Aromen ins Wasser auslaugen. Im Dampf bleiben sie im Lebensmittel. Daher: Siebeinsatz oder Dampfgarer, Deckel drauf, nicht öffnen!"
+  },
+  {
+    "level": 10,
+    "text": "Ceviche — wie wird der Fisch 'gegart'?",
+    "answers": ["Im Ofen", "Durch Säure (Limettensaft) — Proteine denaturieren ohne Hitze", "Gar nicht, er bleibt roh", "Durch Einfrieren"],
+    "correctIndex": 1,
+    "erklaerung": "Kalte/chemische Garung: Zitronensäure denaturiert die Proteine ähnlich wie Hitze — Fleisch wird fest und opak. ACHTUNG: Parasiten und Bakterien werden NICHT abgetötet. Nur frischeste Ware, vorher einfrieren!"
+  },
+  {
+    "level": 10,
+    "text": "Ein Lehrling will Tafelspitz grillen. Dein Urteil?",
+    "answers": ["Super Idee!", "Falsche Methode — Tafelspitz braucht langes Garen in Flüssigkeit (Sieden)", "Geht, wenn man ihn vorher mariniert", "Nur auf Holzkohle möglich"],
+    "correctIndex": 1,
+    "erklaerung": "Tafelspitz ist bindegewebsreiches Rindfleisch — beim Grillen wird es zäh! Es muss langsam in Brühe gesiedet werden, damit das Kollagen sich auflöst. Richtige Methode zum richtigen Stück!"
+  },
+  {
+    "level": 10,
+    "text": "Gratinieren — was muss das Gericht VORHER sein?",
+    "answers": ["Roh", "Bereits fertig gegart — Gratinieren bräunt nur die Oberfläche", "Tiefgekühlt", "Mariniert"],
+    "correctIndex": 1,
+    "erklaerung": "Gratinieren (220–250°C Oberhitze) bräunt nur die Oberfläche — Käse, Brösel oder Eigelb-Sahne. Das Gericht darunter MUSS vorher fertig gegart sein. Sonst: oben verbrannt, unten roh!"
+  },
+  {
+    "level": 11,
+    "text": "Wie viele klassische Muttersoßen gibt es in der französischen Küche?",
+    "answers": ["3", "5", "7", "10"],
+    "correctIndex": 1,
+    "erklaerung": "Die 5 Muttersoßen: 1. Béchamel (Milch), 2. Velouté (Fond), 3. Espagnole (braun), 4. Tomatensauce, 5. Hollandaise (Eigelb+Butter). Aus diesen 5 leiten sich ALLE klassischen Soßen ab."
+  },
+  {
+    "level": 11,
+    "text": "Roux (Mehlschwitze) — welche 3 Stufen gibt es?",
+    "answers": ["Leicht, mittel, schwer", "Hell/Weiß, Blond, Braun — je dunkler, desto weniger Bindekraft", "Süß, salzig, neutral", "Dünn, mittel, dick"],
+    "correctIndex": 1,
+    "erklaerung": "Hell (1–2 Min, stärkste Bindung, für Béchamel), Blond (3–4 Min, für Velouté), Braun (5–8 Min, meister Geschmack, schwächste Bindung, für Espagnole). Butter + Mehl 1:1."
+  },
+  {
+    "level": 11,
+    "text": "Hollandaise ist geronnen. Wie rettest du sie?",
+    "answers": ["Mehr Butter dazu", "Neuer Topf, 1 EL kaltes Wasser, geronnene Soße tropfenweise einschlagen", "Alles nochmal erhitzen", "Wegwerfen, nicht zu retten"],
+    "correctIndex": 1,
+    "erklaerung": "Die Emulsion ist gebrochen (Eigelb zu heiß geworden). Rettung: In einem NEUEN Topf 1 EL kaltes Wasser, die geronnene Soße ganz langsam tropfenweise einschlagen bis sie wieder emulgiert. Geduld!"
+  },
+  {
+    "level": 11,
+    "text": "Warum darf Beurre blanc NICHT kochen?",
+    "answers": ["Weil sie dann zu dick wird", "Die Emulsion bricht — Butter trennt sich in Fett und Molke", "Aus Geschmacksgründen", "Kochen ist kein Problem"],
+    "correctIndex": 1,
+    "erklaerung": "Beurre blanc ist eine Emulsion aus Butterpartikeln in Flüssigkeit. Beim Kochen bricht die Emulsion — die Butter trennt sich in Fett und Molke. Immer unter dem Siedepunkt halten!"
+  },
+  {
+    "level": 11,
+    "text": "Fischfond wird nur 20–30 Minuten gekocht. Warum?",
+    "answers": ["Weil er schnell fertig ist", "Länger kochen macht ihn bitter und trüb", "Weil Fisch schneller verdirbt", "Kein fachlicher Grund"],
+    "correctIndex": 1,
+    "erklaerung": "Fischkarkassen geben ihr Aroma in 20–30 Min. ab. Länger = Gräten und Haut geben bittere Stoffe ab, der Fond wird trüb. Fleischfond dagegen braucht 4–8 Stunden. Nur weißen Fisch verwenden (Lachs = zu fettig)!"
+  },
+  {
+    "level": 11,
+    "text": "Vinaigrette — welches Verhältnis Öl zu Essig?",
+    "answers": ["1:1", "3 Teile Öl : 1 Teil Essig/Säure", "5:1", "1:3"],
+    "correctIndex": 1,
+    "erklaerung": "Klassisch: 3 Teile Öl zu 1 Teil Säure (Essig oder Zitrone). Senf als Emulgator hält die Mischung stabil. Trotzdem eine temporäre Emulsion — immer frisch anrühren oder vor dem Servieren schütteln."
+  },
+  {
+    "level": 11,
+    "text": "Mayonnaise bricht beim Rühren. Was war der Fehler?",
+    "answers": ["Zu viel Salz", "Öl zu schnell zugegeben, Zutaten zu kalt, oder zu viel Öl pro Eigelb", "Falsches Ei", "Zu wenig Essig"],
+    "correctIndex": 1,
+    "erklaerung": "Häufigste Fehler: Öl zu schnell zugegossen (TROPFENWEISE!), Zutaten zu kalt (Zimmertemperatur!), oder über 200ml Öl pro Eigelb. Rettung: Neues Eigelb, gebrochene Mayo tropfenweise einschlagen."
+  },
+  {
+    "level": 11,
+    "text": "Warum wird Tomatenmark beim braunen Fond MIT im Ofen geröstet?",
+    "answers": ["Nur damit es sich besser auflöst", "Rösten gibt Maillard-Farbe, Süße und Umami — roh ist es säuerlich", "Aus Zeitgründen", "Kein fachlicher Grund"],
+    "correctIndex": 1,
+    "erklaerung": "Tomatenmark im Ofen mitrösten = Maillard-Reaktion = Farbe + Süße + Umami. Roh zugegebenes Tomatenmark schmeckt säuerlich und eindimensional. Der Unterschied zwischen gutem und großartigem Fond!"
+  },
+  {
+    "level": 11,
+    "text": "Was bedeutet 'aufmontieren' bei einer Soße?",
+    "answers": ["Die Soße aufkochen", "Kalte Butterstücke in die warme Soße einrühren — Glanz und Bindung", "Käse einrühren", "Die Soße durch ein Sieb passieren"],
+    "correctIndex": 1,
+    "erklaerung": "Aufmontieren = kalte Butterstücke in die fertige, warme Soße schwenken/einrühren. Das Fett emulgiert → Glanz, Geschmeidigkeit, Bindung. Danach NICHT mehr aufkochen (Emulsion bricht)!"
+  },
+  {
+    "level": 11,
+    "text": "Pesto im Mixer — warum nur auf niedrigster Stufe?",
+    "answers": ["Mixer ist genauso gut", "Hohe Stufe erwärmt und oxidiert das Basilikum — wird braun und bitter", "Nur aus Tradition", "Damit es nicht zu flüssig wird"],
+    "correctIndex": 1,
+    "erklaerung": "Schnelle Rotation = Hitze = Oxidation = Basilikum wird braun und bitter. Traditionell im Mörser (pestare = zerstoßen). Mixer nur auf niedrigster Stufe, pulsieren. Gutes Olivenöl und frisch geriebener Parmesan sind entscheidend."
+  },
+  {
+    "level": 11,
+    "text": "Sauce Mornay — welche Muttersoße ist die Basis?",
+    "answers": ["Hollandaise", "Béchamel (+ Käse, traditionell Gruyère)", "Tomatensauce", "Velouté"],
+    "correctIndex": 1,
+    "erklaerung": "Mornay = Béchamel + geriebener Käse (klassisch Gruyère). Den Käse bei niedriger Hitze einschmelzen — nicht kochen (wird fädig)! Perfekt zum Gratinieren: Soße über das Gericht, unter den Salamander."
+  },
+  {
+    "level": 11,
+    "text": "Brauner Fond soll klar sein. Was ist der wichtigste Tipp beim Kochen?",
+    "answers": ["So stark wie möglich kochen", "Nur SIMMERN, nie sprudelnd kochen — und regelmäßig abschäumen", "Ständig umrühren", "Deckel fest drauf"],
+    "correctIndex": 1,
+    "erklaerung": "Sprudelndes Kochen verwirbelt Fett und Trübstoffe — der Fond wird trüb. Sanftes Simmern + regelmäßig abschäumen (Schaum = Eiweiß/Unreinheiten) = klarer, sauberer Fond. Geduld zahlt sich aus!"
+  },
+  {
+    "level": 11,
+    "text": "Gastrique — was ist das?",
+    "answers": ["Ein Käse", "Eine Süß-sauer-Basis aus Karamell und Essig", "Ein Gewürz", "Ein Fond"],
+    "correctIndex": 1,
+    "erklaerung": "Zucker karamellisieren + mit Essig ablöschen = Gastrique. Süße + Säure = perfekte Balance. Basis für fruchtige Soßen (Ente à l'orange!). Vielseitige Technik, die viele Lehrlinge nicht kennen."
+  },
+  {
+    "level": 11,
+    "text": "Velouté ist die vielseitigste Muttersoße. Warum?",
+    "answers": ["Weil sie am besten schmeckt", "Durch Wechsel des Fonds (Geflügel/Fisch/Gemüse) komplett anderer Charakter", "Weil sie am einfachsten ist", "Das stimmt nicht"],
+    "correctIndex": 1,
+    "erklaerung": "Velouté = helle Roux + Fond. Geflügelfond → Geflügel-Velouté, Fischfond → Fisch-Velouté. Mit Sahne → Suprême, mit Käse → Mornay-Variante, mit Pilzen → Champignonrahm. Ein Rezept, unendliche Variationen!"
+  },
+  {
+    "level": 10,
+    "text": "Flambieren — welche Sicherheitsregel ist am wichtigsten?",
+    "answers": ["Nur draußen flambieren", "Pfanne vom Herd nehmen, Alkohol zugeben, kippen/anzünden — NIE über der Flamme einschenken", "Feuerlöscher bereithalten", "Nur mit Wasser löschen"],
+    "correctIndex": 1,
+    "erklaerung": "NIEMALS Alkohol direkt aus der Flasche über eine Flamme gießen — Stichflamme! Pfanne vom Herd, Alkohol (>40%) zugeben, Pfanne kippen oder mit langem Streichholz anzünden. Haare zurückbinden!"
+  },
+  {
+    "level": 11,
+    "text": "Ein Gast hat Milch- und Ei-Allergie. Welche Soßen gehen trotzdem?",
+    "answers": ["Béchamel und Hollandaise", "Vinaigrette, Salsa verde, Tomatensauce, Jus", "Gar keine Soße möglich", "Mayonnaise ohne Ei"],
+    "correctIndex": 1,
+    "erklaerung": "Vinaigrette (Öl+Essig), Salsa verde (Kräuter+Öl), Tomatensauce und Jus (Bratensaft-Reduktion) kommen ohne Milch und Ei aus. Keine Béchamel, Hollandaise, Mayo oder Buttersoßen! Allergene kennen = Pflicht."
   }
 ]
