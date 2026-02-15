@@ -7,11 +7,11 @@
 
 ## Aktueller Zustand
 
-### Phase: App läuft, bei Apple eingereicht. Lexikon-Bereinigung + Level 4 Fragen erstellt.
+### Phase: App läuft. Neue Produkte-DB + Level 5 Fragen erstellt.
 
 Die App ist funktionsfähig und bei Apple zur Prüfung eingereicht.
-Matjes-Datenbank (Lexikon + Produkte) wurde ins Repo integriert.
-Lexikon bereinigt (53 Duplikate entfernt), Level 4 Fragen geschrieben.
+Lexikon bereinigt (161 Einträge), neue Produkte-DB (36 Produkte) von Andreas geliefert.
+Level 4 (Arbeitstechniken) + Level 5 (Warenkunde vertieft) Fragen geschrieben.
 
 ---
 
@@ -29,8 +29,11 @@ Lexikon bereinigt (53 Duplikate entfernt), Level 4 Fragen geschrieben.
 | 2026-02-15 | PrivacyInfo.xcprivacy erstellt | Claude |
 | 2026-02-15 | App bei Apple eingereicht | Andreas |
 | 2026-02-15 | Matjes-Datenbank (Lexikon + Produkte) ins Repo gepusht | Andreas |
-| 2026-02-15 | **Lexikon bereinigt: 214 → 161 Einträge (53 Duplikate entfernt)** | Claude |
-| 2026-02-15 | **Level 4 Fragen geschrieben: 15 Fragen (Arbeitstechniken I)** | Claude |
+| 2026-02-15 | Lexikon bereinigt: 214 → 161 Einträge (53 Duplikate entfernt) | Claude |
+| 2026-02-15 | Level 4 Fragen geschrieben: 15 Fragen (Arbeitstechniken I) | Claude |
+| 2026-02-15 | **Alte Produkte-Datei gelöscht** (848 Messe-Catering-Produkte) | Claude |
+| 2026-02-15 | **Neue Produkte-DB: 36 Produkte** (Koch_Produkte.json) von Andreas | Andreas+Claude |
+| 2026-02-15 | **Level 5 Fragen: 15 Fragen** (Warenkunde vertieft) | Claude |
 
 ---
 
@@ -41,44 +44,49 @@ Lexikon bereinigt (53 Duplikate entfernt), Level 4 Fragen geschrieben.
 | 1 | 15 | Hygiene & Arbeitsschutz | Vorhanden |
 | 2 | 15 | Küchenbrigade & Arbeitsabläufe | Vorhanden |
 | 3 | 16 | Warenkunde & Schnitttechniken | Vorhanden |
-| 4 | 15 | Grundlegende Arbeitstechniken I | **NEU** |
-| 5-30 | 0 | Siehe Level-Map in README.md | Offen |
+| 4 | 15 | Grundlegende Arbeitstechniken I | Vorhanden |
+| 5 | 15 | Warenkunde vertieft (Lagerung, Allergene, Sorten) | **NEU** |
+| 6-30 | 0 | Noch offen | Offen |
 
-**Gesamt: 61 Fragen (von 450 Ziel)**
+**Gesamt: 76 Fragen (von 450 Ziel)**
 
 ---
 
-## Lexikon-Datenbank
+## Datenbanken
 
+### Produkte (NEU)
+| Datei | Einträge | Kategorien |
+|-------|----------|------------|
+| Koch_Produkte.json | 36 | Gemüse (22), Kartoffeln (4), Salat (4), Pilze (3), Hülsenfrüchte (3) |
+
+### Lexikon
 | Datei | Einträge | Status |
 |-------|----------|--------|
-| Koch_Lexikon.json (bereinigt) | 161 | Bereinigt, bereit für App-Integration |
-| Matjes/Lexikon.json (Original) | 214 | Quell-Datei mit 53 Duplikaten |
-| Matjes/Produkte.json (Original) | 848 | Messe-Catering, muss für Azubis umgebaut werden |
+| Koch_Lexikon.json | 161 | Bereinigt, bereit für App-Integration |
 
-### Lexikon-Bereinigung Details:
-- 50 echte Duplikate entfernt (identischer Code + identischer Text)
-- 3 Near-Duplikate entfernt (gleicher Name + gleiche Kategorie, falsche Code-Prefixe)
-- 11 kontextabhängige Einträge BEHALTEN (z.B. Blanchieren als Technik + Vorbereitung)
+### Gelöscht
+| Datei | Grund |
+|-------|-------|
+| ~~Matjes/Produkte.json~~ | Alte Messe-Catering-Daten (848 Stk), ersetzt durch Koch_Produkte.json |
 
 ---
 
 ## Offene Aufgaben (Priorität)
 
 ### P0 - Nächste Schritte
-- [ ] **Andreas prüft Level 4 Fragen fachlich** (15 Fragen zu Arbeitstechniken I)
-- [ ] **Produkte-Datenbank: Andreas bringt neue Daten** (allgemeine Warenkunde statt Messe-Catering)
-- [ ] **Kategorien für Produkte/Lexikon gemeinsam festlegen**
+- [ ] **Andreas prüft Level 4+5 Fragen fachlich**
+- [ ] **Kategorien für Produkte/Lexikon gemeinsam festlegen** (Umbenennung?)
+- [ ] **Weitere Produkt-Kategorien von Andreas** (Fleisch, Fisch, Milch, Gewürze?)
 
 ### P1 - Fragen weiterschreiben
-- [ ] Level 5: Grundlegende Arbeitstechniken II (Braten, Schmoren, Frittieren, Fonds)
-- [ ] Level 6: Warenkunde Tierisch (Fleisch, Geflügel, Fisch)
-- [ ] Level 7-10: Weitere Fragen 1. Lehrjahr
+- [ ] Level 6: Grundlegende Arbeitstechniken II (Braten, Schmoren, Frittieren, Fonds)
+- [ ] Level 7: Warenkunde Tierisch (Fleisch, Geflügel, Fisch)
+- [ ] Level 8-10: Weitere Fragen 1. Lehrjahr
 
 ### P2 - App-Features (v2 Planung)
-- [ ] Lexikon-Tab in der App (Phase 1)
-- [ ] Verlinkung Quiz-Erklärungen → Lexikon-Einträge
-- [ ] Warenkunde-Bereich (Phase 2)
+- [ ] Lexikon-Tab in der App
+- [ ] Warenkunde-Bereich (Produkte-DB anzeigen)
+- [ ] Verlinkung Quiz-Erklärungen → Lexikon/Produkte
 
 ### P3 - Später
 - [ ] Fragen für Level 11-30
@@ -87,35 +95,34 @@ Lexikon bereinigt (53 Duplikate entfernt), Level 4 Fragen geschrieben.
 
 ---
 
-## Datei-Übersicht
+## Datei-Übersicht (aktuelle Session)
 
-### Neue Dateien in dieser Session:
+### Neue Dateien:
 ```
-AusbildungsSpielKoch/Resources/Koch_Lexikon.json  ← Bereinigtes Lexikon (161 Einträge)
+AusbildungsSpielKoch/Resources/Koch_Lexikon.json    ← Bereinigtes Lexikon (161 Einträge)
+AusbildungsSpielKoch/Resources/Koch_Produkte.json   ← Neue Produkte-DB (36 Einträge)
 ```
 
 ### Geänderte Dateien:
 ```
-AusbildungsSpielKoch/Resources/iMOPS_Koch_Fragen_Level1-3.json  ← +15 Level 4 Fragen
+AusbildungsSpielKoch/Resources/iMOPS_Koch_Fragen_Level1-3.json  ← +15 Level 4 + 15 Level 5 Fragen
 ```
 
-### Matjes-Datenbank (von Andreas gepusht):
+### Gelöschte Dateien:
 ```
-Matjes/Matjes/Resources/Kühlhaus/Lexikon.json    ← Original (214 Einträge)
-Matjes/Matjes/Resources/Kühlhaus/Produkte.json   ← Original (848 Einträge)
+Matjes/Matjes/Resources/Kühlhaus/Produkte.json  ← Alte Messe-Catering-Daten
 ```
 
 ---
 
 ## Hinweise für die nächste Session
 
-1. **Lexikon ist bereinigt** -- Koch_Lexikon.json ist die saubere Version (161 Einträge)
-2. **Level 4 Fragen brauchen Andreas' fachliches OK** -- er hat 30 Jahre Küchenerfahrung
-3. **Produkte-Daten kommen von Andreas** -- neue allgemeine Warenkunde statt Messe-Catering
-4. **QuestionLoader lädt aktuell nur eine JSON-Datei** -- bei Umbenennung muss der Loader angepasst werden
-5. **Kontextabhängige Lexikon-Einträge sind gewollt** -- gleicher Begriff in verschiedenen Kategorien = verschiedener Kontext
-6. **v2 Vision besprochen** -- Quiz + Lexikon + Warenkunde als Dreiklang, Phasen-Plan steht
+1. **Koch_Produkte.json ist die neue Produkte-DB** — 36 Produkte, sauberes Format
+2. **Level 4+5 Fragen brauchen Andreas' OK** — fachliche Prüfung
+3. **QuestionLoader lädt aktuell nur eine JSON-Datei** — bei Umbenennung Loader anpassen
+4. **Produkte-DB hat Nährwerte, Allergene, Lagerung, Saison** — fertig für App-Integration
+5. **Matjes/Lexikon.json existiert noch** — Original-Lexikon als Referenz
 
 ---
 
-*Nächste Aktualisierung: Nach Andreas' Feedback zu Level 4 Fragen + neue Produkte-Daten*
+*Nächste Aktualisierung: Nach Andreas' Feedback + weitere Produkt-Kategorien*

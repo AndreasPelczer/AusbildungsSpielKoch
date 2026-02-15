@@ -1,0 +1,614 @@
+[
+  {
+    "id": "W-KART-001",
+    "name": "Kartoffel, festkochend",
+    "kategorie": "Kartoffeln",
+    "typ": "Grundprodukt",
+    "beschreibung": "Geringe Stärke, behält Form beim Kochen. Sorten: Linda, Sieglinde, Annabelle. Verwendung: Salzkartoffeln, Kartoffelsalat, Bratkartoffeln, Gratin. Erkennbar am länglichen Wuchs und glatten Schale.",
+    "lagerung": "Dunkel, kühl (4-8°C), trocken. Nicht neben Äpfeln (Ethylen beschleunigt Keimung). Licht = grün = Solanin = giftig.",
+    "saison": "Ernte Juni-Oktober, Lagerware ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 77,
+      "fett": 0.1,
+      "eiweiss": 2.0,
+      "kohlenhydrate": 17.0
+    }
+  },
+  {
+    "id": "W-KART-002",
+    "name": "Kartoffel, vorwiegend festkochend",
+    "kategorie": "Kartoffeln",
+    "typ": "Grundprodukt",
+    "beschreibung": "Mittlerer Stärkegehalt, Allrounder. Sorten: Laura, Gala, Marabel. Verwendung: Suppen, Eintöpfe, Ofenkartoffeln, Rösti. Die Sorte für fast alles.",
+    "lagerung": "Dunkel, kühl (4-8°C), trocken.",
+    "saison": "Ernte Juni-Oktober, Lagerware ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 77,
+      "fett": 0.1,
+      "eiweiss": 2.0,
+      "kohlenhydrate": 17.0
+    }
+  },
+  {
+    "id": "W-KART-003",
+    "name": "Kartoffel, mehligkochend",
+    "kategorie": "Kartoffeln",
+    "typ": "Grundprodukt",
+    "beschreibung": "Hoher Stärkegehalt, zerfällt beim Kochen. Sorten: Adretta, Augusta, Bintje. Verwendung: Püree, Klöße, Kroketten, Pommes frites. Stärke = knusprig außen, fluffig innen.",
+    "lagerung": "Dunkel, kühl (4-8°C), trocken.",
+    "saison": "Ernte August-Oktober, Lagerware ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 77,
+      "fett": 0.1,
+      "eiweiss": 2.0,
+      "kohlenhydrate": 17.0
+    }
+  },
+  {
+    "id": "W-KART-004",
+    "name": "Süßkartoffel",
+    "kategorie": "Kartoffeln",
+    "typ": "Grundprodukt",
+    "beschreibung": "Botanisch keine echte Kartoffel (Windengewächs). Süßlich, oranges Fleisch. Verwendung: Püree, Suppe, Ofengemüse, Pommes. Enthält mehr Beta-Carotin als normale Kartoffeln.",
+    "lagerung": "NICHT im Kühlschrank! Zimmertemperatur (12-16°C), trocken, dunkel. Kälte verändert Geschmack.",
+    "saison": "Import ganzjährig, deutsche Ernte September-November",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 86,
+      "fett": 0.1,
+      "eiweiss": 1.6,
+      "kohlenhydrate": 20.0
+    }
+  },
+  {
+    "id": "W-GEM-001",
+    "name": "Karotte / Möhre",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Wichtigstes Wurzelgemüse. Bestandteil von Suppengrün/Mirepoix. Sorten: Nantaise (dünn, süß), Chantenay (kurz, dick). Beta-Carotin wird erst mit Fett aufgenommen (fettlöslich!).",
+    "lagerung": "Grünzeug sofort entfernen (entzieht Wasser). 2-4°C, feucht, bis 2 Wochen.",
+    "saison": "Deutsche Ernte Juni-November, Lagerware ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 36,
+      "fett": 0.2,
+      "eiweiss": 0.9,
+      "kohlenhydrate": 7.6
+    }
+  },
+  {
+    "id": "W-GEM-002",
+    "name": "Knollensellerie",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Bestandteil von Suppengrün. Intensiver Geschmack. Verwendung: Suppen, Eintöpfe, Waldorfsalat, Schnitzel (paniert), Selleriepüree. Staudensellerie ist die Stängelversion.",
+    "lagerung": "2-4°C, feucht. Angeschnittene Fläche mit Zitronenwasser beträufeln (Oxidation).",
+    "saison": "September-März",
+    "allergene": "Sellerie (Hauptallergen Nr. 9)",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 27,
+      "fett": 0.3,
+      "eiweiss": 1.5,
+      "kohlenhydrate": 4.2
+    }
+  },
+  {
+    "id": "W-GEM-003",
+    "name": "Petersilienwurzel",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Dritter im Bunde des Suppengrüns. Ähnlich wie Pastinake, aber schärfer/würziger. Spitze zeigt nach unten (Pastinake: dicker Kopf oben). Verwendung: Suppen, Eintöpfe, Püree.",
+    "lagerung": "2-4°C, feucht, 1-2 Wochen",
+    "saison": "Oktober-März",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 40,
+      "fett": 0.6,
+      "eiweiss": 2.9,
+      "kohlenhydrate": 5.4
+    }
+  },
+  {
+    "id": "W-GEM-004",
+    "name": "Pastinake",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Süßlich-nussig, wird nach Frost süßer (Stärke wird zu Zucker). Dicker Kopf (vs. Petersilienwurzel: dünn). Verwendung: Suppe, Püree, Ofengemüse, Babybrei. Renaissance-Gemüse.",
+    "lagerung": "2-4°C, feucht, bis 3 Wochen",
+    "saison": "Oktober-März (nach dem ersten Frost am besten)",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 59,
+      "fett": 0.3,
+      "eiweiss": 1.3,
+      "kohlenhydrate": 12.0
+    }
+  },
+  {
+    "id": "W-GEM-005",
+    "name": "Rote Bete",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Erdig-süßer Geschmack, färbt ALLES (Handschuhe!). Verwendung: Salat, Suppe (Borschtsch), Carpaccio, eingelegt. Farbe durch Betanin. Vorgekocht vakuumiert als Convenience beliebt.",
+    "lagerung": "2-4°C, Sand/Erde dran lassen, bis 4 Wochen",
+    "saison": "September-März",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 43,
+      "fett": 0.1,
+      "eiweiss": 1.5,
+      "kohlenhydrate": 8.4
+    }
+  },
+  {
+    "id": "W-GEM-010",
+    "name": "Zwiebel (Speisezwiebel)",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Basis JEDER Küche. Sorten: Gemüsezwiebel (groß, mild), Haushaltszwiebel (mittel, scharf). Enthält Schwefelverbindungen (deshalb weint man). Verwendung: Universell — roh, gedünstet, geröstet, frittiert.",
+    "lagerung": "Trocken, kühl, dunkel, luftig (Netz). NICHT im Kühlschrank (Feuchtigkeit = Fäulnis). 5-8°C ideal.",
+    "saison": "Ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 28,
+      "fett": 0.3,
+      "eiweiss": 1.2,
+      "kohlenhydrate": 5.0
+    }
+  },
+  {
+    "id": "W-GEM-011",
+    "name": "Schalotte",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Feiner und milder als Zwiebel, süßlicher. Die 'elegante Schwester'. Standard in der französischen Küche. Verwendung: Saucen-Reduktionen, Vinaigrette, Fischgerichte, feine Küche. Karamellisiert besonders gut.",
+    "lagerung": "Trocken, kühl, dunkel. Wie Zwiebeln, aber empfindlicher.",
+    "saison": "Ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 72,
+      "fett": 0.1,
+      "eiweiss": 2.5,
+      "kohlenhydrate": 16.8
+    }
+  },
+  {
+    "id": "W-GEM-012",
+    "name": "Knoblauch",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Knolle mit Zehen. Allicin (Wirkstoff) entsteht erst beim Schneiden. Je feiner geschnitten, desto intensiver. Grüner Keim = bitter, entfernen. Verwendung: Universell. Basis der Mittelmeerküche.",
+    "lagerung": "Trocken, Zimmertemperatur, luftig. Nicht im Kühlschrank.",
+    "saison": "Ganzjährig (frischer Knoblauch: Juni-August)",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 141,
+      "fett": 0.5,
+      "eiweiss": 6.4,
+      "kohlenhydrate": 28.4
+    }
+  },
+  {
+    "id": "W-GEM-013",
+    "name": "Lauch / Porree",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Milder als Zwiebel. Grüner Teil: würzig, zum Kochen. Weißer Teil: mild, auch roh. WICHTIG: Längs halbieren und gründlich waschen (Sand zwischen den Blättern!). Bestandteil von Suppengrün.",
+    "lagerung": "2-4°C, 1-2 Wochen. Geruch überträgt sich — getrennt lagern.",
+    "saison": "Sommer-Lauch: Juni-Oktober (dünn, mild). Winter-Lauch: November-April (dick, kräftig).",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 31,
+      "fett": 0.3,
+      "eiweiss": 2.2,
+      "kohlenhydrate": 3.5
+    }
+  },
+  {
+    "id": "W-GEM-020",
+    "name": "Weißkohl",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Deutschlands Kohl Nr. 1. Basis für Sauerkraut (Milchsäuregärung). Verwendung: Krautsalat, Kohlrouladen, Eintopf. Enthält viel Vitamin C (historisch wichtig gegen Skorbut auf Schiffen).",
+    "lagerung": "2-4°C, bis 3 Monate (ganze Köpfe). Angeschnitten: 1 Woche.",
+    "saison": "September-März, Lagerware länger",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 25,
+      "fett": 0.2,
+      "eiweiss": 1.3,
+      "kohlenhydrate": 4.2
+    }
+  },
+  {
+    "id": "W-GEM-021",
+    "name": "Rotkohl / Blaukraut",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Farbe ändert sich je nach pH: Säure (Essig/Apfel) = rot, Base (Natron) = blau. Deshalb in Süddeutschland 'Blaukraut'. Klassiker zu Wildgerichten und Gänsebraten.",
+    "lagerung": "2-4°C, bis 2 Monate. Nicht neben stark riechenden Lebensmitteln.",
+    "saison": "September-März",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 29,
+      "fett": 0.2,
+      "eiweiss": 1.5,
+      "kohlenhydrate": 4.8
+    }
+  },
+  {
+    "id": "W-GEM-022",
+    "name": "Grünkohl",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "DAS Wintergemüse. Wird nach Frost süßer (Stärke → Zucker). Superfood: extrem viel Vitamin C, K, Eisen. Verwendung: Traditionell mit Pinkel/Grützwurst, modern als Smoothie, Chips, Salat.",
+    "lagerung": "2-4°C, nur 3-5 Tage frisch. Blanchiert einfrierbar.",
+    "saison": "November-Februar (nach dem ersten Frost)",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 37,
+      "fett": 0.9,
+      "eiweiss": 4.3,
+      "kohlenhydrate": 2.5
+    }
+  },
+  {
+    "id": "W-GEM-023",
+    "name": "Blumenkohl",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Weiß (Blätter schützen vor Sonne), es gibt auch violette und grüne Sorten. Verwendung: Gratiniert, als Suppe, Püree, Schnitzel (Steak), polonaise. Muss blütenrein sein (keine braunen Stellen).",
+    "lagerung": "2-4°C, 4-7 Tage. In feuchtes Tuch wickeln.",
+    "saison": "Mai-November",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 25,
+      "fett": 0.3,
+      "eiweiss": 2.5,
+      "kohlenhydrate": 2.3
+    }
+  },
+  {
+    "id": "W-GEM-024",
+    "name": "Brokkoli",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Grüner Verwandter des Blumenkohls. Muss knackig-grün sein (gelbe Blüten = überreif). Blanchieren + Abschrecken = Farbe bleibt. Stiel ist essbar (schälen, dünn schneiden, mitgaren).",
+    "lagerung": "2-4°C, 3-5 Tage. Empfindlich, schnell verarbeiten.",
+    "saison": "Juni-November",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 34,
+      "fett": 0.4,
+      "eiweiss": 3.8,
+      "kohlenhydrate": 2.7
+    }
+  },
+  {
+    "id": "W-GEM-025",
+    "name": "Kohlrabi",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Typisch deutsch — in anderen Ländern fast unbekannt. Mild-süßlich. Roh oder gegart. Blätter sind essbar und nährstoffreich! Holzig wenn zu groß. Weiß oder violett (gleicher Geschmack).",
+    "lagerung": "2-4°C, ohne Blätter 1-2 Wochen. Mit Blättern nur 2-3 Tage.",
+    "saison": "Mai-Oktober",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 27,
+      "fett": 0.1,
+      "eiweiss": 1.7,
+      "kohlenhydrate": 3.7
+    }
+  },
+  {
+    "id": "W-GEM-030",
+    "name": "Tomate",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Botanisch eine Beere. Sorten: Fleischtomate (Sauce, Salat), Cocktail/Cherry (Garnitur, Snack), San Marzano (DIE Saucen-Tomate). Concassée = geschält, entkernt, gewürfelt. NIEMALS im Kühlschrank — verliert Aroma.",
+    "lagerung": "Zimmertemperatur! Nachreifen bei 18-20°C. Getrennt von anderem Gemüse (Ethylen).",
+    "saison": "Freiland: Juli-Oktober. Gewächshaus ganzjährig.",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 18,
+      "fett": 0.2,
+      "eiweiss": 0.9,
+      "kohlenhydrate": 2.6
+    }
+  },
+  {
+    "id": "W-GEM-031",
+    "name": "Paprika",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Grün = unreif (herb). Gelb = halbreif (mild). Rot = reif (süß, meiste Vitamine). Alle sind die gleiche Pflanze! Enthält 3x mehr Vitamin C als Orangen. Verwendung: Roh, gegrillt, gefüllt, Suppe.",
+    "lagerung": "8-10°C (Gemüsefach), 1 Woche. Kälteempfindlich.",
+    "saison": "Juli-Oktober (Freiland)",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 21,
+      "fett": 0.3,
+      "eiweiss": 1.2,
+      "kohlenhydrate": 3.4
+    }
+  },
+  {
+    "id": "W-GEM-032",
+    "name": "Zucchini",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Gehört zur Familie der Kürbisse. Jung ernten (15-20cm ideal). Große Exemplare: wässrig, kernig. Verwendung: Gegrillt, gebraten, Suppe, Ratatouille, Zoodles. Blüten sind eine Delikatesse (gefüllt, frittiert).",
+    "lagerung": "8-10°C, 3-5 Tage max. Kälteempfindlich — nicht unter 5°C.",
+    "saison": "Juni-Oktober",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 19,
+      "fett": 0.3,
+      "eiweiss": 1.2,
+      "kohlenhydrate": 2.2
+    }
+  },
+  {
+    "id": "W-GEM-033",
+    "name": "Aubergine",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Roh ungenießbar (Solanin). Saugt Öl auf wie ein Schwamm — vorher salzen (entzieht Wasser). Verwendung: Gegrillt, Ratatouille, Moussaka, Baba Ganoush. Fruchtfleisch oxidiert schnell (braun).",
+    "lagerung": "10-13°C, 3-5 Tage. Kälteempfindlich!",
+    "saison": "Juli-Oktober (Import ganzjährig)",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 24,
+      "fett": 0.2,
+      "eiweiss": 1.0,
+      "kohlenhydrate": 3.5
+    }
+  },
+  {
+    "id": "W-GEM-034",
+    "name": "Gurke (Salatgurke)",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "96% Wasser. Schale enthält die meisten Nährstoffe. Einlegegurken = Cornichons (kleine Sorte). Verwendung: Salat, Gazpacho, Tsatziki, Garnitur. Immer erst kurz vor dem Servieren salzen (zieht Wasser).",
+    "lagerung": "10-13°C, 3-5 Tage. Kälteempfindlich — über 5°C lagern.",
+    "saison": "Mai-September (Freiland)",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 12,
+      "fett": 0.2,
+      "eiweiss": 0.6,
+      "kohlenhydrate": 1.8
+    }
+  },
+  {
+    "id": "W-GEM-040",
+    "name": "Kopfsalat",
+    "kategorie": "Salat",
+    "typ": "Grundprodukt",
+    "beschreibung": "Klassiker. Zarte Blätter, milder Geschmack. Welkt schnell. Nur waschen, nicht schneiden (reißen!). Messer oxidiert die Schnittstellen. Verwendung: Beilage, Garnitur.",
+    "lagerung": "2-4°C, feucht, nur 2-3 Tage.",
+    "saison": "Mai-Oktober (Freiland)",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 14,
+      "fett": 0.2,
+      "eiweiss": 1.3,
+      "kohlenhydrate": 1.1
+    }
+  },
+  {
+    "id": "W-GEM-041",
+    "name": "Eisbergsalat",
+    "kategorie": "Salat",
+    "typ": "Grundprodukt",
+    "beschreibung": "Knackig, haltbarer als andere Salate. Wenig Geschmack, viel Crunch. Lässt sich gut schneiden (nicht so empfindlich). Verwendung: Burger, Wraps, Beilage. In der Profiküche eher Basis als Star.",
+    "lagerung": "2-4°C, bis 1 Woche.",
+    "saison": "Ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 13,
+      "fett": 0.1,
+      "eiweiss": 1.0,
+      "kohlenhydrate": 1.6
+    }
+  },
+  {
+    "id": "W-GEM-042",
+    "name": "Feldsalat / Rapunzel",
+    "kategorie": "Salat",
+    "typ": "Grundprodukt",
+    "beschreibung": "DER Wintersalat. Wächst sogar unter Schnee. Nussiger Geschmack, kleine Rosetten. Aufwendig zu putzen (Wurzeln, Sand). Sehr nährstoffreich (Eisen, Vitamin C). Verwendung: Salat, Garnitur.",
+    "lagerung": "2-4°C, feucht, nur 2-3 Tage. Sehr empfindlich.",
+    "saison": "Oktober-März",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 14,
+      "fett": 0.4,
+      "eiweiss": 1.8,
+      "kohlenhydrate": 0.7
+    }
+  },
+  {
+    "id": "W-GEM-043",
+    "name": "Rucola",
+    "kategorie": "Salat",
+    "typ": "Grundprodukt",
+    "beschreibung": "Scharf-nussig (Senföle). Wilde Rauke ist schmaler und schärfer als Salatrauke. Große Blätter = weniger scharf. Verwendung: Salat, Pizza, Pesto, Garnitur. Passt zu Parmesan und Balsamico.",
+    "lagerung": "2-4°C, feuchtes Tuch, max 2-3 Tage. Wird schnell gelb.",
+    "saison": "April-November (Freiland)",
+    "allergene": "Senf (entfernt verwandt, selten relevant)",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 25,
+      "fett": 0.7,
+      "eiweiss": 2.6,
+      "kohlenhydrate": 2.1
+    }
+  },
+  {
+    "id": "W-GEM-050",
+    "name": "Spargel, weiß",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "König des Gemüses. Weiß weil unter der Erde (kein Licht = kein Chlorophyll). Handelsklassen: Extra, I, II. Frischetest: Stangen quietschen beim Reiben, Schnittfläche feucht. Muss geschält werden (vom Kopf weg).",
+    "lagerung": "Feuchtes Tuch, 2-4°C, max 2-3 Tage. Am besten sofort verarbeiten.",
+    "saison": "Mitte April bis 24. Juni (Johannistag). Danach Erntestopp.",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 18,
+      "fett": 0.1,
+      "eiweiss": 1.9,
+      "kohlenhydrate": 1.9
+    }
+  },
+  {
+    "id": "W-GEM-051",
+    "name": "Spargel, grün",
+    "kategorie": "Gemüse",
+    "typ": "Grundprodukt",
+    "beschreibung": "Wächst über der Erde (Chlorophyll = grün). Kräftigerer Geschmack als weißer. Muss nur im unteren Drittel geschält werden. Kürzere Garzeit. Verwendung: Gebraten, gegrillt, Salat, Pasta.",
+    "lagerung": "Wie weißer Spargel. Aufrecht in feuchtes Tuch stellen.",
+    "saison": "April-Juni",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 20,
+      "fett": 0.2,
+      "eiweiss": 2.2,
+      "kohlenhydrate": 2.0
+    }
+  },
+  {
+    "id": "W-GEM-060",
+    "name": "Champignon",
+    "kategorie": "Pilze",
+    "typ": "Grundprodukt",
+    "beschreibung": "Meistgegessener Pilz weltweit. Weiß oder braun (Steinchampignon = kräftiger). Roh essbar bei einwandfreier Hygiene. NICHT waschen — nur abbürsten oder kurz abspülen. Verwendung: Universell.",
+    "lagerung": "Papier oder Leinen, KEINE Plastiktüte (Schwitzwasser = Schimmel). 2-4°C, 3-5 Tage.",
+    "saison": "Zucht ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 22,
+      "fett": 0.3,
+      "eiweiss": 3.1,
+      "kohlenhydrate": 0.6
+    }
+  },
+  {
+    "id": "W-GEM-061",
+    "name": "Pfifferling / Eierschwamm",
+    "kategorie": "Pilze",
+    "typ": "Grundprodukt",
+    "beschreibung": "Goldgelb, pfeffriger Geschmack (daher 'Pfifferling'). Kann nicht gezüchtet werden — nur Wildsammlung. Immer kochen (roh unverträglich). Verwendung: Rahmsauce, zu Wild, Pasta, Omelett.",
+    "lagerung": "Papier, 2-4°C, max 2 Tage. Sofort verarbeiten.",
+    "saison": "Juni-Oktober",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 23,
+      "fett": 0.5,
+      "eiweiss": 2.4,
+      "kohlenhydrate": 0.2
+    }
+  },
+  {
+    "id": "W-GEM-062",
+    "name": "Steinpilz",
+    "kategorie": "Pilze",
+    "typ": "Grundprodukt",
+    "beschreibung": "König der Pilze. Festes Fleisch, intensiver Umami-Geschmack. Nicht züchtbar. Getrocknet noch intensiver (Risotto!). Verwechslungsgefahr mit Gallenröhrling (bitter). Verwendung: Braten, Risotto, Suppe.",
+    "lagerung": "Papier, 2-4°C, 1-2 Tage. Oder trocknen (Geschmack verstärkt sich).",
+    "saison": "Juli-November",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 27,
+      "fett": 0.4,
+      "eiweiss": 3.7,
+      "kohlenhydrate": 1.0
+    }
+  },
+  {
+    "id": "W-GEM-070",
+    "name": "Linsen (braun/grün)",
+    "kategorie": "Hülsenfrüchte",
+    "typ": "Grundprodukt",
+    "beschreibung": "Kein Einweichen nötig (anders als Bohnen). Braun/grün: behalten Form. Rote Linsen: zerfallen (perfekt für Dal/Suppe). Beluga-Linsen: schwarz, fest, edel. Gute pflanzliche Proteinquelle.",
+    "lagerung": "Trocken, dunkel, kühl. Getrocknet: 1-2 Jahre. Gekocht: 3-5 Tage im Kühlschrank.",
+    "saison": "Trockenware ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 309,
+      "fett": 1.4,
+      "eiweiss": 23.4,
+      "kohlenhydrate": 49.0
+    }
+  },
+  {
+    "id": "W-GEM-071",
+    "name": "Kichererbsen",
+    "kategorie": "Hülsenfrüchte",
+    "typ": "Grundprodukt",
+    "beschreibung": "Basis für Hummus und Falafel. MÜSSEN eingeweicht (12h) und gekocht werden (roh giftig: Phasin). Dosenkichererbsen sind vorgekocht. Aquafaba (Kochflüssigkeit) = veganer Eischnee-Ersatz!",
+    "lagerung": "Trocken: 1-2 Jahre. Eingeweicht/gekocht: 3-5 Tage im Kühlschrank.",
+    "saison": "Trockenware ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 364,
+      "fett": 6.0,
+      "eiweiss": 19.0,
+      "kohlenhydrate": 61.0
+    }
+  },
+  {
+    "id": "W-GEM-072",
+    "name": "Weiße Bohnen",
+    "kategorie": "Hülsenfrüchte",
+    "typ": "Grundprodukt",
+    "beschreibung": "Einweichen (12h) + Kochen (60-90min) Pflicht. Phasin wird erst durch Hitze zerstört. Verwendung: Eintopf, Cassoulet, Salat, Püree. Navy Beans, Cannellini, Dicke Bohnen = verschiedene Sorten.",
+    "lagerung": "Trocken: 1-2 Jahre. Gekocht: 3-5 Tage im Kühlschrank.",
+    "saison": "Trockenware ganzjährig",
+    "allergene": "",
+    "zusatzstoffe": "",
+    "naehrwerte": {
+      "kcal": 284,
+      "fett": 1.6,
+      "eiweiss": 21.1,
+      "kohlenhydrate": 36.5
+    }
+  }
+]

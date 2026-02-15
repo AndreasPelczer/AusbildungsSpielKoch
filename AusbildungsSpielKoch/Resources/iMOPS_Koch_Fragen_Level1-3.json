@@ -425,5 +425,110 @@
     "answers": ["Damit mehr Gemüse reinpasst", "Damit die Temperatur beim Einlegen nicht zu stark abfällt", "Weil es schneller kocht", "Weil kleine Töpfe verboten sind"],
     "correctIndex": 1,
     "erklaerung": "Viel Wasser = die Temperatur bleibt stabil. Kaltes Gemüse in wenig Wasser? Die Temperatur bricht ein und das Ergebnis wird matschig statt knackig."
+  },
+  {
+    "level": 5,
+    "text": "Warum weint man beim Zwiebelschneiden?",
+    "answers": ["Wegen des scharfen Messers", "Weil Schwefelverbindungen freigesetzt werden, die die Augen reizen", "Wegen der ätherischen Öle", "Weil die Zwiebel Säure enthält"],
+    "correctIndex": 1,
+    "erklaerung": "Beim Schneiden werden Schwefelverbindungen freigesetzt, die mit der Tränenflüssigkeit reagieren. Scharfes Messer hilft — weniger Zellen werden zerquetscht."
+  },
+  {
+    "level": 5,
+    "text": "Dein Knoblauch hat grüne Keime. Was tust du?",
+    "answers": ["Komplett wegwerfen", "Keim entfernen — der ist bitter", "Mitkochen, das ist gesund", "Den Knoblauch einfrieren"],
+    "correctIndex": 1,
+    "erklaerung": "Der grüne Keim ist bitter! Zehe halbieren, Keim raus, Rest verwenden. Je feiner du Knoblauch schneidest, desto intensiver wird er übrigens."
+  },
+  {
+    "level": 5,
+    "text": "Sellerie steht auf der Allergenliste. Welche Nummer hat er?",
+    "answers": ["Nr. 4", "Nr. 7", "Nr. 9", "Nr. 14"],
+    "correctIndex": 2,
+    "erklaerung": "Sellerie ist Hauptallergen Nr. 9 von 14. MUSS auf Speisekarten deklariert werden — auch in Suppen und Fonds! Allergene kennen ist Pflicht."
+  },
+  {
+    "level": 5,
+    "text": "Die Karotten haben noch Grünzeug dran. Was machst du als Erstes?",
+    "answers": ["Das Grün dran lassen — sieht hübsch aus", "Grünzeug sofort entfernen — es entzieht den Karotten Wasser", "Alles zusammen in den Kühlschrank", "Das Grün mitkochen"],
+    "correctIndex": 1,
+    "erklaerung": "Das Grün entzieht der Karotte Wasser und sie wird schneller schrumpelig. Sofort ab damit! Das Grün kannst du übrigens für Pesto verwenden."
+  },
+  {
+    "level": 5,
+    "text": "Warum ist die Tomate botanisch eine Beere?",
+    "answers": ["Weil sie süß schmeckt", "Weil sie Samen enthält, die von Fruchtfleisch umgeben sind", "Weil sie am Strauch wächst", "Das stimmt gar nicht"],
+    "correctIndex": 1,
+    "erklaerung": "Botanisch ist jede Frucht eine Beere, wenn Samen im Fruchtfleisch eingebettet sind. Auch Paprika und Gurke sind Beeren! Erdbeeren dagegen nicht."
+  },
+  {
+    "level": 5,
+    "text": "Grüne, gelbe und rote Paprika — was ist der Unterschied?",
+    "answers": ["Verschiedene Sorten", "Gleiche Pflanze, verschiedene Reifegrade", "Verschiedene Anbaugebiete", "Nur die Farbe ist anders, sonst identisch"],
+    "correctIndex": 1,
+    "erklaerung": "Alles die gleiche Pflanze! Grün = unreif (herb), gelb = halbreif (mild), rot = reif (süß, meiste Vitamine). Rote Paprika hat 3x mehr Vitamin C als Orangen!"
+  },
+  {
+    "level": 5,
+    "text": "Der Chef will Sauerkraut machen. Welcher Kohl und welches Verfahren?",
+    "answers": ["Rotkohl + Einkochen", "Weißkohl + Milchsäuregärung", "Grünkohl + Trocknen", "Blumenkohl + Einlegen in Essig"],
+    "correctIndex": 1,
+    "erklaerung": "Weißkohl + Salz + Zeit = Milchsäuregärung = Sauerkraut. Eines der ältesten Konservierungsverfahren! Historisch wichtig gegen Skorbut auf Seefahrten."
+  },
+  {
+    "level": 5,
+    "text": "Rotkohl oder Blaukraut — was ist der Unterschied?",
+    "answers": ["Verschiedene Kohlsorten", "Kein Unterschied — die Farbe ändert sich je nach pH-Wert", "Blaukraut wird mit Milch gekocht", "Rotkohl ist frisch, Blaukraut ist eingelegt"],
+    "correctIndex": 1,
+    "erklaerung": "Gleicher Kohl! Säure (Essig/Apfel) macht ihn rot → Rotkohl. Base (Natron) macht ihn blau → Blaukraut. Deshalb: In Norddeutschland Rotkohl, in Süddeutschland Blaukraut."
+  },
+  {
+    "level": 5,
+    "text": "Auberginen saugen beim Braten extrem viel Öl auf. Was hilft?",
+    "answers": ["Mehr Öl nehmen", "Auberginen vorher salzen — das entzieht Wasser", "Auberginen einfrieren", "In Mehl wälzen"],
+    "correctIndex": 1,
+    "erklaerung": "Salzen entzieht Wasser aus den Zellen. Dadurch saugen sie weniger Öl auf. 30 Minuten salzen, abtupfen, dann braten. Spart Öl und schmeckt besser!"
+  },
+  {
+    "level": 5,
+    "text": "Kichererbsen aus der Dose: Die Flüssigkeit heißt 'Aquafaba'. Was kann man damit machen?",
+    "answers": ["Wegschütten — ist Abfall", "Als veganen Eischnee-Ersatz aufschlagen", "Zum Putzen verwenden", "Als Haarspülung"],
+    "correctIndex": 1,
+    "erklaerung": "Aquafaba lässt sich aufschlagen wie Eischnee — perfekter veganer Ersatz! Für Mousse, Baiser, Cocktails. Aus Abfall wird Zutat."
+  },
+  {
+    "level": 5,
+    "text": "Weiße Bohnen roh essen — geht das?",
+    "answers": ["Klar, wie Erbsen", "NEIN — rohe Bohnen enthalten Phasin (giftig!)", "Nur wenn sie eingeweicht wurden", "Nur die weißen, rote sind giftig"],
+    "correctIndex": 1,
+    "erklaerung": "Phasin ist ein Lektin und GIFTIG! Erst durch Kochen (mind. 15 Minuten, 100°C) wird es zerstört. Einweichen allein reicht NICHT. Das gilt für alle Bohnen."
+  },
+  {
+    "level": 5,
+    "text": "Champignons in Plastiktüte lagern — gute Idee?",
+    "answers": ["Ja, hält sie frisch", "NEIN — Schwitzwasser = Schimmel. Papier oder Leinen nehmen", "Nur wenn ein Loch in der Tüte ist", "Nur bei braunen Champignons"],
+    "correctIndex": 1,
+    "erklaerung": "Pilze brauchen Luft! In Plastik bildet sich Schwitzwasser → Schimmel. Papier oder Leinentuch ist ideal. Auch beim Einkauf: Papiertüte wählen."
+  },
+  {
+    "level": 5,
+    "text": "Wann endet die Spargelsaison offiziell?",
+    "answers": ["Ende Mai", "24. Juni (Johannistag)", "31. August", "Wenn der Frost kommt"],
+    "correctIndex": 1,
+    "erklaerung": "Am 24. Juni (Johannistag) ist Schluss. Danach braucht die Pflanze Zeit zum Regenerieren für nächstes Jahr. Wer danach sticht, schadet der Ernte."
+  },
+  {
+    "level": 5,
+    "text": "Pastinake und Petersilienwurzel sehen ähnlich aus. Wie unterscheidest du sie?",
+    "answers": ["Gar nicht, sie sind gleich", "Pastinake hat einen dickeren Kopf, Petersilienwurzel ist dünn und spitz", "An der Farbe — Pastinake ist gelb", "Am Gewicht"],
+    "correctIndex": 1,
+    "erklaerung": "Pastinake: dicker Kopf oben, süßlich-nussig. Petersilienwurzel: dünn, Spitze nach unten, schärfer/würziger. Beide werden nach Frost süßer!"
+  },
+  {
+    "level": 5,
+    "text": "Rote Bete schneiden — warum Handschuhe anziehen?",
+    "answers": ["Wegen der Säure", "Weil Betanin ALLES rot färbt — Hände, Brett, Kleidung", "Wegen Allergiegefahr", "Aus hygienischen Gründen"],
+    "correctIndex": 1,
+    "erklaerung": "Betanin ist ein natürlicher Farbstoff und färbt gnadenlos. Handschuhe sind Pflicht, sonst hast du stundenlang rote Hände. Auch Bretter und Tücher verfärben sich."
   }
 ]
