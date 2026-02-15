@@ -320,5 +320,110 @@
     "answers": ["Sie ist immer grün", "Sie gibt auf leichten Druck nach", "Sie ist steinhart", "Sie hat braune Flecken"],
     "correctIndex": 1,
     "erklaerung": "Leichter Drucktest am Stielende. Gibt sie sanft nach = perfekt. Steinhart = unreif. Matschig = zu spät."
+  },
+  {
+    "level": 4,
+    "text": "Der Chef sagt: 'Mach mir eine Concassée!' Was tust du?",
+    "answers": ["Zwiebeln in Ringe schneiden", "Tomaten häuten, entkernen und in Würfel schneiden", "Kräuter fein hacken", "Kartoffeln in Scheiben hobeln"],
+    "correctIndex": 1,
+    "erklaerung": "Concassée = Tomaten blanchieren, häuten, halbieren, Kerne raus, in Würfel schneiden. Die Basis für unzählige Saucen!"
+  },
+  {
+    "level": 4,
+    "text": "Dein Ausbilder will 'Paysanne' für die Suppe. Was schneidest du?",
+    "answers": ["Feine Streifen", "Grobe Stücke", "Dünne Plättchen - Quadrate oder Dreiecke", "Winzige Würfel"],
+    "correctIndex": 2,
+    "erklaerung": "Paysanne = bäuerliche Art. Dünne, flache Plättchen (ca. 1cm). Perfekt für Suppen und Eintöpfe - gart schnell und gleichmäßig."
+  },
+  {
+    "level": 4,
+    "text": "Der Chef gibt dir ein Tourniermesser und Kartoffeln. Was will er von dir?",
+    "answers": ["Die Kartoffeln schälen", "Die Kartoffeln in eine gleichmäßige, ovale Form mit 7 Flächen bringen", "Die Kartoffeln in Würfel schneiden", "Die Kartoffeln aushöhlen"],
+    "correctIndex": 1,
+    "erklaerung": "Tournieren: Mit dem gebogenen Messer eine gleichmäßige ovale Form schnitzen - 7 Flächen ist die Regel. Klassische Beilage der feinen Küche!"
+  },
+  {
+    "level": 4,
+    "text": "Du sollst ein Rinderfilet parieren. Was genau machst du?",
+    "answers": ["Das Filet in Scheiben schneiden", "Sehnen, Silberhaut und überschüssiges Fett entfernen", "Das Filet würzen und marinieren", "Das Filet plattieren"],
+    "correctIndex": 1,
+    "erklaerung": "Parieren = das Fleisch küchenfertig machen. Silberhaut zieht sich beim Braten zusammen - die MUSS ab. Saubere Arbeit = sauberes Ergebnis."
+  },
+  {
+    "level": 4,
+    "text": "Dämpfen oder Kochen - was ist schonender für Vitamine?",
+    "answers": ["Kochen, weil das Wasser die Vitamine schützt", "Beides ist gleich", "Dämpfen, weil das Gut nicht im Wasser liegt", "Frittieren ist am schonendsten"],
+    "correctIndex": 2,
+    "erklaerung": "Beim Dämpfen hat das Gut keinen direkten Wasserkontakt. Vitamine und Mineralstoffe bleiben im Gemüse statt im Kochwasser zu landen."
+  },
+  {
+    "level": 4,
+    "text": "Der Saucier sagt: 'Ziselier den Fisch!' Was machst du mit deinem Messer?",
+    "answers": ["Den Fisch filetieren", "Die Haut schräg einschneiden", "Die Gräten entfernen", "Den Fisch in Stücke schneiden"],
+    "correctIndex": 1,
+    "erklaerung": "Ziselieren = die Haut schräg einritzen. Verhindert, dass der Fisch sich beim Braten wölbt, und die Hitze dringt gleichmäßiger ein."
+  },
+  {
+    "level": 4,
+    "text": "Beim Kochen in Flüssigkeit: Ab welcher Temperatur siedet Wasser auf Meereshöhe?",
+    "answers": ["90 Grad Celsius", "100 Grad Celsius", "110 Grad Celsius", "80 Grad Celsius"],
+    "correctIndex": 1,
+    "erklaerung": "100 Grad Celsius auf Meereshöhe. In den Bergen weniger! Beim Kochen sprudelt die Flüssigkeit deutlich sichtbar."
+  },
+  {
+    "level": 4,
+    "text": "Du sollst Kräuter schneiden. Der Chef sagt: 'Nimm den Wiegeschnitt!' Was tust du?",
+    "answers": ["Die Kräuter mit der Schere schneiden", "Das Messer mit beiden Händen hin- und herwiegen", "Die Kräuter mit einem Mörser zerkleinern", "Die Kräuter reißen statt schneiden"],
+    "correctIndex": 1,
+    "erklaerung": "Beim Wiegeschnitt bleibt die Messerspitze auf dem Brett, die Klinge wiegt hin und her. So werden Kräuter fein, ohne sie zu quetschen."
+  },
+  {
+    "level": 4,
+    "text": "Warum sollst du Pilze NICHT unter fließendem Wasser waschen?",
+    "answers": ["Weil sie dann giftig werden", "Weil sie sich wie Schwämme vollsaugen und matschig werden", "Weil die Farbe sich verändert", "Pilze muss man nie waschen"],
+    "correctIndex": 1,
+    "erklaerung": "Pilze sind Schwämme! Sie saugen Wasser auf und werden beim Braten matschig. Besser: mit Küchenpapier oder einer weichen Bürste abreiben."
+  },
+  {
+    "level": 4,
+    "text": "Der Chef fragt: 'Was ist der Unterschied zwischen Garziehen und Kochen?' Deine Antwort?",
+    "answers": ["Kein Unterschied", "Garziehen ist bei 75-95 Grad, Kochen bei 100 Grad", "Garziehen dauert immer länger", "Kochen ist ohne Deckel, Garziehen mit"],
+    "correctIndex": 1,
+    "erklaerung": "Garziehen (Pochieren) = sanftes Garen unter dem Siedepunkt. Die Flüssigkeit bewegt sich kaum. Perfekt für empfindliches Gut wie Eier oder Fisch."
+  },
+  {
+    "level": 4,
+    "text": "Du blanchierst grüne Bohnen. Wie viel Salz kommt ins Wasser?",
+    "answers": ["Kein Salz beim Blanchieren", "Reichlich - etwa 10 Gramm pro Liter", "Eine Prise reicht", "Nur Zucker, kein Salz"],
+    "correctIndex": 1,
+    "erklaerung": "Reichlich Salz! Ca. 10g pro Liter. Das Salz sorgt für Geschmack und hilft, die grüne Farbe zu erhalten. 'Das Wasser muss schmecken wie das Meer.'"
+  },
+  {
+    "level": 4,
+    "text": "Welches Messer nimmst du zum Schälen und Tournieren?",
+    "answers": ["Das große Kochmesser", "Das Officemesser (kleines Schälmesser)", "Das Brotmesser", "Das Filetiermesser"],
+    "correctIndex": 1,
+    "erklaerung": "Das Officemesser (auch Tourniermesser): Klein, gebogene Klinge, perfekte Kontrolle. Für alles wo Präzision auf kleiner Fläche gefragt ist."
+  },
+  {
+    "level": 4,
+    "text": "Beim Schneiden rutscht dein Gemüse weg. Was machst du als Erstes?",
+    "answers": ["Fester drücken", "Eine flache Seite abschneiden als stabilen Stand", "Schneller schneiden", "Handschuhe anziehen"],
+    "correctIndex": 1,
+    "erklaerung": "Immer erst eine stabile Auflagefläche schaffen! Runde Karotte? Längs halbieren, flache Seite nach unten. Sicherheit geht vor Tempo."
+  },
+  {
+    "level": 4,
+    "text": "Der Chef sagt: 'Die Zwiebeln bitte glasig dünsten.' Was heißt das?",
+    "answers": ["Die Zwiebeln knusprig braten", "Bei niedriger Hitze weich garen bis sie durchsichtig werden", "Die Zwiebeln in Wasser kochen", "Die Zwiebeln roh servieren"],
+    "correctIndex": 1,
+    "erklaerung": "Glasig = bei mittlerer bis niedriger Hitze in Fett schwitzen. Die Zwiebeln werden weich und durchscheinend, aber KEINE Farbe nehmen!"
+  },
+  {
+    "level": 4,
+    "text": "Beim Blanchieren: Warum nimmst du einen GROSSEN Topf mit viel Wasser?",
+    "answers": ["Damit mehr Gemüse reinpasst", "Damit die Temperatur beim Einlegen nicht zu stark abfällt", "Weil es schneller kocht", "Weil kleine Töpfe verboten sind"],
+    "correctIndex": 1,
+    "erklaerung": "Viel Wasser = die Temperatur bleibt stabil. Kaltes Gemüse in wenig Wasser? Die Temperatur bricht ein und das Ergebnis wird matschig statt knackig."
   }
 ]

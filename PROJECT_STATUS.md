@@ -7,10 +7,11 @@
 
 ## Aktueller Zustand
 
-### Phase: Code-Migration abgeschlossen, Xcode-Integration ausstehend
+### Phase: App läuft, bei Apple eingereicht. Lexikon-Bereinigung + Level 4 Fragen erstellt.
 
-Alle Swift-Dateien und Text-Ressourcen wurden aus dem alten Projekt migriert und umbenannt.
-Andreas muss die Dateien in Xcode zum Target hinzufügen und die Audio-Dateien manuell kopieren.
+Die App ist funktionsfähig und bei Apple zur Prüfung eingereicht.
+Matjes-Datenbank (Lexikon + Produkte) wurde ins Repo integriert.
+Lexikon bereinigt (53 Duplikate entfernt), Level 4 Fragen geschrieben.
 
 ---
 
@@ -22,95 +23,99 @@ Andreas muss die Dateien in Xcode zum Target hinzufügen und die Audio-Dateien m
 | 2026-02-15 | Xcode-Projekt angelegt, läuft im Simulator | Andreas |
 | 2026-02-15 | Matjes-Icon in AppIcon.appiconset eingefügt | Andreas |
 | 2026-02-15 | CLAUDE.md und PROJECT_STATUS.md erstellt | Claude |
-| 2026-02-15 | **Swift-Code aus altem Projekt migriert (11 Dateien)** | Claude |
-| 2026-02-15 | **Alle verbotenen Namen bereinigt (millonen, KitchenMillionaire, Matjes)** | Claude |
-| 2026-02-15 | **AusbildungsSpielKochApp.swift: SwiftData entfernt, ProgressManager eingebunden** | Claude |
-| 2026-02-15 | **Fragen-JSON (45 Fragen, Level 1-3) kopiert** | Claude |
-| 2026-02-15 | **PrivacyInfo.xcprivacy erstellt** | Claude |
-| 2026-02-15 | **UserDefaults-Key umbenannt: Matjes_LevelProgress → AusbildungsSpielKoch_LevelProgress** | Claude |
-| 2026-02-15 | **UI-Titel geändert: "Matjes" → "Ausbildungsspiel Koch"** | Claude |
+| 2026-02-15 | Swift-Code aus altem Projekt migriert (11 Dateien) | Claude |
+| 2026-02-15 | Alle verbotenen Namen bereinigt | Claude |
+| 2026-02-15 | Fragen-JSON (45 Fragen, Level 1-3) kopiert | Claude |
+| 2026-02-15 | PrivacyInfo.xcprivacy erstellt | Claude |
+| 2026-02-15 | App bei Apple eingereicht | Andreas |
+| 2026-02-15 | Matjes-Datenbank (Lexikon + Produkte) ins Repo gepusht | Andreas |
+| 2026-02-15 | **Lexikon bereinigt: 214 → 161 Einträge (53 Duplikate entfernt)** | Claude |
+| 2026-02-15 | **Level 4 Fragen geschrieben: 15 Fragen (Arbeitstechniken I)** | Claude |
+
+---
+
+## Fragenbestand
+
+| Level | Anzahl | Thema | Status |
+|-------|--------|-------|--------|
+| 1 | 15 | Hygiene & Arbeitsschutz | Vorhanden |
+| 2 | 15 | Küchenbrigade & Arbeitsabläufe | Vorhanden |
+| 3 | 16 | Warenkunde & Schnitttechniken | Vorhanden |
+| 4 | 15 | Grundlegende Arbeitstechniken I | **NEU** |
+| 5-30 | 0 | Siehe Level-Map in README.md | Offen |
+
+**Gesamt: 61 Fragen (von 450 Ziel)**
+
+---
+
+## Lexikon-Datenbank
+
+| Datei | Einträge | Status |
+|-------|----------|--------|
+| Koch_Lexikon.json (bereinigt) | 161 | Bereinigt, bereit für App-Integration |
+| Matjes/Lexikon.json (Original) | 214 | Quell-Datei mit 53 Duplikaten |
+| Matjes/Produkte.json (Original) | 848 | Messe-Catering, muss für Azubis umgebaut werden |
+
+### Lexikon-Bereinigung Details:
+- 50 echte Duplikate entfernt (identischer Code + identischer Text)
+- 3 Near-Duplikate entfernt (gleicher Name + gleiche Kategorie, falsche Code-Prefixe)
+- 11 kontextabhängige Einträge BEHALTEN (z.B. Blanchieren als Technik + Vorbereitung)
 
 ---
 
 ## Offene Aufgaben (Priorität)
 
-### P0 - Andreas muss machen (Xcode-Integration)
-- [ ] **Alle neuen Swift-Dateien in Xcode zum Target hinzufügen**
-  - Models/Question.swift, Models/LevelProgress.swift
-  - ViewModels/GameViewModel.swift
-  - Views/Main/StartScreenView.swift, LevelGridView.swift, LevelGameView.swift, ResultView.swift
-  - Views/Components/AnswerButton.swift
-  - Helpers/QuestionLoader.swift, ProgressManager.swift, SoundManager.swift
-  - Resources/iMOPS_Koch_Fragen_Level1-3.json
-  - PrivacyInfo.xcprivacy
-- [ ] **Audio-Dateien manuell ins Repo kopieren**
-  - Quelle: Altes Repo `Ausbildungsspiel/KitchenMillionaire/`
-  - Ziel: `AusbildungsSpielKoch/Resources/Audio/`
-  - Dateien: correct.mp3, wrong.mp3, applaus.wav, click.wav
-- [ ] **Build im Simulator testen**
+### P0 - Nächste Schritte
+- [ ] **Andreas prüft Level 4 Fragen fachlich** (15 Fragen zu Arbeitstechniken I)
+- [ ] **Produkte-Datenbank: Andreas bringt neue Daten** (allgemeine Warenkunde statt Messe-Catering)
+- [ ] **Kategorien für Produkte/Lexikon gemeinsam festlegen**
 
-### P1 - Danach
-- [ ] App-Icon validieren (Xcode > Product > Archive > Validate)
-- [ ] Bundle-ID final setzen
+### P1 - Fragen weiterschreiben
+- [ ] Level 5: Grundlegende Arbeitstechniken II (Braten, Schmoren, Frittieren, Fonds)
+- [ ] Level 6: Warenkunde Tierisch (Fleisch, Geflügel, Fisch)
+- [ ] Level 7-10: Weitere Fragen 1. Lehrjahr
 
-### P2 - Später
-- [ ] Fragen für Level 4-30 erstellen
-- [ ] App Store Einreichung vorbereiten
-- [ ] Screenshots für App Store erstellen
+### P2 - App-Features (v2 Planung)
+- [ ] Lexikon-Tab in der App (Phase 1)
+- [ ] Verlinkung Quiz-Erklärungen → Lexikon-Einträge
+- [ ] Warenkunde-Bereich (Phase 2)
+
+### P3 - Später
+- [ ] Fragen für Level 11-30
+- [ ] App Store Screenshots
+- [ ] Fachkraft Küche Track (2-jährige Ausbildung)
 
 ---
 
-## Migrierte Dateien (Referenz)
+## Datei-Übersicht
 
-### Umbenennungen im Code:
+### Neue Dateien in dieser Session:
 ```
-Header-Kommentare:  "millonen" → "AusbildungsSpielKoch"
-Kommentare:         "Matjes Küchenfachkunde" → "AusbildungsSpielKoch" / entfernt
-UserDefaults-Key:   "Matjes_LevelProgress" → "AusbildungsSpielKoch_LevelProgress"
-App-Struct:         KitchenMillionaireApp → AusbildungsSpielKochApp (bereits korrekt im neuen Projekt)
-UI-Titel:           "Matjes" + "Küchenfachkunde" → "Ausbildungsspiel" + "Koch"
+AusbildungsSpielKoch/Resources/Koch_Lexikon.json  ← Bereinigtes Lexikon (161 Einträge)
 ```
 
-### Datei-Mapping (abgeschlossen):
+### Geänderte Dateien:
 ```
-✅ KitchenMillionaire/Models/Question.swift        → AusbildungsSpielKoch/Models/Question.swift
-✅ KitchenMillionaire/Models/LevelProgress.swift    → AusbildungsSpielKoch/Models/LevelProgress.swift
-✅ KitchenMillionaire/ViewModels/GameViewModel.swift → AusbildungsSpielKoch/ViewModels/GameViewModel.swift
-✅ KitchenMillionaire/Views/Main/StartScreenView.swift → AusbildungsSpielKoch/Views/Main/StartScreenView.swift
-✅ KitchenMillionaire/Views/Main/LevelGridView.swift → AusbildungsSpielKoch/Views/Main/LevelGridView.swift
-✅ KitchenMillionaire/Views/Main/LevelGameView.swift → AusbildungsSpielKoch/Views/Main/LevelGameView.swift
-✅ KitchenMillionaire/Views/Main/ResultView.swift   → AusbildungsSpielKoch/Views/Main/ResultView.swift
-✅ KitchenMillionaire/Views/Components/AnswerButton.swift → AusbildungsSpielKoch/Views/Components/AnswerButton.swift
-✅ KitchenMillionaire/Helpers/QuestionLoader.swift   → AusbildungsSpielKoch/Helpers/QuestionLoader.swift
-✅ KitchenMillionaire/Helpers/ProgressManager.swift  → AusbildungsSpielKoch/Helpers/ProgressManager.swift
-✅ KitchenMillionaire/Helpers/SoundManager.swift     → AusbildungsSpielKoch/Helpers/SoundManager.swift
-✅ KitchenMillionaire/iMOPS_Koch_Fragen_Level1-3.json → AusbildungsSpielKoch/Resources/iMOPS_Koch_Fragen_Level1-3.json
-✅ KitchenMillionaire/PrivacyInfo.xcprivacy          → AusbildungsSpielKoch/PrivacyInfo.xcprivacy
-⬜ KitchenMillionaire/correct.mp3                    → AusbildungsSpielKoch/Resources/Audio/correct.mp3 (Andreas)
-⬜ KitchenMillionaire/wrong.mp3                      → AusbildungsSpielKoch/Resources/Audio/wrong.mp3 (Andreas)
-⬜ KitchenMillionaire/applaus.wav                    → AusbildungsSpielKoch/Resources/Audio/applaus.wav (Andreas)
-⬜ KitchenMillionaire/click.wav                      → AusbildungsSpielKoch/Resources/Audio/click.wav (Andreas)
+AusbildungsSpielKoch/Resources/iMOPS_Koch_Fragen_Level1-3.json  ← +15 Level 4 Fragen
 ```
 
----
-
-## Git-Historie (Kurzform)
-
+### Matjes-Datenbank (von Andreas gepusht):
 ```
-2026-02-15  Andreas: Initial commit - leeres Xcode-Projekt mit Matjes-Icon
-2026-02-15  Claude: Code-Migration aus altem Projekt (11 Swift-Dateien + JSON + PrivacyInfo)
+Matjes/Matjes/Resources/Kühlhaus/Lexikon.json    ← Original (214 Einträge)
+Matjes/Matjes/Resources/Kühlhaus/Produkte.json   ← Original (848 Einträge)
 ```
 
 ---
 
 ## Hinweise für die nächste Session
 
-1. **Hauptaufgabe:** Warten auf Andreas' Xcode-Integration (Target-Zuordnung + Audio-Dateien)
-2. **Icon ist fertig** - nicht anfassen!
-3. **Kein SwiftData** - wurde entfernt, ProgressManager nutzt UserDefaults
-4. **Alle verbotenen Namen sind bereinigt** - Grep-Check bestätigt
-5. **45 Fragen** sind vorhanden (15 pro Level, Level 1-3)
+1. **Lexikon ist bereinigt** -- Koch_Lexikon.json ist die saubere Version (161 Einträge)
+2. **Level 4 Fragen brauchen Andreas' fachliches OK** -- er hat 30 Jahre Küchenerfahrung
+3. **Produkte-Daten kommen von Andreas** -- neue allgemeine Warenkunde statt Messe-Catering
+4. **QuestionLoader lädt aktuell nur eine JSON-Datei** -- bei Umbenennung muss der Loader angepasst werden
+5. **Kontextabhängige Lexikon-Einträge sind gewollt** -- gleicher Begriff in verschiedenen Kategorien = verschiedener Kontext
+6. **v2 Vision besprochen** -- Quiz + Lexikon + Warenkunde als Dreiklang, Phasen-Plan steht
 
 ---
 
-*Nächste Aktualisierung: Nach Xcode-Integration durch Andreas*
+*Nächste Aktualisierung: Nach Andreas' Feedback zu Level 4 Fragen + neue Produkte-Daten*
