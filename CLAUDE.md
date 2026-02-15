@@ -107,6 +107,18 @@ Wenn Andreas ein Git-Problem hat, gib ihm **MAXIMAL EINEN einzigen Befehl** zum 
 Keine Erklärungen, keine Alternativen, keine mehrstufigen Anleitungen.
 Wenn ein Befehl nicht klappt, gib den nächsten EINZELNEN Befehl.
 
+### 🚨 FEHLER AUS VERGANGENEN SESSIONS - NICHT WIEDERHOLEN!
+Diese Fehler haben Stunden gekostet. LIES DAS BEVOR DU ANDREAS IRGENDWAS SAGST:
+
+| Fehler | Warum falsch | Was stattdessen |
+|--------|-------------|-----------------|
+| `git push origin main` wenn Andreas auf claude/-Branch ist | "src refspec main does not match any" - es gibt lokal keinen main Branch | `git push origin HEAD:main` |
+| Andreas mehrstufige Git-Befehle geben (stash, rebase, merge) | Er kennt kein Git, das verwirrt und frustriert | EINEN Befehl, der alles macht |
+| `git pull` vorschlagen wenn unstaged changes existieren | "cannot pull with rebase: You have unstaged changes" | Erst committen: `git add -A && git commit -m "Update"` dann pullen |
+| Mehrere Lösungsvorschläge anbieten | Andreas will EINE Lösung, nicht Optionen | Den besten Befehl geben. Punkt. |
+| Davon ausgehen, dass vorherige Sessions Wissen weitergegeben haben | Jede Session startet bei NULL. Kein Gedächtnis. | IMMER diese CLAUDE.md lesen. Alles steht hier. |
+| Klug sein wollen statt einfach sein | Komplexe Git-Operationen eskalieren | Der dümmste Befehl der funktioniert ist der beste |
+
 ### 4.1 Grundregeln
 - **Andreas** arbeitet lokal in Xcode und pusht über Xcode oder einfache Terminal-Befehle
 - **Claude** arbeitet auf `claude/`-Branches (Systemvorgabe)
