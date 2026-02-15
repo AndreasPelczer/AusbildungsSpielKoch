@@ -12,11 +12,14 @@ class ProgressManager: ObservableObject {
     static let shared = ProgressManager()
 
     @Published var progress: [Int: LevelProgress] = [:]
+    @Published var examResults: [String: ExamResult] = [:]
 
     private let storageKey = "AusbildungsSpielKoch_LevelProgress"
+    private let examStorageKey = "AusbildungsSpielKoch_ExamResults"
 
     init() {
         load()
+        loadExamResults()
     }
 
     func load() {
@@ -28,6 +31,13 @@ class ProgressManager: ObservableObject {
             guard let intKey = Int(key) else { return nil }
             return (intKey, value)
         })
+    }
+
+    func loadExamResults() {
+        guard let data = UserDefaults.standard.data(forKey: examStorageKey),
+              let decoded = try? JSONDecoder().decode([String: ExamResult].self, from: data)
+        else { return }
+        examResults = decoded
     }
 
     func save() {
@@ -75,8 +85,31 @@ class ProgressManager: ObservableObject {
         return starsForLevel(previous) >= 1
     }
 
+    func saveExamResult(examId: String, result: ExamResult) {
+        // Nur speichern wenn besser als bisheriges Ergebnis
+        if let existing = examResults[examId] {
+            if result.percentage > existing.percentage {
+                examResults[examId] = result
+            }
+        } else {
+            examResults[examId] = result
+        }
+        guard let data = try? JSONEncoder().encode(examResults) else { return }
+        UserDefaults.standard.set(data, forKey: examStorageKey)
+    }
+
+    func examResult(for examId: String) -> ExamResult? {
+        examResults[examId]
+    }
+
+    func isExamUnlocked(_ exam: ExamConfig) -> Bool {
+        starsForLevel(exam.unlockLevel) >= 1
+    }
+
     func resetAllProgress() {
         progress = [:]
+        examResults = [:]
         UserDefaults.standard.removeObject(forKey: storageKey)
+        UserDefaults.standard.removeObject(forKey: examStorageKey)
     }
 }

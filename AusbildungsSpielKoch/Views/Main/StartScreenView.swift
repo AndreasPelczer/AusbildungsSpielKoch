@@ -29,8 +29,7 @@ struct StartScreenView: View {
 
     private let lehrjahre: [LehrjahrConfig] = [
         LehrjahrConfig(number: 1, title: "1. Lehrjahr", subtitle: "Grundlagen", icon: "1.circle.fill", color: .green, levelRange: 1...10),
-        LehrjahrConfig(number: 2, title: "2. Lehrjahr", subtitle: "Aufbau", icon: "2.circle.fill", color: .blue, levelRange: 11...20),
-        LehrjahrConfig(number: 3, title: "3. Lehrjahr", subtitle: "Spezialisierung", icon: "3.circle.fill", color: .purple, levelRange: 21...30),
+        LehrjahrConfig(number: 2, title: "2. Lehrjahr", subtitle: "Vertiefung", icon: "2.circle.fill", color: .blue, levelRange: 11...20),
     ]
 
     /// Nur Lehrjahre anzeigen, die mindestens ein Level mit Fragen haben
@@ -64,22 +63,21 @@ struct StartScreenView: View {
                 VStack(spacing: 0) {
                     // Header
                     VStack(spacing: 8) {
-                        Image(systemName: "flame.fill")
+                        Text("🐟")
                             .font(.system(size: 50))
-                            .foregroundColor(.orange)
-                            .shadow(color: .orange.opacity(flameGlow ? 0.8 : 0.3), radius: flameGlow ? 20 : 8)
+                            .shadow(color: .blue.opacity(flameGlow ? 0.8 : 0.3), radius: flameGlow ? 20 : 8)
                             .scaleEffect(flameGlow ? 1.08 : 1.0)
                             .accessibilityHidden(true)
 
-                        Text("Ausbildungsspiel")
+                        Text("Matjes")
                             .font(.system(size: 36, weight: .black, design: .rounded))
                             .foregroundColor(.white)
 
-                        Text("Koch")
+                        Text("der kleine Hering")
                             .font(.system(size: 22, weight: .bold, design: .rounded))
                             .foregroundColor(.orange)
 
-                        Text("Koch / Köchin")
+                        Text("Das Ausbildungsspiel der Küche")
                             .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundColor(.gray)
                             .padding(.top, 2)
@@ -88,7 +86,7 @@ struct StartScreenView: View {
                     .opacity(headerVisible ? 1 : 0)
                     .offset(y: headerVisible ? 0 : -20)
                     .accessibilityElement(children: .combine)
-                    .accessibilityLabel("Ausbildungsspiel Koch, Koch und Köchin")
+                    .accessibilityLabel("Matjes, der kleine Hering, Das Ausbildungsspiel der Küche")
 
                     Spacer()
 
@@ -116,6 +114,28 @@ struct StartScreenView: View {
                     .padding(.horizontal, 20)
                     .opacity(buttonsVisible ? 1 : 0)
                     .offset(y: buttonsVisible ? 0 : 30)
+
+                    // Prüfungen
+                    VStack(spacing: 12) {
+                        ForEach(ExamConfig.allExams) { exam in
+                            let isUnlocked = progressManager.isExamUnlocked(exam)
+                            let bestResult = progressManager.examResult(for: exam.id)
+
+                            if isUnlocked {
+                                NavigationLink(destination: ExamGameView(
+                                    config: exam,
+                                    allQuestions: allQuestions
+                                )) {
+                                    ExamButton(exam: exam, bestResult: bestResult)
+                                }
+                            } else {
+                                ExamButton(exam: exam, bestResult: nil, locked: true)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 8)
+                    .opacity(footerVisible ? 1 : 0)
 
                     Spacer()
 
@@ -156,7 +176,7 @@ struct StartScreenView: View {
                     headerVisible = true
                 }
 
-                // Flamme pulsieren
+                // Fisch pulsieren
                 withAnimation(.easeInOut(duration: 2.0).repeatForever(autoreverses: true)) {
                     flameGlow = true
                 }
@@ -222,5 +242,68 @@ struct LehrjahrButton<Destination: View>: View {
             )
         }
         .accessibilityLabel("\(title), \(subtitle)")
+    }
+}
+
+// MARK: - Prüfungs-Button
+struct ExamButton: View {
+    let exam: ExamConfig
+    let bestResult: ExamResult?
+    var locked: Bool = false
+
+    var body: some View {
+        HStack(spacing: 16) {
+            Image(systemName: locked ? "lock.fill" : exam.icon)
+                .font(.system(size: 28))
+                .foregroundColor(locked ? .gray : exam.color)
+                .frame(width: 50)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(exam.name)
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundColor(locked ? .gray : .white)
+
+                if locked {
+                    Text("Level \(exam.unlockLevel) abschließen")
+                        .font(.system(size: 13, weight: .medium, design: .rounded))
+                        .foregroundColor(.gray)
+                } else if let result = bestResult {
+                    HStack(spacing: 6) {
+                        Image(systemName: result.passed ? "checkmark.circle.fill" : "xmark.circle.fill")
+                            .foregroundColor(result.passed ? .green : .red)
+                            .font(.caption)
+                        Text("Bestes: \(Int(result.percentage))%")
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
+                            .foregroundColor(result.passed ? .green : .red)
+                    }
+                } else {
+                    Text("\(exam.fragenAnzahl) Fragen · \(exam.dauerMinuten) Min.")
+                        .font(.system(size: 13, weight: .medium, design: .rounded))
+                        .foregroundColor(.gray)
+                }
+            }
+
+            Spacer()
+
+            if !locked {
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 14, weight: .bold))
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(locked ? Color.gray.opacity(0.05) : exam.color.opacity(0.08))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(
+                            locked ? Color.gray.opacity(0.15) : exam.color.opacity(0.3),
+                            lineWidth: locked ? 1 : 2
+                        )
+                )
+        )
+        .accessibilityLabel(locked ? "\(exam.name), gesperrt" : "\(exam.name), \(exam.subtitle)")
     }
 }

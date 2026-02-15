@@ -28,7 +28,6 @@ struct LevelGridView: View {
         switch lehrjahr {
         case 1: return "1. Lehrjahr"
         case 2: return "2. Lehrjahr"
-        case 3: return "3. Lehrjahr"
         default: return "Alle Level"
         }
     }
@@ -36,9 +35,8 @@ struct LevelGridView: View {
     private var headerSubtitle: String {
         switch lehrjahr {
         case 1: return "Grundlagen"
-        case 2: return "Aufbau"
-        case 3: return "Spezialisierung"
-        default: return "Level 1-30"
+        case 2: return "Vertiefung"
+        default: return "Level 1-20"
         }
     }
 
