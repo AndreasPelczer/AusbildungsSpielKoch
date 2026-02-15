@@ -1,189 +1,168 @@
-# Matjes, der kleine Hering 🐟
+# Matjes, der kleine Hering
 
-**Das Ausbildungsspiel der Küche**
+**Das Ausbildungsspiel der Küche** -- *für Köchinnen und Köche*
 
-*für Köchinnen und Köche*
+Matjes ist eine Lern-App für Kochlehrlinge im deutschsprachigen Raum. Die App vermittelt Warenkunde und Küchenwissen durch ein gamifiziertes Quizsystem, das die Ausbildung nach IHK-Rahmenplan begleitet.
 
-Matjes ist eine Lern-App für Kochlehrlinge im deutschsprachigen Raum. Die App vermittelt Warenkunde und Küchenwissen durch ein gamifiziertes Quizsystem, das die zweijährige Ausbildung (4 Halbjahre) nach IHK-Rahmenplan begleitet.
+---
+
+## Aktueller Stand
+
+Die App ist funktionsfähig und als Beta bei Apple eingereicht. Sie enthält **20 Level** in **4 Halbjahren** mit insgesamt **~566 Quizfragen**, ein integriertes **Lexikon** (Produkte, Garmethoden, Saucen) sowie ein **Prüfungssystem** mit Commis-Prüfung und Bossfight.
 
 ---
 
 ## Konzept
 
-Lehrlinge durchlaufen **2 Lehrjahre (4 Halbjahre)** mit steigendem Schwierigkeitsgrad. Jedes Halbjahr endet mit einer **Commis-Prüfung (Endgegner)**. Am Ende der Ausbildung wartet der **Bossfight** – eine simulierte Abschlussprüfung über alle Kategorien und Level.
+Lehrlinge durchlaufen **4 Halbjahre** mit steigendem Schwierigkeitsgrad. Die Halbjahre werden sequentiell freigeschaltet. Nach dem 3. Halbjahr wartet die **Commis-Prüfung (Endgegner)**, nach dem 4. Halbjahr der **Bossfight** -- eine simulierte Abschlussprüfung.
+
+### Halbjahr-Struktur
+
+| Block | Level | Inhalt | Freischaltung |
+|-------|-------|--------|---------------|
+| **1. Halbjahr** | 1--5 | Grundlagen (Hygiene, Küchenbrigade, Warenkunde, Arbeitstechniken) | Immer offen |
+| **2. Halbjahr** | 6--10 | Warenkunde (Fleisch, Fisch, Milch, Gewürze, Garmethoden) | Nach Level 5 |
+| **3. Halbjahr** | 11--15 | Vertiefung (Saucenkunde, Erkennen, Zuordnen) | Nach Level 10 |
+| **Commis-Prüfung** | -- | 30 Fragen / 20 Min. | Nach Level 15 |
+| **4. Halbjahr** | 16--20 | Anwenden & Bewerten (Wissen, Praxis, Beurteilung) | Nach Level 15 |
+| **Bossfight** | -- | 50 Fragen / 40 Min. | Nach Level 20 |
+
+Halbjahr 5 und 6 (IHK-Erweiterung) sind vorbereitet, aber noch nicht implementiert.
 
 ### Level-System
 
-Matjes hat **20 Level** in zwei Blöcken:
+**Level 1--11: Handkuratierte Fragen** (166 Fragen in `Matjes_Fragen_Level1-11.json`)
 
-#### Level 1–11: Handkuratierte Fragen
+Manuell erstellte, fachlich geprüfte Quizfragen mit jeweils richtiger Antwort, drei Distraktoren und einer Erklärung bei falscher Antwort.
 
-Manuell erstellte, fachlich geprüfte Quizfragen mit jeweils richtiger Antwort und Distraktoren.
+**Level 12--20: LexikonQuizGenerator** (~400 automatisch generierte Fragen)
 
-| Level | Bloom-Stufe | Inhalt |
-|-------|-------------|--------|
-| 1–5 | Erkennen → Bewerten | Fleisch (25 Produkte) |
-| 1–5 | Erkennen → Bewerten | Fisch & Meeresfrüchte (24 Produkte) |
-| 1–5 | Erkennen → Bewerten | Milchprodukte (24 Produkte) |
-| 1–5 | Erkennen → Bewerten | Gewürze (25 Produkte) |
-| 1–5 | Erkennen → Bewerten | Garmethoden (20 Methoden) |
-| 1–5 | Erkennen → Bewerten | Saucenkunde (20 Soßen) |
+Der LexikonQuizGenerator erzeugt Quizfragen direkt aus den Lexikon-Daten und folgt dabei der Bloom-Taxonomie:
 
-**Gesamt:** 138 Produkte/Methoden, 240+ handgeschriebene Fragen
+| Level | Bloom-Stufe | Beispiel |
+|-------|-------------|----------|
+| 12--13 | ERKENNEN | "Um welches Produkt handelt es sich?" |
+| 14--15 | ZUORDNEN | "Zu welcher Kategorie gehört Rinderfilet?" |
+| 16--17 | WISSEN | Lagerung, Allergene, Temperaturen abrufen |
+| 18--19 | ANWENDEN | "Ein Gast hat Fischallergie -- was darfst du NICHT verwenden?" |
+| 20 | BEWERTEN | "Welche Aussage ist FALSCH?" |
 
-#### Level 12–20: LexikonQuizGenerator (automatisch)
+Jedes Level hat 25--70 Fragen im Pool. Pro Spiel werden 10 zufällig ausgewählt.
 
-Der LexikonQuizGenerator erzeugt automatisch **~400 Quizfragen** aus den Lexikon-Daten:
+### Spiel-Mechanik
 
-| Level | Bloom-Stufe | Was wird gefragt? |
-|-------|-------------|-------------------|
-| 12 | ERKENNEN | "Um welches Produkt handelt es sich?" (aus Beschreibung) |
-| 13 | ERKENNEN | "Welche Sauce hat diese Basis?" / "Welche Garmethode?" |
-| 14 | ZUORDNEN | "Zu welcher Kategorie gehört Rinderfilet?" |
-| 15 | ZUORDNEN | "Welcher Typ Garmethode ist Pochieren?" |
-| 16 | WISSEN | Lagerung, Allergene, Nährwerte abrufen |
-| 17 | WISSEN | Temperaturen, Garmedien, Saucen-Basis |
-| 18 | ANWENDEN | "Ein Gast hat Fischallergie – was darfst du NICHT verwenden?" |
-| 19 | ANWENDEN | Ableitungen, Praxistipps, Klassiker (Spargel → Hollandaise) |
-| 20 | BEWERTEN | "Welche Aussage ist FALSCH?" / "NICHT geeignet für..." |
+Jedes Level besteht aus 10 Fragen mit je 4 Antwortmöglichkeiten (A, B, C, D), die bei jedem Start neu gemischt werden. Die Sternebewertung: 0--1 Fehler = 3 Sterne, 2--3 Fehler = 2 Sterne, 4--5 Fehler = 1 Stern, 6+ Fehler = 0 Sterne. Das nächste Level wird ab 1 Stern freigeschaltet. Bei falscher Antwort wird eine Erklärung angezeigt.
 
-**So funktioniert der Generator:**
-- Jedes Level hat **25–70 Fragen** im Pool
-- Bei jedem Spielstart werden **10 zufällig** ausgewählt
-- Bei App-Neustart → komplett neue Fragen-Mischung
+### Lexikon
 
-**Daten-Datei:** `Matjes_Fragen_Level1-11.json`
+Das integrierte Lexikon dient als Nachschlagewerk und gleichzeitig als Datenquelle für den QuizGenerator:
 
-### Produktkategorien (Datenbasis)
-
-| Kategorie | Einträge | Beschreibung |
-|-----------|----------|--------------|
-| Fleisch | 25 | Rind, Kalb, Schwein, Lamm, Wild, Geflügel, Innereien |
-| Fisch & Meeresfrüchte | 24 | Süß-/Salzwasserfische, Schalen- und Krustentiere |
-| Milchprodukte | 24 | Trinkmilch, Rahm, Käse, Sauermilchprodukte |
-| Gewürze | 25 | Küchengewürze von Pfeffer bis Safran |
-| Garmethoden | 20 | Kochen, Schmoren, Sous-vide, Konfieren u.v.m. |
-| Saucenkunde | 20 | Muttersoßen, Fonds, Ableitungen, kalte Soßen |
-
-**Gesamt:** 138 Einträge → **640+ Quizfragen** (240+ manuell + ~400 generiert)
-
-### Prüfungssystem
-
-| Prüfung | Zeitpunkt | Format |
-|---------|-----------|--------|
-| Commis-Prüfung (Endgegner) | Ende jedes Halbjahres (4×) | Zwischenprüfung über bisherige Inhalte |
-| Bossfight (Abschlussprüfung) | Ende der Ausbildung (2. Lehrjahr) | 80 Fragen / 60 Min. über alle Kategorien und Level |
+| Kategorie | Einträge |
+|-----------|----------|
+| Produkte (Fleisch, Fisch, Milch, Gewürze, Gemüse) | 134 |
+| Garmethoden (Kochen, Schmoren, Sous-vide u.v.m.) | 20 |
+| Saucen (Muttersoßen, Fonds, Ableitungen, kalte Soßen) | 20 |
 
 ---
 
 ## Tech Stack
 
-*In Entwicklung – Branch: `claude/setup-chef-quiz-game-Jyg7i`*
-
-iOS (Swift/Xcode)
+| | |
+|---|---|
+| Sprache | Swift / SwiftUI |
+| Architektur | MVVM |
+| iOS-Minimum | 17.0 |
+| Externe Abhängigkeiten | Keine |
+| Datenhaltung | UserDefaults (Fortschritt), JSON-Bundles (Inhalte) |
 
 ---
 
-## Architektur
-
-### Datenbank
+## Projektstruktur
 
 ```
-matjes_produkte
-├── kategorien          # Produktkategorien
-├── produkte            # Alle Lebensmittel, Methoden, Soßen
-├── fragen              # Handkuratierte Quizfragen (Level 1–11)
-├── fragen_generated    # Generierte Quizfragen (Level 12–20)
-├── lehrling_profil     # Profil und Lehrjahr/Halbjahr
-├── fortschritt         # Lernfortschritt pro Kategorie/Level
-└── quiz_historie       # Protokoll aller Antworten
+AusbildungsSpielKoch/
+├── CLAUDE.md
+├── PROJECT_STATUS.md
+├── README.md
+│
+├── AusbildungsSpielKoch/
+│   ├── AusbildungsSpielKochApp.swift
+│   ├── Models/
+│   │   ├── Question.swift
+│   │   ├── LevelProgress.swift
+│   │   ├── Produkt.swift
+│   │   ├── Garmethode.swift
+│   │   └── Sauce.swift
+│   ├── ViewModels/
+│   │   └── GameViewModel.swift
+│   ├── Views/
+│   │   ├── Main/
+│   │   │   ├── MainTabView.swift
+│   │   │   ├── StartScreenView.swift
+│   │   │   ├── LevelGridView.swift
+│   │   │   ├── LevelGameView.swift
+│   │   │   └── ResultView.swift
+│   │   ├── Lexikon/
+│   │   │   ├── LexikonHomeView.swift
+│   │   │   ├── ProduktListView.swift / ProduktDetailView.swift
+│   │   │   ├── GarmethodeListView.swift / GarmethodeDetailView.swift
+│   │   │   └── SauceListView.swift / SauceDetailView.swift
+│   │   └── Components/
+│   │       └── AnswerButton.swift
+│   ├── Helpers/
+│   │   ├── QuestionLoader.swift
+│   │   ├── LexikonQuizGenerator.swift
+│   │   ├── LexikonLoader.swift
+│   │   ├── ProgressManager.swift
+│   │   └── SoundManager.swift
+│   └── Resources/
+│       ├── Matjes_Fragen_Level1-11.json (166 Fragen)
+│       ├── Koch_Produkte.json (134 Produkte)
+│       ├── Koch_Garmethoden.json (20 Garmethoden)
+│       ├── Koch_Saucen.json (20 Saucen)
+│       ├── Koch_Pruefungskonzept.json
+│       └── Audio/ (correct.mp3, wrong.mp3, applaus.wav, click.wav)
+│
+├── AusbildungsSpielKochTests/
+└── AusbildungsSpielKochUITests/
 ```
-
-### Rollen
-
-| Rolle | Rechte |
-|-------|--------|
-| Lehrling | Quiz spielen, eigenen Fortschritt einsehen |
-| Ausbilder/in | Fortschritt aller Lehrlinge einsehen, Berichte exportieren |
-| Administrator | Produkte, Fragen und Kategorien verwalten |
 
 ---
 
 ## Features
 
-- 🐟 **Matjes-Maskottchen** – "Matjes, der kleine Hering" begleitet durch die App
-- **LexikonQuizGenerator** – Erzeugt ~400 Fragen aus Lexikon-Daten (Level 12–20, Bloom-Taxonomie)
-- **20 Level** – 11 handkuratiert + 9 automatisch generiert
-- **Gamification** – Punkte, Level-Freischaltung, Endgegner (Commis-Prüfung), Bossfight (Abschlussprüfung)
-- **Zufalls-Modus** – 10 zufällige Fragen pro Spielstart, nie dieselbe Mischung
-- **Fortschritts-Dashboard** – Stärken/Schwächen auf einen Blick
-- **Schwachstellen-Training** – Gezieltes Üben nach Prüfungen
-- **Zertifikate** – PDF-Download bei bestandener Prüfung
-- **Ausbilder-Reports** – Automatische Fortschrittsberichte
-- **Offline-Modus** – Lernen ohne Internetverbindung
+**Implementiert:**
+
+- 20 Level in 4 Halbjahren mit sequentieller Freischaltung
+- ~566 Quizfragen (166 handkuratiert + ~400 automatisch generiert)
+- Bloom-Taxonomie (Erkennen bis Bewerten)
+- Commis-Prüfung (Endgegner nach Halbjahr 3)
+- Bossfight (Abschlussprüfung nach Halbjahr 4)
+- Integriertes Lexikon (Produkte, Garmethoden, Saucen) mit Suche
+- Sternebewertung und Fortschrittsspeicherung
+- Sound-Feedback und Haptik
+- Tab-Navigation (Quiz + Lexikon)
+- Offline-Modus
+
+**Geplant:**
+
+- Fortschritts-Dashboard (Stärken/Schwächen)
+- Schwachstellen-Training
+- Halbjahr 5 + 6 (IHK-Erweiterung)
+- Zertifikate (PDF bei bestandener Prüfung)
+- Ausbilder-Reports
+- Abo-Modell (1 Monat kostenlos, danach Abo)
 
 ---
 
-## Monetarisierung
+## Zukunftsvision
 
-- 1 Monat kostenlos testen (Vollzugang)
-- Danach Abo-Modell (monatlich/jährlich)
-- Zielgruppe: Lehrlinge, Ausbildungsbetriebe, Berufsschulen
+Karrierepfad: Commis -> Demi-Chef -> Chef de Partie -> Sous-Chef -> Küchenchef
 
----
-
-## App Store
-
-Verfügbar für iOS (geplant). Kategorie: Bildung / Essen & Trinken.
-
----
-
-## Xcode-Setup nach Merge
-
-Nach dem Merge von `claude/setup-chef-quiz-game-Jyg7i` in Xcode:
-
-1. Alte JSON-Referenz `iMOPS_Koch_Fragen_Level1-3.json` entfernen
-2. Neue `Matjes_Fragen_Level1-11.json` per Drag & Drop ins Projekt ziehen
-
----
-
-## Dokumentation
-
-| Dokument | Inhalt |
-|----------|--------|
-| `Matjes_Produktdatenbank.docx` | Alle Produktkategorien + Datenbankkonzept |
-| `Matjes_Quizfragen.docx` | 160 handkuratierte Quizfragen (Fleisch, Fisch, Milch, Gewürze) |
-| `Matjes_Level9_10_Pruefungen.docx` | Garmethoden, Saucenkunde + Prüfungskonzept |
-| `Matjes_AppStore_Beschreibung.md` | Apple App Store Texte |
-
----
-
-## Roadmap
-
-### Erledigt
-- [x] Produktkategorien definieren (Fleisch, Fisch, Milch, Gewürze)
-- [x] Quizfragen Level 1–5 erstellen (160 Fragen)
-- [x] Garmethoden (Level 9) ausarbeiten
-- [x] Saucenkunde (Level 10) ausarbeiten
-- [x] Prüfungskonzept (Commis-Prüfung + Bossfight)
-- [x] App Store Beschreibung + Copyright
-- [x] LexikonQuizGenerator bauen (Level 12–20, ~400 Fragen)
-- [x] Rebranding: Codiclodi → Matjes, der kleine Hering
-- [x] JSON umbenannt: `Matjes_Fragen_Level1-11.json`
-- [x] Startbildschirm mit Matjes-Maskottchen
-- [x] Branch gepusht: `claude/setup-chef-quiz-game-Jyg7i`
-
-### Offen
-- [ ] PR erstellen und mergen
-- [ ] Xcode: alte JSON-Referenz entfernen, neue einbinden
-- [ ] Fachliches OK für Level 4+5 Fragen
-- [ ] 4 Halbjahre nach IHK-Rahmenplan strukturieren
-- [ ] UI/UX Design
-- [ ] Testphase mit Lehrlingen
-- [ ] App Store Launch
+6 Halbjahre nach IHK-Rahmenplan, davon 4 implementiert. Halbjahr 5 und 6 folgen als Erweiterung.
 
 ---
 
 ## Lizenz
 
-© 2026 Andreas Pelczer. Alle Rechte vorbehalten.
+(c) 2026 Andreas Pelczer. Alle Rechte vorbehalten.
