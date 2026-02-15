@@ -1,7 +1,7 @@
 # PROJECT_STATUS.md - Aktueller Projektstatus
 
 > **Diese Datei wird von jeder Claude-Session aktualisiert.**
-> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (4-Halbjahre-Umbau)
+> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (Compiler-Fix + Übergabe)
 
 ---
 
@@ -56,6 +56,8 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 | 2026-02-15 | Cleanup: Alten Matjes/-Ordner entfernt | Claude |
 | 2026-02-15 | LexikonQuizGenerator: Unicode-Fehler behoben | Claude |
 | 2026-02-15 | **4-Halbjahre-Umbau: StartScreen, LevelGrid, ExamConfig, ProgressManager** | Claude |
+| 2026-02-15 | **Compiler-Fix: StartScreenView.swift Zeile 321 – Expression zu komplex** | Claude |
+| 2026-02-15 | Andreas: Claude-Branch lokal gemerged (PR war noch nicht gemerged) | Andreas+Claude |
 
 ---
 
@@ -150,6 +152,25 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 4. **LevelGridView** Parameter heißt jetzt `halbjahr` (nicht mehr `lehrjahr`)
 5. **LexikonQuizGenerator.swift** verwendet Unicode-Escapes für deutsche Anführungszeichen
 6. **Halbjahr 5+6** sind vorbereitet aber noch nicht implementiert
+7. **StartScreenView.swift** hatte Compiler-Fehler (Zeile 321: "unable to type-check expression in reasonable time") – wurde gefixt durch Aufteilen in Sub-Expressions
+8. **Git-Situation**: Andreas hat den `claude/setup-chef-quiz-game-Jyg7i` Branch direkt lokal gemerged, weil der PR noch nicht auf GitHub gemerged war. Andreas' lokaler main enthält jetzt den Stand vom Claude-Branch.
+
+---
+
+## Sitzungsprotokoll 2026-02-15 (letzte Session)
+
+### Was passiert ist
+1. **Compiler-Fehler**: Andreas hatte in Xcode den Fehler `StartScreenView.swift:321:25 – The compiler is unable to type-check this expression in reasonable time`
+2. **Ursache**: SwiftUI-Expression in StartScreenView war zu komplex für den Swift-Compiler (verschachtelte Views + Modifiers)
+3. **Fix**: Der Fix war bereits auf dem `claude/setup-chef-quiz-game-Jyg7i` Branch vorhanden (aus einer früheren Session), aber der PR war noch nicht gemerged
+4. **Andreas' Git-Problem**: `git pull origin main` ergab "Already up to date", weil der Fix nur auf dem Claude-Branch lag, nicht auf main
+5. **Lösung**: `git fetch origin claude/setup-chef-quiz-game-Jyg7i && git merge origin/claude/setup-chef-quiz-game-Jyg7i --no-edit`
+6. **Ergebnis**: Andreas hat den Fix lokal, Compiler-Fehler ist behoben
+
+### Wichtig für nächste Session
+- **PR `claude/setup-chef-quiz-game-Jyg7i` → main** muss noch auf GitHub gemerged werden (oder ein neuer PR erstellt werden)
+- Andreas' lokaler Stand enthält bereits alle Änderungen
+- Falls Andreas pusht bevor der PR gemerged ist: `git push origin HEAD:main`
 
 ---
 
