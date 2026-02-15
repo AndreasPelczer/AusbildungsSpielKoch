@@ -530,5 +530,425 @@
     "answers": ["Wegen der Säure", "Weil Betanin ALLES rot färbt — Hände, Brett, Kleidung", "Wegen Allergiegefahr", "Aus hygienischen Gründen"],
     "correctIndex": 1,
     "erklaerung": "Betanin ist ein natürlicher Farbstoff und färbt gnadenlos. Handschuhe sind Pflicht, sonst hast du stundenlang rote Hände. Auch Bretter und Tücher verfärben sich."
+  },
+  {
+    "level": 6,
+    "text": "Wiener Schnitzel — welches Fleisch MUSS es sein?",
+    "answers": ["Schwein", "Kalb", "Pute", "Egal, Hauptsache paniert"],
+    "correctIndex": 1,
+    "erklaerung": "Echtes Wiener Schnitzel = NUR Kalbfleisch (Oberschale). Alles andere heißt 'Schnitzel Wiener Art'. Die Panade muss soufflieren (wellig aufgehen)."
+  },
+  {
+    "level": 6,
+    "text": "Kalbsleber braten — wann wird gesalzen?",
+    "answers": ["Vorher, damit es würzig wird", "Während des Bratens", "NACH dem Braten — Salz zieht Wasser und macht sie zäh", "Salz ist bei Leber verboten"],
+    "correctIndex": 2,
+    "erklaerung": "Leber erst NACH dem Braten salzen! Salz zieht Flüssigkeit und macht sie gummiartig. Innen noch leicht rosa = perfekt. Klassisch: Berliner Leber mit Apfel und Zwiebel."
+  },
+  {
+    "level": 6,
+    "text": "Entenbrust braten — wie startest du?",
+    "answers": ["In heißem Öl mit der Fleischseite zuerst", "KALT in die Pfanne, Hautseite unten — Fett rendert langsam aus", "Im Ofen bei 200°C", "In der Fritteuse"],
+    "correctIndex": 1,
+    "erklaerung": "Fettschicht kreuzweise einritzen, dann KALT in die Pfanne mit der Hautseite unten starten. Das Fett rendert langsam aus, die Haut wird knusprig. Dann kurz von der Fleischseite — innen rosa!"
+  },
+  {
+    "level": 6,
+    "text": "Wildschweinbraten — was ist die Kerntemperatur-Regel?",
+    "answers": ["Innen rosa wie bei Rind (55°C)", "Mindestens 70°C — wegen Trichinen", "Egal, solange es gut schmeckt", "50°C reicht bei Wild"],
+    "correctIndex": 1,
+    "erklaerung": "Wildschwein MUSS durchgegart werden — Kerntemperatur mindestens 70°C! Trichinen (Parasiten) werden erst bei dieser Temperatur abgetötet. Bei Rindfleisch ist rosa ok, bei Wildschwein NICHT."
+  },
+  {
+    "level": 6,
+    "text": "Was ist 'Frenchen' beim Lammkarree?",
+    "answers": ["Das Fleisch marinieren", "Die Rippenknochen freilegen (optische Präsentation)", "Das Lamm in Scheiben schneiden", "Eine französische Garmethode"],
+    "correctIndex": 1,
+    "erklaerung": "Frenchen = die Rippenknochen vom Fleisch und Fett befreien, sodass sie sauber herausstehen. Sieht auf dem Teller professionell aus. Manche setzen Papiermannschetten auf die Knochen."
+  },
+  {
+    "level": 6,
+    "text": "Rindermark pochieren — warum darf es nie kochen?",
+    "answers": ["Es schmeckt dann bitter", "Es zerläuft und löst sich auf", "Es wird zu fest", "Es verliert die Farbe"],
+    "correctIndex": 1,
+    "erklaerung": "Rindermark ist fast reines Fett — bei zu hoher Hitze zerläuft es komplett in der Flüssigkeit. Sanft pochieren (ca. 80°C) bis es glasig-weich ist. Für Markklößchen in klarer Brühe oder auf Toast."
+  },
+  {
+    "level": 6,
+    "text": "Hähnchenbrust trocknet beim Braten leicht aus. Was hilft NICHT?",
+    "answers": ["Sous-vide garen", "Bei maximaler Hitze von beiden Seiten braten", "Mit Haut braten", "Pochieren"],
+    "correctIndex": 1,
+    "erklaerung": "Maximale Hitze von beiden Seiten trocknet die magere Hähnchenbrust am schnellsten aus! Sous-vide (Niedrigtemperatur), Pochieren oder mit Haut braten schützen vor dem Austrocknen. Kerntemperatur: 75°C."
+  },
+  {
+    "level": 6,
+    "text": "Tafelspitz — wie wird er traditionell gegart?",
+    "answers": ["Scharf angebraten", "Sanft pochiert (nie kochen!)", "Im Ofen bei 200°C", "Auf dem Grill"],
+    "correctIndex": 1,
+    "erklaerung": "Tafelspitz wird in Brühe sanft pochiert — das Wasser darf NIE sprudelnd kochen (Fleisch wird zäh). Wiener Klassiker mit Schnittlauchsauce, Apfelkren und Rösterdäpfeln."
+  },
+  {
+    "level": 6,
+    "text": "Kalbsniere vor der Zubereitung — was musst du zuerst tun?",
+    "answers": ["Direkt in die Pfanne", "Wässern, um Harnstoff zu entfernen", "Einfrieren", "In Mehl wälzen"],
+    "correctIndex": 1,
+    "erklaerung": "Nieren müssen gewässert werden, um den Harnstoff (unangenehmer Geschmack) zu entfernen. Außerdem: Fettkapsel und weiße Stränge entfernen. Dann nur kurz garen — sonst gummiartig."
+  },
+  {
+    "level": 6,
+    "text": "Gänsekeule konfieren — was bedeutet das?",
+    "answers": ["In Wasser kochen", "In eigenem Fett langsam garen", "Auf dem Grill räuchern", "In Alufolie im Ofen backen"],
+    "correctIndex": 1,
+    "erklaerung": "Confit (konfieren) = in eigenem Fett bei niedriger Temperatur langsam garen. Französische Konservierungsmethode. Das Gänseschmalz unbedingt aufheben — Gold wert zum Braten oder aufs Brot!"
+  },
+  {
+    "level": 6,
+    "text": "Schweinekotelett — warum den Fettrand einschneiden?",
+    "answers": ["Damit es schneller gar wird", "Damit es sich beim Braten nicht wölbt", "Zum Würzen", "Damit das Fett abfließt"],
+    "correctIndex": 1,
+    "erklaerung": "Der Fettrand zieht sich beim Braten zusammen und das Kotelett wölbt sich. Fettrand alle 2cm einschneiden — so bleibt es flach und brät gleichmäßig. Der Knochen gibt extra Geschmack."
+  },
+  {
+    "level": 6,
+    "text": "Schweinebauch — wie wird die Schwarte knusprig?",
+    "answers": ["Feucht halten und bei niedriger Temperatur garen", "Einritzen, salzen und am Ende hohe Hitze", "In Öl frittieren", "Schwarte vor dem Garen entfernen"],
+    "correctIndex": 1,
+    "erklaerung": "Schwarte rautenförmig einritzen, kräftig salzen. Erst langsam schmoren/braten, dann am Ende 10–15 Minuten bei 250°C Oberhitze — die Schwarte bläht sich auf und wird kross!"
+  },
+  {
+    "level": 6,
+    "text": "Welches Fleisch würdest du für Gulasch verwenden?",
+    "answers": ["Rinderfilet", "Rinderschulter", "Hähnchenbrust", "Lammkarree"],
+    "correctIndex": 1,
+    "erklaerung": "Rinderschulter ist bindegewebsreich — perfekt zum Schmoren. Durch langes Garen wird das Kollagen zu Gelatine und das Fleisch butterzart. Rinderfilet wäre verschwendet (zu teuer, wird trocken)."
+  },
+  {
+    "level": 6,
+    "text": "Wann hat Wild Saison?",
+    "answers": ["Frühling/Sommer", "Herbst/Winter (Jagdsaison)", "Nur im Dezember", "Ganzjährig wie Schwein"],
+    "correctIndex": 1,
+    "erklaerung": "Wild (Hirsch, Reh, Wildschwein) hat in Herbst und Winter Saison (September–Januar). Passt perfekt zu den klassischen Beilagen: Rotkohl, Preiselbeeren, Maronen, Spätzle."
+  },
+  {
+    "level": 6,
+    "text": "Ossobuco — was steckt im Namen?",
+    "answers": ["'Großer Braten' auf Italienisch", "'Knochen mit Loch' — die Kalbshaxe mit Markknochen", "'Langsam geschmort'", "'Mailänder Art'"],
+    "correctIndex": 1,
+    "erklaerung": "Osso = Knochen, Buco = Loch. Die Kalbshaxe wird in Scheiben geschmort — das Knochenmark im Loch ist die Delikatesse! Dazu gehört Gremolata (Petersilie, Knoblauch, Zitronenzeste)."
+  },
+  {
+    "level": 7,
+    "text": "Frischer Fisch — wie erkennst du, dass er NICHT mehr frisch ist?",
+    "answers": ["Riecht nach Meer", "Riecht nach Ammoniak, Augen trüb, Kiemen grau", "Die Schuppen glänzen", "Das Fleisch ist fest"],
+    "correctIndex": 1,
+    "erklaerung": "Frisch: klare Augen, rote Kiemen, Meergeruch, festes Fleisch. SCHLECHT: Ammoniakgeruch, trübe Augen, graue/braune Kiemen, weiches Fleisch. Fisch verdirbt schneller als Fleisch!"
+  },
+  {
+    "level": 7,
+    "text": "Garnelen vorbereiten — was MUSS entfernt werden?",
+    "answers": ["Die Beine", "Der Darm (schwarzer Faden am Rücken)", "Der Kopf (immer)", "Die Schale (immer)"],
+    "correctIndex": 1,
+    "erklaerung": "Den schwarzen Darmfaden am Rücken mit einem Messer herausziehen! Er enthält Verdauungsreste und kann bitter schmecken. Schale und Kopf können je nach Gericht dran bleiben (Geschmack!)."
+  },
+  {
+    "level": 7,
+    "text": "Miesmuscheln — welche Regel gilt für die Saison?",
+    "answers": ["Nur im Sommer essen", "Nur in Monaten mit R (September–April)", "Das ganze Jahr", "Nur an Freitagen"],
+    "correctIndex": 1,
+    "erklaerung": "Die 'R-Regel': Miesmuscheln nur in Monaten mit R essen (September bis April). Im Sommer (Mai–August) ist Laichzeit — schlechte Qualität und höheres Risiko. Offene rohe Muscheln = tot = weg damit!"
+  },
+  {
+    "level": 7,
+    "text": "Calamari werden beim Braten gummiartig. Was ist die Lösung?",
+    "answers": ["Länger braten", "Entweder ganz kurz (30 Sek) ODER ganz lang (45+ Min) garen", "In Mehl wälzen", "Vorher einfrieren"],
+    "correctIndex": 1,
+    "erklaerung": "Die goldene Regel bei Tintenfisch: Ganz kurz (unter 1 Minute) ODER ganz lang (über 45 Minuten). Alles dazwischen = Gummi. Kurz = Ringe frittieren. Lang = Tuben schmoren."
+  },
+  {
+    "level": 7,
+    "text": "Thunfisch-Steak — wie wird es in der Profiküche serviert?",
+    "answers": ["Komplett durchgebraten", "Nur kurz angebraten, innen roh/rosa", "Immer roh als Sushi", "Pochiert"],
+    "correctIndex": 1,
+    "erklaerung": "Frischer Thunfisch wird wie ein Steak behandelt — heiß und kurz von jeder Seite, innen noch roh/rosa. Durchgebraten wird er trocken und geschmacklos. Für rohen Verzehr: Sashimi-Qualität!"
+  },
+  {
+    "level": 7,
+    "text": "Jakobsmuscheln braten — wie lange pro Seite?",
+    "answers": ["5 Minuten", "Ca. 30 Sekunden — karamellisierte Kruste, glasig innen", "10 Minuten", "So lange bis sie braun sind"],
+    "correctIndex": 1,
+    "erklaerung": "Jakobsmuscheln nur 30 Sekunden pro Seite bei hoher Hitze! Schöne Kruste außen, glasig-zart innen. Vorher gut trockentupfen (sonst keine Kruste). Noix = weißes Fleisch, Corail = oranger Rogen."
+  },
+  {
+    "level": 7,
+    "text": "Kabeljau und Dorsch — was ist der Unterschied?",
+    "answers": ["Verschiedene Fischarten", "Gleicher Fisch — in der Ostsee heißt er Dorsch, sonst Kabeljau", "Dorsch ist geräuchert", "Kabeljau ist größer"],
+    "correctIndex": 1,
+    "erklaerung": "Gleicher Fisch, zwei Namen! In der Ostsee = Dorsch, im Atlantik = Kabeljau. Mildes, weißes Fleisch. Fish & Chips-Fisch! Als Stockfisch getrocknet oder als Bacalao gesalzen."
+  },
+  {
+    "level": 7,
+    "text": "Hummer vor dem Kochen — was ist aus Tierschutzgründen Pflicht?",
+    "answers": ["Direkt ins kochende Wasser", "Vorher betäuben (Eiswasser 20min oder elektrisch)", "Einfrieren", "Gar nicht kochen, nur grillen"],
+    "correctIndex": 1,
+    "erklaerung": "Lebend in kochendes Wasser ist in vielen Ländern verboten. Vorher betäuben: mind. 20 Minuten in Eiswasser (wird bewusstlos) oder elektrisch betäuben. Dann erst kochen oder halbieren und grillen."
+  },
+  {
+    "level": 7,
+    "text": "Welcher Fisch hat das Problem mit vielen Y-Gräten?",
+    "answers": ["Lachs", "Hecht", "Zander", "Forelle"],
+    "correctIndex": 1,
+    "erklaerung": "Hecht hat viele fiese Y-Gräten! Daher wird er klassisch als Farce verarbeitet (durch den Wolf gedreht) — Hechtklößchen, Quenelles. So sind die Gräten kein Problem mehr."
+  },
+  {
+    "level": 7,
+    "text": "Lachs — Wildfang vs. Zucht. Was stimmt?",
+    "answers": ["Kein Unterschied", "Wild = magerer und intensiver, Zucht = fetter und milder", "Zucht ist immer besser", "Wildfang gibt es nicht mehr"],
+    "correctIndex": 1,
+    "erklaerung": "Wildlachs ist magerer, hat intensiveren Geschmack und festeres Fleisch. Zuchtlachs ist fetter (Futter), milder und günstiger. Die orange Farbe kommt bei Zucht vom Futterzusatz Astaxanthin."
+  },
+  {
+    "level": 7,
+    "text": "Forelle Müllerin Art — was bedeutet das?",
+    "answers": ["In der Mühle geräuchert", "In Mehl gewendet und in Butter gebraten", "Mit Mehlsoße serviert", "Von einem Müller gefangen"],
+    "correctIndex": 1,
+    "erklaerung": "Müllerin = 'à la meunière' (französisch). Die Forelle wird in Mehl gewendet (wie die Müllerin im Mehl steht) und in Butter gebraten. Klassiker der einfachen, perfekten Fischküche."
+  },
+  {
+    "level": 7,
+    "text": "Fisch ist das Allergen Nr. ...?",
+    "answers": ["Nr. 2", "Nr. 4", "Nr. 7", "Nr. 10"],
+    "correctIndex": 1,
+    "erklaerung": "Fisch ist Hauptallergen Nr. 4. MUSS auf Speisekarten deklariert werden! Krebstiere = Nr. 2, Weichtiere = Nr. 14. Alle 14 Hauptallergene kennen ist Pflicht für jeden Koch."
+  },
+  {
+    "level": 7,
+    "text": "Miesmuscheln kochen — eine bleibt nach dem Kochen geschlossen. Was tun?",
+    "answers": ["Nochmal kochen", "Wegwerfen — hat sich nicht geöffnet = nicht essbar", "Aufbrechen und essen", "Das ist normal"],
+    "correctIndex": 1,
+    "erklaerung": "Zwei Regeln: 1) Offene ROHE Muscheln = tot = wegwerfen. 2) Geschlossene GEKOCHTE Muscheln = haben sich nicht geöffnet = wegwerfen. Sicher ist sicher!"
+  },
+  {
+    "level": 7,
+    "text": "Matjes — wie wird er hergestellt?",
+    "answers": ["Geräuchert", "Junger Hering, enzymatisch in Salzlake gereift", "In Essig eingelegt", "Getrocknet"],
+    "correctIndex": 1,
+    "erklaerung": "Matjes = junger Hering, der enzymatisch in Salzlake reift (NICHT geräuchert, NICHT eingelegt). Holländische Methode. Die 'Hollandse Nieuwe' kommt im Juni. Kalt serviert mit Zwiebeln."
+  },
+  {
+    "level": 7,
+    "text": "Seezunge, Steinbutt — was haben diese Fische gemeinsam?",
+    "answers": ["Beide sind Süßwasserfische", "Beides sind Plattfische", "Beide sind günstig", "Beide werden roh gegessen"],
+    "correctIndex": 1,
+    "erklaerung": "Seezunge und Steinbutt sind Plattfische — sie liegen flach auf dem Meeresboden. Steinbutt ist der 'König der Plattfische'. Beide gehören zu den teuersten und edelsten Speisefischen."
+  },
+  {
+    "level": 8,
+    "text": "Crème fraîche vs. Sauerrahm — warum nimmt der Profi Crème fraîche für heiße Soßen?",
+    "answers": ["Schmeckt besser", "Crème fraîche flockt NICHT beim Kochen (30% Fett schützt)", "Ist billiger", "Kein Unterschied"],
+    "correctIndex": 1,
+    "erklaerung": "Crème fraîche hat ca. 30% Fett — das stabilisiert sie beim Kochen. Sauerrahm (20–24% Fett) und Saure Sahne (10–15%) flocken bei Hitze leichter aus. DER Trick der Profiküche!"
+  },
+  {
+    "level": 8,
+    "text": "Butter hat einen niedrigen Rauchpunkt (175°C). Was nimmst du zum scharfen Anbraten?",
+    "answers": ["Noch mehr Butter", "Butterschmalz (geklärte Butter)", "Margarine", "Olivenöl extra vergine"],
+    "correctIndex": 1,
+    "erklaerung": "Butterschmalz = Butter ohne Wasser und Eiweiß. Rauchpunkt: ca. 250°C — perfekt zum scharfen Anbraten. Normale Butter verbrennt bei 175°C (braun → schwarz → bitter). Auch Olivenöl extra vergine hat einen niedrigen Rauchpunkt."
+  },
+  {
+    "level": 8,
+    "text": "Was bedeutet 'Montieren' bei Soßen?",
+    "answers": ["Aufmixen im Mixer", "Kalte Butterstücke in die heiße Soße schwenken", "Mit Mehl andicken", "Soße durch ein Sieb passieren"],
+    "correctIndex": 1,
+    "erklaerung": "Montieren = kalte Butterstücke in die fertige, heiße Soße einrühren/schwenken. Das Fett emulgiert, die Soße wird glänzend, sämig und bekommt einen feinen Buttergeschmack. Nicht mehr aufkochen danach!"
+  },
+  {
+    "level": 8,
+    "text": "Beurre noisette — was ist das und warum heißt es so?",
+    "answers": ["Butter mit Haselnüssen", "Gebräunte Butter — die Farbe erinnert an Haselnüsse", "Nuss-Margarine", "Kalte Butter mit Nussaroma"],
+    "correctIndex": 1,
+    "erklaerung": "Beurre noisette = 'Nussbutter'. Butter erhitzen bis die Molke bräunt → nussiges Aroma und haselnussbraune Farbe. Klassiker zu Fisch und Blumenkohl. ZU LANGE = Beurre noire = verbrannt = bitter!"
+  },
+  {
+    "level": 8,
+    "text": "Parmesan-Rinde — was machst du damit?",
+    "answers": ["Wegwerfen", "In Suppen und Risotto mitkochen — gibt Umami", "Reiben und als Gewürz nutzen", "Gar nichts, die ist giftig"],
+    "correctIndex": 1,
+    "erklaerung": "Die Parmesan-Rinde ist essbar und eine Umami-Bombe! In Suppen, Fonds oder Risotto mitkochen — sie löst sich teilweise auf und gibt intensiven Geschmack. Parmigiano Reggiano = mind. 12 Monate gereift."
+  },
+  {
+    "level": 8,
+    "text": "Fondue — welche Käse-Kombination ist der Schweizer Klassiker?",
+    "answers": ["Mozzarella + Cheddar", "Gruyère + Emmentaler", "Parmesan + Gorgonzola", "Brie + Camembert"],
+    "correctIndex": 1,
+    "erklaerung": "Gruyère + Emmentaler, aufgelöst in Weißwein mit etwas Kirschwasser. Beide Käse schmelzen hervorragend. Gruyère für Würze, Emmentaler für Milde. In der Schweiz gibt's regionale Varianten."
+  },
+  {
+    "level": 8,
+    "text": "Roquefort — woraus wird er hergestellt?",
+    "answers": ["Kuhmilch", "Schafsmilch", "Ziegenmilch", "Büffelmilch"],
+    "correctIndex": 1,
+    "erklaerung": "Roquefort wird aus SCHAFSMILCH hergestellt und reift in den Kalksteinhöhlen von Roquefort-sur-Soulzon (Frankreich). AOP-geschützt. Gorgonzola dagegen ist aus Kuhmilch."
+  },
+  {
+    "level": 8,
+    "text": "Ricotta — woraus wird er eigentlich gemacht?",
+    "answers": ["Aus Vollmilch", "Aus Molke (Nebenprodukt der Käseherstellung)", "Aus Sahne", "Aus Buttermilch"],
+    "correctIndex": 1,
+    "erklaerung": "'Ricotta' bedeutet 'nochmal gekocht'. Er wird aus Molke hergestellt — dem Nebenprodukt der normalen Käseherstellung. Mild, leicht körnig, perfekt für Ravioli-Füllungen und Desserts."
+  },
+  {
+    "level": 8,
+    "text": "Quark auf Deutsch = Topfen auf ...?",
+    "answers": ["Schweizerdeutsch", "Österreichisch", "Bayerisch", "Sächsisch"],
+    "correctIndex": 1,
+    "erklaerung": "Quark (D) = Topfen (AT). In Österreich unverzichtbar: Topfenstrudel, Topfenknödel, Topfenpalatschinken. Bröseltopfen ist die trockenere Variante — ideal für Knödel."
+  },
+  {
+    "level": 8,
+    "text": "Mozzarella auf die Pizza — ein häufiger Fehler?",
+    "answers": ["Zu viel Käse nehmen", "Mozzarella nicht abtropfen lassen — Pizza wird nass", "Falschen Käse nehmen", "Mozzarella vor dem Backen erhitzen"],
+    "correctIndex": 1,
+    "erklaerung": "Frischer Mozzarella (in Lake) muss gut abtropfen, sonst macht die Feuchtigkeit den Teig matschig. Kurz in Scheiben schneiden und auf Küchenpapier abtropfen lassen. Oder Low-Moisture-Mozzarella verwenden."
+  },
+  {
+    "level": 8,
+    "text": "Burrata aufschneiden — was passiert?",
+    "answers": ["Nichts Besonderes", "Cremige Stracciatella-Füllung (Mozzarella-Fäden + Sahne) fließt heraus", "Trockener Kern kommt zum Vorschein", "Sie zerfällt"],
+    "correctIndex": 1,
+    "erklaerung": "Burrata = Mozzarella-Hülle gefüllt mit Stracciatella (zerrissene Mozzarella-Fäden + Sahne). Beim Aufschneiden fließt die cremige Füllung raus. NICHT erhitzen — roh als Vorspeise servieren!"
+  },
+  {
+    "level": 8,
+    "text": "Sahne aufschlagen — was ist der wichtigste Tipp?",
+    "answers": ["Zucker vorher reingeben", "Alles gut kühlen — Schüssel + Sahne", "Schnell schlagen", "Nur Sahne mit genau 30% Fett nehmen"],
+    "correctIndex": 1,
+    "erklaerung": "Je kälter, desto besser! Schüssel UND Sahne vorher kühlen (Kühlschrank oder kurz ins Eisfach). Mindestens 30% Fett braucht sie zum Steifwerden. Zu warm = wird nicht steif oder wird zu Butter."
+  },
+  {
+    "level": 8,
+    "text": "Milch ist das Hauptallergen Nr. ...?",
+    "answers": ["Nr. 1", "Nr. 4", "Nr. 7", "Nr. 14"],
+    "correctIndex": 2,
+    "erklaerung": "Milch (einschließlich Laktose) ist Hauptallergen Nr. 7. Betrifft ALLE Milchprodukte — Käse, Butter, Sahne, Joghurt. Laktoseintoleranz ≠ Milchallergie (verschiedene Mechanismen!)."
+  },
+  {
+    "level": 8,
+    "text": "Emmentaler hat Löcher. Wodurch entstehen sie?",
+    "answers": ["Durch Luftblasen beim Rühren", "Durch CO2 von Propionibakterien während der Reifung", "Durch Würmer", "Sie werden reingestochen"],
+    "correctIndex": 1,
+    "erklaerung": "Propionibakterien produzieren während der Reifung CO2-Gas — das bildet die typischen Löcher. Je wärmer die Reifung, desto größere Löcher. Schweizer AOC-Original hat die größten Löcher."
+  },
+  {
+    "level": 8,
+    "text": "Obers, Schlagobers, Kaffeeobers — welches Land spricht so?",
+    "answers": ["Deutschland", "Österreich", "Schweiz", "Frankreich"],
+    "correctIndex": 1,
+    "erklaerung": "Obers = österreichisch für Sahne/Rahm. Schlagobers = Schlagsahne, Kaffeeobers = Kaffeesahne. In der österreichischen Küche allgegenwärtig — gleicher Fettgehalt wie deutsche Sahne (36%)."
+  },
+  {
+    "level": 9,
+    "text": "Schwarzer und weißer Pfeffer — gleiche Pflanze?",
+    "answers": ["Nein, verschiedene Pflanzen", "JA — schwarzer ist unreif geerntet, weißer ist reif und geschält", "Nur die Farbe unterscheidet sich", "Weißer Pfeffer ist gebleicht"],
+    "correctIndex": 1,
+    "erklaerung": "Gleiche Pflanze! Schwarz: unreife grüne Beeren, fermentiert + getrocknet. Weiß: reife Beeren, in Wasser eingeweicht (Schale entfernt). Weiß = milder, für helle Soßen (keine schwarzen Punkte)."
+  },
+  {
+    "level": 9,
+    "text": "Safran ist das teuerste Gewürz der Welt. Warum?",
+    "answers": ["Weil es so gut schmeckt", "150.000 Blüten ergeben nur 1 kg — alles Handarbeit", "Weil es selten wächst", "Weil es importiert werden muss"],
+    "correctIndex": 1,
+    "erklaerung": "Safran = die Narben der Krokusblüte. Jede Blüte hat nur 3 Narben, die von Hand gepflückt werden. 150.000 Blüten für 1 kg! Daher: WENIGER IST MEHR. Fäden in warmem Wasser einweichen vor der Verwendung."
+  },
+  {
+    "level": 9,
+    "text": "Paprikapulver in heißes Fett — was passiert?",
+    "answers": ["Extra viel Geschmack", "Es wird BITTER — nie direkt in heißes Fett!", "Nichts Besonderes", "Es wird schärfer"],
+    "correctIndex": 1,
+    "erklaerung": "Paprikapulver verbrennt bei hoher Hitze und wird bitter! Erst die Hitze reduzieren oder mit Flüssigkeit ablöschen, DANN das Paprikapulver einrühren. Gilt für Gulasch und alle ungarischen Gerichte."
+  },
+  {
+    "level": 9,
+    "text": "Kreuzkümmel (Cumin) und Kümmel — das Gleiche?",
+    "answers": ["Ja, nur andere Namen", "NEIN — komplett verschiedene Gewürze mit anderem Geschmack", "Kümmel ist die getrocknete Version", "Kreuzkümmel ist schärfer, sonst gleich"],
+    "correctIndex": 1,
+    "erklaerung": "KOMPLETT verschieden! Kreuzkümmel (Cumin) = warm, erdig, orientalisch/mexikanisch. Kümmel = herb, typisch deutsch/österreichisch (Sauerkraut, Brot). Werden ständig verwechselt!"
+  },
+  {
+    "level": 9,
+    "text": "Muskatnuss — warum ist Vorsicht geboten?",
+    "answers": ["Sie ist immer schimmelig", "In großen Mengen giftig (Myristicin)", "Sie verdirbt schnell", "Sie enthält Allergene"],
+    "correctIndex": 1,
+    "erklaerung": "Muskatnuss enthält Myristicin — in großen Mengen giftig und halluzinogen. In der Küche kein Problem (winzige Mengen). IMMER frisch reiben — Aroma verfliegt sonst. Muskatblüte (Macis) = die Samenhülle, feiner."
+  },
+  {
+    "level": 9,
+    "text": "Nelken-Frischetest — wie prüfst du die Qualität?",
+    "answers": ["Am Geruch", "In Wasser werfen — schwimmt aufrecht = frisch", "Zerbrechen — muss leicht brechen", "An der Farbe"],
+    "correctIndex": 1,
+    "erklaerung": "Nelken in Wasser werfen: schwimmt aufrecht (Stiel oben) oder sinkt = frisch. Schwimmt waagerecht = alt, kein Öl mehr drin. Nelken enthalten Eugenol — daher der betäubende Geschmack."
+  },
+  {
+    "level": 9,
+    "text": "Vanille — was ist der Unterschied zwischen Bourbon-Vanille und Vanillin?",
+    "answers": ["Kein Unterschied", "Bourbon = echte Vanille (Madagaskar), Vanillin = synthetisch hergestellt", "Vanillin ist teurer", "Bourbon kommt aus den USA"],
+    "correctIndex": 1,
+    "erklaerung": "Bourbon-Vanille = echte Vanilleschoten aus Madagaskar (zweitteuertes Gewürz!). Vanillin = synthetisch/chemisch hergestellt, billiger, flacher im Geschmack. Echte Vanille hat 200+ Aromastoffe, Vanillin nur einen."
+  },
+  {
+    "level": 9,
+    "text": "Capsaicin in Chili — was neutralisiert die Schärfe?",
+    "answers": ["Wasser trinken", "Milch oder Fett (Capsaicin ist fettlöslich!)", "Brot essen", "Salz auf die Zunge"],
+    "correctIndex": 1,
+    "erklaerung": "Capsaicin ist FETTLÖSLICH — Wasser verteilt es nur im Mund und macht es schlimmer! Milch, Joghurt, Käse oder Fett lösen das Capsaicin. Auch Zucker kann helfen. Brot hilft nur mechanisch."
+  },
+  {
+    "level": 9,
+    "text": "Ceylon-Zimt vs. Cassia-Zimt — welcher ist gesünder?",
+    "answers": ["Kein Unterschied", "Ceylon — Cassia enthält mehr Cumarin (leberschädlich bei Überkonsum)", "Cassia — der ist natürlicher", "Beide sind ungesund"],
+    "correctIndex": 1,
+    "erklaerung": "Cassia-Zimt (China, billig, dick) enthält viel Cumarin — kann bei regelmäßigem hohem Konsum die Leber schädigen. Ceylon-Zimt (Sri Lanka, teuer, fein) hat fast kein Cumarin. Für Kinder und Vielnutzer: Ceylon!"
+  },
+  {
+    "level": 9,
+    "text": "Szechuanpfeffer — ist das echter Pfeffer?",
+    "answers": ["Ja, eine Pfeffersorte", "NEIN — ein Rautengewächs, das Taubheit auf der Zunge erzeugt", "Ja, nur aus China", "Nein, das ist eine Chilischote"],
+    "correctIndex": 1,
+    "erklaerung": "Kein Pfeffer! Szechuanpfeffer ist ein Rautengewächs. Das Besondere: Sanshoole erzeugt ein kribbelndes Taubheitsgefühl auf der Zunge. Zitrusartig. Chinesische Küche: Mapo Tofu, Five-Spice-Pulver."
+  },
+  {
+    "level": 9,
+    "text": "Piment wird auch 'Allspice' genannt. Warum?",
+    "answers": ["Weil es überall verwendet wird", "Weil es nach Nelke, Pfeffer, Zimt UND Muskat gleichzeitig schmeckt", "Weil es alle Speisen verbessert", "Das ist nur der englische Name"],
+    "correctIndex": 1,
+    "erklaerung": "Piment (Nelkenpfeffer) schmeckt wie eine Mischung aus Nelke + Pfeffer + Zimt + Muskat in einer einzigen Beere. Daher 'Allspice' — alle Gewürze in einem. Aus Jamaika, sparsam dosieren!"
+  },
+  {
+    "level": 9,
+    "text": "Kurkuma färbt alles gelb. Welches andere Gewürz brauchst du für bessere Aufnahme?",
+    "answers": ["Salz", "Schwarzen Pfeffer (Piperin verbessert die Curcumin-Aufnahme)", "Zucker", "Zimt"],
+    "correctIndex": 1,
+    "erklaerung": "Piperin im schwarzen Pfeffer steigert die Bioverfügbarkeit von Curcumin um bis zu 2000%! Daher: Kurkuma + Pfeffer = Dream Team. 'Goldene Milch' enthält immer beides. Handschuhe tragen — färbt wie Betanin!"
+  },
+  {
+    "level": 9,
+    "text": "Senf — welche Farbe ist schärfer?",
+    "answers": ["Gelbe Senfkörner", "Braune Senfkörner (Dijon-Senf)", "Beide gleich scharf", "Weiße Senfkörner"],
+    "correctIndex": 1,
+    "erklaerung": "Braune Senfkörner sind schärfer als gelbe. Dijon-Senf = braune Körner. Tafelsenf = meist gelbe. Trick: Senfmehl + KALTES Wasser = schärfer. Heißes Wasser = milder. Senf ist Hauptallergen Nr. 10!"
+  },
+  {
+    "level": 9,
+    "text": "Lorbeerblätter im Eintopf — wie viele und warum entfernen?",
+    "answers": ["10 Stück, können drin bleiben", "1–2 Stück, vor dem Servieren entfernen (werden sonst bitter)", "So viele wie möglich", "Nur frische Blätter verwenden"],
+    "correctIndex": 1,
+    "erklaerung": "1–2 Lorbeerblätter reichen völlig! Zu viele oder zu lange mitgekocht = bitter. Vor dem Servieren IMMER entfernen (keiner will auf ein Lorbeerblatt beißen). Getrocknete sind intensiver als frische."
+  },
+  {
+    "level": 9,
+    "text": "Sternanis und Anis — botanisch verwandt?",
+    "answers": ["Ja, gleiche Pflanzenfamilie", "NEIN — botanisch nicht verwandt, schmecken aber ähnlich (Anethol)", "Sternanis ist getrockneter Anis", "Anis ist gemahlener Sternanis"],
+    "correctIndex": 1,
+    "erklaerung": "Botanisch NICHT verwandt! Sternanis (Illiciaceae, China) und Anis (Doldenblütler, Mittelmeer) schmecken nur ähnlich — beide enthalten Anethol. Sternanis: asiatische Küche, Pho, Glühwein. Anis: Backwaren, Ouzo, Pastis."
   }
 ]
