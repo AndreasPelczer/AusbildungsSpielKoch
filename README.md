@@ -1,5 +1,5 @@
 
-# Matjes, der kleine Hering
+# Matjes, der junge Hering
 
 **Das Ausbildungsspiel der Küche für Köchinnen und Köche**
 
