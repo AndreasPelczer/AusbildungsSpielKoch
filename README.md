@@ -3,7 +3,7 @@
 
 **Das Ausbildungsspiel der Küche für Köchinnen und Köche**
 
-Codiclodi ist eine Lern-App für Kochlehrlinge im deutschsprachigen Raum. Die App vermittelt Warenkunde und Küchenwissen durch ein gamifiziertes Quizsystem, das die dreijährige Ausbildung nach IHK-Rahmenplan begleitet.
+Matjes ist eine Lern-App für Kochlehrlinge im deutschsprachigen Raum. Die App vermittelt Warenkunde und Küchenwissen durch ein gamifiziertes Quizsystem, das die dreijährige Ausbildung nach IHK-Rahmenplan begleitet.
 
 ---
 
