@@ -142,6 +142,7 @@ Diese Fehler haben Stunden gekostet. LIES DAS BEVOR DU ANDREAS IRGENDWAS SAGST:
 | Mehrere Lösungsvorschläge anbieten | Andreas will EINE Lösung, nicht Optionen | Den besten Befehl geben. Punkt. |
 | Davon ausgehen, dass vorherige Sessions Wissen weitergegeben haben | Jede Session startet bei NULL. Kein Gedächtnis. | IMMER diese CLAUDE.md lesen. Alles steht hier. |
 | Klug sein wollen statt einfach sein | Komplexe Git-Operationen eskalieren | Der dümmste Befehl der funktioniert ist der beste |
+| `git pull origin main` sagen wenn PR noch nicht gemerged ist | "Already up to date" - der Fix liegt nur auf dem Claude-Branch | `git fetch origin claude/BRANCHNAME && git merge origin/claude/BRANCHNAME --no-edit` |
 
 ### 4.1 Grundregeln
 - **Andreas** arbeitet lokal in Xcode und pusht über Xcode oder einfache Terminal-Befehle
