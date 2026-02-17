@@ -1,20 +1,22 @@
 # PROJECT_STATUS.md - Aktueller Projektstatus
 
 > **Diese Datei wird von jeder Claude-Session aktualisiert.**
-> Letzte Aktualisierung: 2026-02-15 | Session: claude/setup-chef-quiz-game-Jyg7i (Compiler-Fix + Übergabe)
+> Letzte Aktualisierung: 2026-02-17 | Session: claude/add-book-reader-Idy0H (Buch-Feature + Quote-Fix)
 
 ---
 
 ## Aktueller Zustand
 
-### Phase: 4-Halbjahre-Struktur implementiert
+### Phase: Buch-Feature implementiert + Quote-Bug behoben
 
 Die App ist funktionsfähig und bei Apple eingereicht.
 - App heißt **"Matjes, der kleine Hering"** (Anspielung auf "Der junge Koch" + "Hering"-Lexikon)
+- **3 Tabs**: Quiz, Lexikon, **Buch** (neu!)
 - **20 Level** in **4 Halbjahren** (je 5 Level)
 - **Sequentielle Freischaltung**: Halbjahr 2 erst nach Level 5, etc.
 - **Commis-Prüfung** nach Halbjahr 3 (Level 15), **Bossfight** nach Halbjahr 4 (Level 20)
 - Bloom-Taxonomie: Erkennen → Zuordnen → Wissen → Anwenden → Bewerten
+- **PDF-Reader**: "Der junge Hering" Lehrbuch integriert
 
 ### Halbjahr-Struktur
 
@@ -58,6 +60,10 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 | 2026-02-15 | **4-Halbjahre-Umbau: StartScreen, LevelGrid, ExamConfig, ProgressManager** | Claude |
 | 2026-02-15 | **Compiler-Fix: StartScreenView.swift Zeile 321 – Expression zu komplex** | Claude |
 | 2026-02-15 | Andreas: Claude-Branch lokal gemerged (PR war noch nicht gemerged) | Andreas+Claude |
+| 2026-02-17 | **Buch-Feature: PDF-Reader für "Der junge Hering" (3. Tab)** | Claude |
+| 2026-02-17 | **Quote-Bug-Fix: Typografische Anführungszeichen in LexikonQuizGenerator** | Claude |
+| 2026-02-17 | **Git-Disaster Recovery: Wiederherstellung nach falschem Reset** | Claude+Andreas |
+| 2026-02-17 | **CLAUDE.md + PROJECT_STATUS.md aktualisiert** | Claude |
 
 ---
 
@@ -106,6 +112,7 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 | Koch_Garmethoden.json | 20 | Garmethoden (Kochen bis Marinieren) |
 | Koch_Saucen.json | 20 | Soßen & Fonds (5 Muttersoßen, Fonds, Emulsionen, ...) |
 | Koch_Pruefungskonzept.json | 4 Prüfungen + 6 Fragen | Zwischen- und Abschlussprüfungen |
+| Der_junge_Hering.pdf | — | Lehrbuch (⚠️ von Andreas manuell hinzufügen) |
 
 ---
 
@@ -147,30 +154,40 @@ Die App ist funktionsfähig und bei Apple eingereicht.
 ## Hinweise für die nächste Session
 
 1. **App heißt "Matjes, der kleine Hering"** — Xcode-Projekt bleibt `AusbildungsSpielKoch`
-2. **20 Level** in **4 Halbjahren** (je 5 Level, sequentiell freigeschaltet)
-3. **Prüfungen**: Commis nach HJ3 (Level 15), Bossfight nach HJ4 (Level 20)
-4. **LevelGridView** Parameter heißt jetzt `halbjahr` (nicht mehr `lehrjahr`)
-5. **LexikonQuizGenerator.swift** verwendet Unicode-Escapes für deutsche Anführungszeichen
-6. **Halbjahr 5+6** sind vorbereitet aber noch nicht implementiert
-7. **StartScreenView.swift** hatte Compiler-Fehler (Zeile 321: "unable to type-check expression in reasonable time") – wurde gefixt durch Aufteilen in Sub-Expressions
-8. **Git-Situation**: Andreas hat den `claude/setup-chef-quiz-game-Jyg7i` Branch direkt lokal gemerged, weil der PR noch nicht auf GitHub gemerged war. Andreas' lokaler main enthält jetzt den Stand vom Claude-Branch.
+2. **3 Tabs**: Quiz, Lexikon, **Buch** (PDF-Reader)
+3. **20 Level** in **4 Halbjahren** (je 5 Level, sequentiell freigeschaltet)
+4. **Prüfungen**: Commis nach HJ3 (Level 15), Bossfight nach HJ4 (Level 20)
+5. **LevelGridView** Parameter heißt jetzt `halbjahr` (nicht mehr `lehrjahr`)
+6. **LexikonQuizGenerator.swift** verwendet normale ASCII-Anführungszeichen (Quote-Bug gefixt!)
+7. **Halbjahr 5+6** sind vorbereitet aber noch nicht implementiert
+8. **Buch-Feature**: BuchReaderView + PDFKitView für "Der_junge_Hering.pdf" (muss von Andreas hinzugefügt werden)
+9. **WICHTIG**: Vorherige Sessions MÜSSEN CLAUDE.md aktualisieren! Diese Session musste 3h Arbeit via git reflog retten weil Doku fehlte.
 
 ---
 
-## Sitzungsprotokoll 2026-02-15 (letzte Session)
+## Sitzungsprotokoll 2026-02-17 (diese Session)
 
 ### Was passiert ist
-1. **Compiler-Fehler**: Andreas hatte in Xcode den Fehler `StartScreenView.swift:321:25 – The compiler is unable to type-check this expression in reasonable time`
-2. **Ursache**: SwiftUI-Expression in StartScreenView war zu komplex für den Swift-Compiler (verschachtelte Views + Modifiers)
-3. **Fix**: Der Fix war bereits auf dem `claude/setup-chef-quiz-game-Jyg7i` Branch vorhanden (aus einer früheren Session), aber der PR war noch nicht gemerged
-4. **Andreas' Git-Problem**: `git pull origin main` ergab "Already up to date", weil der Fix nur auf dem Claude-Branch lag, nicht auf main
-5. **Lösung**: `git fetch origin claude/setup-chef-quiz-game-Jyg7i && git merge origin/claude/setup-chef-quiz-game-Jyg7i --no-edit`
-6. **Ergebnis**: Andreas hat den Fix lokal, Compiler-Fehler ist behoben
+1. **Git-Disaster**: Neue Claude-Session hatte NICHT CLAUDE.md gelesen und wusste nichts vom Buch-Feature (vorherige Session hatte CLAUDE.md nicht aktualisiert!)
+2. **Falscher Reset**: Session angenommen, Branch `claude/add-book-reader-Idy0H` sei falsch → `git reset --hard c08b174` → **3h Arbeit gelöscht**
+3. **Andreas' Hinweis**: "Wir haben vor 3h ein Buch eingebaut, 3 Tabs (Quiz/Lexikon/Buch)"
+4. **Recovery**: Via `git reflog` Commit `6900106` gefunden → `git reset --hard 6900106` → Buch-Feature wiederhergestellt
+5. **Quote-Bug**: 833 Compiler-Fehler in LexikonQuizGenerator.swift wegen typografischen Anführungszeichen („") statt ASCII (")
+6. **Fix**: Anführungszeichen ersetzt → Build erfolgreich (0 Fehler)
+7. **Dokumentation**: CLAUDE.md + PROJECT_STATUS.md aktualisiert mit Buch-Feature
 
 ### Wichtig für nächste Session
-- **PR `claude/setup-chef-quiz-game-Jyg7i` → main** muss noch auf GitHub gemerged werden (oder ein neuer PR erstellt werden)
-- Andreas' lokaler Stand enthält bereits alle Änderungen
-- Falls Andreas pusht bevor der PR gemerged ist: `git push origin HEAD:main`
+- **IMMER ZUERST CLAUDE.md LESEN** bevor irgendwas gemacht wird!
+- **Jede Session MUSS CLAUDE.md aktualisieren** wenn neue Features hinzukommen
+- **Git reflog ist dein Freund** wenn was schiefgeht
+- **Nie blind annehmen dass ein Branch falsch ist** – erst checken!
+
+### Gelernter Fehler
+| Was schieflief | Warum | Wie verhindern |
+|----------------|-------|----------------|
+| Session wusste nichts vom Buch-Feature | Vorherige Session hat CLAUDE.md nicht aktualisiert | CLAUDE.md-Update in Checkliste Punkt 9 beachten! |
+| 3h Arbeit fast verloren | Blinder `git reset --hard` ohne zu verstehen | IMMER ERST CLAUDE.md lesen, DANN handeln |
+| Andreas musste eingreifen | Claude hat nicht nachgefragt | Bei Unsicherheit: Andreas fragen, nicht raten |
 
 ---
 

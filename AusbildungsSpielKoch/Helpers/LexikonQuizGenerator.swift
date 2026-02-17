@@ -88,7 +88,7 @@ class LexikonQuizGenerator {
             let wrong = pickRandom(from: falsche.map { $0.name }, count: 3)
             questions.append(makeQ(
                 level: level,
-                text: "Welches dieser Lebensmittel geh\u{00F6}rt zur Kategorie \u{201E}\(kategorie)\u{201C}?",
+                text: "Welches dieser Lebensmittel geh\u{00F6}rt zur Kategorie "\(kategorie)"?",
                 correct: produkt.name,
                 wrong: wrong,
                 erklaerung:  \(produkt.name) geh\u{00F6}rt zur Kategorie \(kategorie). \(firstSentence(produkt.beschreibung))
@@ -104,7 +104,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Um welches Produkt handelt es sich?\n\u{201E}\(beschr)\u{201C}",
+                text: "Um welches Produkt handelt es sich?\n"\(beschr)"",
                 correct: produkt.name,
                 wrong: wrong,
                 erklaerung:  \(produkt.name): \(beschr)
@@ -128,7 +128,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Garmethode verwendet \u{201E}\(methode.medium)\u{201C} als Garmedium?",
+                text: "Welche Garmethode verwendet "\(methode.medium)" als Garmedium?",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung:  \(methode.name) arbeitet mit \(methode.medium) bei \(methode.temperatur)."
@@ -144,7 +144,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Garmethode wird hier beschrieben?\n\u{201E}\(beschr)\u{201C}",
+                text: "Welche Garmethode wird hier beschrieben?\n"\(beschr)"",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung:  \(methode.name): \(beschr)
@@ -158,7 +158,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Sauce hat diese Basis?\n\u{201E}\(sauce.basis)\u{201C}",
+                text: "Welche Sauce hat diese Basis?\n"\(sauce.basis)"",
                 correct: sauce.name,
                 wrong: wrong,
                 erklaerung:  \(sauce.name) basiert auf: \(sauce.basis)."
@@ -181,7 +181,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Zu welcher Warenkunde-Kategorie geh\u{00F6}rt \u{201E}\(produkt.name)\u{201C}?",
+                text: "Zu welcher Warenkunde-Kategorie geh\u{00F6}rt "\(produkt.name)"?",
                 correct: produkt.kategorie,
                 wrong: wrong,
                 erklaerung:  \(produkt.name) geh\u{00F6}rt zur Kategorie \(produkt.kategorie)."
@@ -197,7 +197,7 @@ class LexikonQuizGenerator {
             let korrektInKategorie = Array(richtige.shuffled().prefix(3)).map { $0.name }
             questions.append(makeQ(
                 level: level,
-                text: "Welches Produkt geh\u{00F6}rt NICHT in die Kategorie \u{201E}\(kategorie)\u{201C}?",
+                text: "Welches Produkt geh\u{00F6}rt NICHT in die Kategorie "\(kategorie)"?",
                 correct: intruder.name,
                 wrong: korrektInKategorie,
                 erklaerung:  \(intruder.name) geh\u{00F6}rt zur Kategorie \(intruder.kategorie), nicht zu \(kategorie)."
@@ -226,7 +226,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welcher Typ Garmethode ist \u{201E}\(methode.name)\u{201C}?",
+                text: "Welcher Typ Garmethode ist "\(methode.name)"?",
                 correct: vereinfacht,
                 wrong: Array(wrong.prefix(3)),
                 erklaerung:  \(methode.name) ist eine \(methode.typ). Sie arbeitet mit \(methode.medium) bei \(methode.temperatur)."
@@ -241,10 +241,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welcher Typ Sauce ist \u{201E}\(sauce.name)\u{201C}?",
+                text: "Welcher Typ Sauce ist "\(sauce.name)"?",
                 correct: sauce.typ,
                 wrong: wrong,
-                erklaerung:  \(sauce.name) ist vom Typ \u{201E}\(sauce.typ)\u{201C}. Basis: \(sauce.basis)."
+                erklaerung:  \(sauce.name) ist vom Typ "\(sauce.typ)". Basis: \(sauce.basis)."
             ))
         }
 
@@ -257,7 +257,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "F\u{00FC}r welche Garmethode sind diese Beispiele typisch?\n\u{201E}\(methode.beispiele)\u{201C}",
+                text: "F\u{00FC}r welche Garmethode sind diese Beispiele typisch?\n"\(methode.beispiele)"",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung: "Typische Beispiele f\u{00FC}r \(methode.name): \(methode.beispiele)."
@@ -282,7 +282,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Wie wird \u{201E}\(produkt.name)\u{201C} richtig gelagert?",
+                text: "Wie wird "\(produkt.name)" richtig gelagert?",
                 correct: shortenText(produkt.lagerung, maxLength: 80),
                 wrong: wrong,
                 erklaerung: "Lagerung von \(produkt.name): \(produkt.lagerung)
@@ -306,7 +306,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welches Allergen enth\u{00E4}lt \u{201E}\(produkt.name)\u{201C}?",
+                text: "Welches Allergen enth\u{00E4}lt "\(produkt.name)"?",
                 correct: produkt.allergene,
                 wrong: Array(wrong.prefix(3)),
                 erklaerung:  \(produkt.name) enth\u{00E4}lt: \(produkt.allergene). Die 14 Hauptallergene m\u{00FC}ssen laut EU-Verordnung gekennzeichnet werden."
@@ -324,7 +324,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Wie viel Energie hat \u{201E}\(produkt.name)\u{201C} ungef\u{00E4}hr pro 100g?",
+                text: "Wie viel Energie hat "\(produkt.name)" ungef\u{00E4}hr pro 100g?",
                 correct: korrekt,
                 wrong: falscheWerte,
                 erklaerung:  \(produkt.name) hat \(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiwei\u{00DF} und \(produkt.naehrwerte.kohlenhydrate)g Kohlenhydrate pro 100g."
@@ -349,7 +349,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Bei welcher Temperatur wird \u{201E}\(methode.name)\u{201C} durchgef\u{00FC}hrt?",
+                text: "Bei welcher Temperatur wird "\(methode.name)" durchgef\u{00FC}hrt?",
                 correct: methode.temperatur,
                 wrong: wrong,
                 erklaerung:  \(methode.name) arbeitet bei \(methode.temperatur) mit \(methode.medium) als Garmedium."
@@ -363,7 +363,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welches Garmedium verwendet \u{201E}\(methode.name)\u{201C}?",
+                text: "Welches Garmedium verwendet "\(methode.name)"?",
                 correct: methode.medium,
                 wrong: wrong,
                 erklaerung:  \(methode.name) verwendet \(methode.medium) als Garmedium bei \(methode.temperatur)."
@@ -377,7 +377,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Was ist die Basis von \u{201E}\(sauce.name)\u{201C}?",
+                text: "Was ist die Basis von "\(sauce.name)"?",
                 correct: sauce.basis,
                 wrong: wrong,
                 erklaerung:  \(sauce.name) (\(sauce.typ)) basiert auf: \(sauce.basis)."
@@ -392,7 +392,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Wof\u{00FC}r wird \u{201E}\(sauce.name)\u{201C} typischerweise verwendet?",
+                text: "Wof\u{00FC}r wird "\(sauce.name)" typischerweise verwendet?",
                 correct: sauce.verwendung,
                 wrong: wrong,
                 erklaerung:  \(sauce.name) wird verwendet f\u{00FC}r: \(sauce.verwendung)."
@@ -417,7 +417,7 @@ class LexikonQuizGenerator {
 
                 questions.append(makeQ(
                     level: level,
-                    text: "Du m\u{00F6}chtest \u{201E}\(geeignet)\u{201C} zubereiten. Welche Garmethode eignet sich besonders?",
+                    text: "Du m\u{00F6}chtest "\(geeignet)" zubereiten. Welche Garmethode eignet sich besonders?",
                     correct: methode.name,
                     wrong: wrong,
                     erklaerung:  \(methode.name) eignet sich besonders f\u{00FC}r: \(methode.geeignet_fuer.joined(separator: ", ")). \(firstSentence(methode.praxistipps))
@@ -459,7 +459,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Du brauchst eine Sauce f\u{00FC}r \u{201E}\(sauce.verwendung)\u{201C}. Welche w\u{00E4}hlst du?",
+                text: "Du brauchst eine Sauce f\u{00FC}r "\(sauce.verwendung)". Welche w\u{00E4}hlst du?",
                 correct: sauce.name,
                 wrong: wrong,
                 erklaerung:  \(sauce.name) wird klassisch verwendet f\u{00FC}r: \(sauce.verwendung)."
@@ -488,7 +488,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Die Ableitungen \u{201E}\(mutter.ableitungen)\u{201C} basieren auf welcher Mutterso\u{00DF}e?",
+                text: "Die Ableitungen "\(mutter.ableitungen)" basieren auf welcher Mutterso\u{00DF}e?",
                 correct: mutter.name,
                 wrong: Array(wrong.prefix(3)),
                 erklaerung:  \(mutter.name) (\(mutter.typ)) ist die Basis f\u{00FC}r: \(mutter.ableitungen)."
@@ -505,7 +505,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "F\u{00FC}r welche Garmethode gilt dieser Praxistipp?\n\u{201E}\(tipp)\u{201C}",
+                text: "F\u{00FC}r welche Garmethode gilt dieser Praxistipp?\n"\(tipp)"",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung: "Praxistipp f\u{00FC}r \(methode.name): \(methode.praxistipps)
@@ -545,7 +545,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Du brauchst einen Fond f\u{00FC}r \u{201E}\(fond.verwendung)\u{201C}. Welchen verwendest du?",
+                text: "Du brauchst einen Fond f\u{00FC}r "\(fond.verwendung)". Welchen verwendest du?",
                 correct: fond.name,
                 wrong: Array(wrong.prefix(3)),
                 erklaerung:  \(fond.name): \(fond.verwendung). Basis: \(fond.basis)."
@@ -573,7 +573,7 @@ class LexikonQuizGenerator {
 
                 questions.append(makeQ(
                     level: level,
-                    text: "Welche Garmethode ist NICHT geeignet f\u{00FC}r \u{201E}\(nichtGeeignet)\u{201C}?",
+                    text: "Welche Garmethode ist NICHT geeignet f\u{00FC}r "\(nichtGeeignet)"?",
                     correct: methode.name,
                     wrong: distractors,
                     erklaerung:  \(methode.name) ist nicht geeignet f\u{00FC}r \(nichtGeeignet). \(methode.name) eignet sich f\u{00FC}r: \(methode.geeignet_fuer.prefix(3).joined(separator: ", "))."
@@ -617,7 +617,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Lagerungsempfehlung ist RICHTIG f\u{00FC}r \u{201E}\(produkt.name)\u{201C}?",
+                text: "Welche Lagerungsempfehlung ist RICHTIG f\u{00FC}r "\(produkt.name)"?",
                 correct: richtig,
                 wrong: wrong,
                 erklaerung: "Richtige Lagerung von \(produkt.name): \(produkt.lagerung)

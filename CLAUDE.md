@@ -70,11 +70,12 @@ AusbildungsSpielKoch/
 │   │
 │   ├── Views/
 │   │   ├── Main/
-│   │   │   ├── MainTabView.swift      ← Tab-Navigation (Quiz + Lexikon)
+│   │   │   ├── MainTabView.swift      ← Tab-Navigation (Quiz + Lexikon + Buch)
 │   │   │   ├── StartScreenView.swift  ← Startbildschirm (2 Lehrjahre)
 │   │   │   ├── LevelGridView.swift    ← Level-Auswahl (Raster, 20 Level)
 │   │   │   ├── LevelGameView.swift    ← Quiz-Spielansicht
-│   │   │   └── ResultView.swift       ← Ergebnis + Sterne + Konfetti
+│   │   │   ├── ResultView.swift       ← Ergebnis + Sterne + Konfetti
+│   │   │   └── BuchReaderView.swift   ← PDF-Reader für "Der junge Hering"
 │   │   ├── Lexikon/
 │   │   │   ├── LexikonHomeView.swift      ← Lexikon Hauptansicht + Suche
 │   │   │   ├── ProduktListView.swift      ← Produkte nach Kategorie
@@ -84,7 +85,8 @@ AusbildungsSpielKoch/
 │   │   │   ├── SauceListView.swift        ← Saucen nach Typ
 │   │   │   └── SauceDetailView.swift      ← Saucen-Detail
 │   │   └── Components/
-│   │       └── AnswerButton.swift     ← Wiederverwendbarer Antwort-Button
+│   │       ├── AnswerButton.swift     ← Wiederverwendbarer Antwort-Button
+│   │       └── PDFKitView.swift       ← PDF-Viewer Komponente
 │   │
 │   ├── Helpers/
 │   │   ├── QuestionLoader.swift       ← JSON-Fragen laden & cachen
@@ -99,6 +101,7 @@ AusbildungsSpielKoch/
 │   │   ├── Koch_Garmethoden.json            ← 20 Garmethoden
 │   │   ├── Koch_Saucen.json                 ← 20 Saucen
 │   │   ├── Koch_Pruefungskonzept.json       ← Prüfungsstruktur
+│   │   ├── Der_junge_Hering.pdf             ← ⚠️ VON ANDREAS MANUELL HINZUFÜGEN (Lehrbuch)
 │   │   └── Audio/
 │   │       ├── correct.mp3            ← ⚠️ VON ANDREAS MANUELL HINZUFÜGEN
 │   │       ├── wrong.mp3              ← ⚠️ VON ANDREAS MANUELL HINZUFÜGEN
@@ -233,13 +236,21 @@ JSON-Datei → QuestionLoader → GameViewModel → Views
 
 ---
 
-## 6. Bekannte Problemstellen
+## 6. Features
+
+### 6.1 Haupt-Features
+- **Quiz-Modus**: 20 Level in 4 Halbjahren, sequentielle Freischaltung
+- **Lexikon**: Nachschlagewerk für Produkte, Garmethoden, Saucen
+- **Buch-Reader**: PDF-Viewer für "Der junge Hering" (Lehrbuch)
+
+### 6.2 Bekannte Problemstellen
 
 | Problem | Status | Lösung |
 |---------|--------|--------|
 | App-Icon wird nicht angezeigt im Store | Gelöst | Neues Projekt hat sauberen Asset-Katalog |
 | Alte Namens-Relikte im Code | Gelöst | Bei Matjes-Rebranding bereinigt |
 | Audio-Dateien fehlen noch im Repo | Offen | Andreas muss sie manuell hinzufügen |
+| PDF "Der_junge_Hering.pdf" fehlt noch | Offen | Andreas muss es manuell hinzufügen |
 | Prüfungsmodul (Commis-Prüfung, Bossfight) | Offen | Nächstes Feature |
 
 ---
@@ -290,5 +301,5 @@ Der PR-Link ist das Ergebnis. Andreas klickt "Merge". Fertig.
 
 ---
 
-*Letzte Aktualisierung: 2026-02-15*
-*Session: claude/setup-chef-quiz-game-Jyg7i (Matjes-Rebranding)*
+*Letzte Aktualisierung: 2026-02-17*
+*Session: claude/add-book-reader-Idy0H (Buch-Feature + Quote-Fix)*
