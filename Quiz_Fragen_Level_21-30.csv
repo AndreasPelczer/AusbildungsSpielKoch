@@ -1,0 +1,101 @@
+Level,Nr,Frage,A,B,C,D,Richtig,Kategorie
+21,1,"Bei der Warenannahme stellen Sie fest, dass TK-Fisch eine Kerntemperatur von -12°C hat. Wie handeln Sie nach HACCP?",Ware annehmen und sofort verarbeiten,"Ware ablehnen, da Kühlkette unterbrochen (-18°C erforderlich)",Ware annehmen und dokumentieren,Ware zunächst kühlen,B,Wareneingang
+21,2,Welche Maßnahme ist bei einem CCP im HACCP-System zwingend erforderlich?,Tägliche Sichtprüfung,Dokumentation mit Grenzwerten und Korrekturmaßnahmen,Monatliche Überprüfung,Mündliche Weitergabe,B,HACCP
+21,3,Ein Mitarbeiter hat Magen-Darm-Beschwerden. Was ist nach IfSG zu tun?,Nur im Spülbereich einsetzen,"Sofort nach Hause schicken, Tätigkeitsverbot",Mit Handschuhen arbeiten lassen,Nur im Lager einsetzen,B,Hygiene
+21,4,Frischer Fisch bei Warenannahme: Welche max. Kerntemperatur ist zulässig?,0°C,+2°C,+4°C,+7°C,B,Wareneingang
+21,5,Wie oft müssen Kühltemperaturen nach HACCP mindestens dokumentiert werden?,Wöchentlich,Täglich,Zweimal täglich,Nur bei Auffälligkeiten,B,HACCP
+21,6,Ein Pflaster löst sich. Welche Farbe sollte es haben und warum?,Weiß,Blau und metalldetektierbar,Hautfarben,Transparent,B,Hygiene
+21,7,Welche Temperatur muss bei Heißhaltung mindestens erreicht werden?,55°C,60°C,65°C,70°C,C,HACCP
+21,8,Rohe Eier: Wo lagern nach HACCP?,Bei Raumtemperatur,"Kühlschrank +7°C, getrennt von Fertigware",Mit Milchprodukten,TK-Lager,B,Wareneingang
+21,9,Was bedeutet MHD rechtlich?,Produkt ungenießbar danach,Herstellergarantie für Qualität bis Datum,Muss an diesem Tag verbraucht werden,Nur Richtwert,B,Wareneingang
+21,10,Wie lange dürfen zubereitete Speisen max. bei Raumtemperatur stehen?,30 Min,1 Std,2 Std,3 Std,C,HACCP
+21,11,Geflügel durchgegart bei welcher Kerntemperatur?,55°C,60°C,65°C,70°C,D,HACCP
+21,12,TK-Ware auftauen: Was ist HACCP-konform?,Bei Raumtemp,"Im kalten Kühlschrank, Auftauflüssigkeit entfernen",In warmem Wasser,Auf Arbeitsfläche,B,HACCP
+21,13,Wie oft Händedesinfektionsmittel nachfüllen?,Nur wenn leer,Täglich,"Bei Bedarf, bevor leer",Wöchentlich,C,Hygiene
+21,14,Frisches Hackfleisch: Bis wann verarbeiten/einfrieren?,Am gleichen Tag,24 Stunden,48 Stunden,3 Tage,A,Wareneingang
+21,15,Welche Aussage zur Kreuzkontamination ist korrekt?,Nur bei Fleisch,Übertragung von Keimen zwischen rohen und gegarten LM,Nur bei Kontakt,Spielt keine Rolle,B,Hygiene
+22,1,Welche Garmethode ist am schonendsten für Vitamine?,Kochen in viel Wasser,Dämpfen,Frittieren,Schmoren,B,Garmethoden
+22,2,Gast hat Zöliakie. Welches LM ist NICHT geeignet?,Reis,Mais,Dinkel,Kartoffeln,C,Allergene
+22,3,Rinderfilet 'medium': Welche Kerntemperatur?,45-50°C,54-56°C,60-62°C,65-70°C,B,Garmethoden
+22,4,Welche 14 Hauptallergene müssen in EU deklariert werden?,Nur Nüsse/Milch,"Getreide, Krebstiere, Eier, Fisch, Erdnüsse, Soja, Milch, Nüsse, Sellerie, Senf, Sesam, Sulfite, Lupinen, Weichtiere",Nur tierische Produkte,Alle Proteine,B,Allergene
+22,5,Was beschreibt die Maillard-Reaktion?,Karamellisieren,Bräunung zwischen Aminosäuren und Zuckern,Verdampfen,Denaturierung,B,Garmethoden
+22,6,Wie viel % der täglichen Energie sollen laut DGE aus Kohlenhydraten stammen?,30%,40%,50%,60%,C,Nährwerte
+22,7,Gast mit Laktoseintoleranz: Welche Zutat ist problematisch?,Butter,Olivenöl,Margarine (pflanzlich),Kokosfett,A,Allergene
+22,8,Pochieren: Welche Temperatur?,Sprudelnd,75-95°C (knapp unter Siedepunkt),Kalt,Über 100°C,B,Garmethoden
+22,9,Welches Vitamin ist besonders hitzeempfindlich?,Vitamin A,Vitamin D,Vitamin C,Vitamin K,C,Nährwerte
+22,10,Was bedeutet 'à point' bei Fleisch?,Durchgebraten,Englisch,Medium (rosa Kern),Well done,C,Garmethoden
+22,11,Omega-3-Fettsäuren: Korrekte Aussage?,Ungesund,Nur pflanzlich,"Essentiell, unterstützen Herz-Kreislauf",Kein Nährwert,C,Nährwerte
+22,12,Gast ist Veganer. Was ist geeignet?,Honig,Eier,Hefeflocken,Butter,C,Allergene
+22,13,Unterschied Blanchieren/Pochieren?,"Blanchieren kurz sprudelnd, Pochieren sanft unter Siedepunkt",Dasselbe,Blanchieren nur für Gemüse,Pochieren ohne Wasser,A,Garmethoden
+22,14,Eiweiß pro kg Körpergewicht/Tag (DGE)?,"0,5 g","0,8 g","1,5 g","2,0 g",B,Nährwerte
+22,15,Sulfite: Ab wann deklarieren?,Ab 10 mg/kg,Nie nötig,Nur in Fleisch,Nicht in Wein,A,Allergene
+23,1,Welche ist KEINE Muttersauce nach Escoffier?,Hollandaise,Béarnaise,Béchamel,Espagnole,B,Saucen
+23,2,Klassischer Fischfond: Welche Zutaten?,"Fischgräten, Gemüse, Weißwein, Wasser",Nur Gräten/Wasser,"Filets, Sahne, Butter","Gräten, Rotwein, Tomatenmark",A,Fonds
+23,3,Was ist eine Liaison?,Mehlschwitze,Eigelb/Sahne zum Legieren,Kalte Butter,Tomatensauce,B,Saucen
+23,4,Hollandaise + Tomatenpüree ergibt?,Sauce Choron,Sauce Béarnaise,Sauce Mousseline,Sauce Maltaise,A,Saucen
+23,5,Unterschied Fond/Brühe?,Kein,"Fond aus Knochen, Brühe aus Fleisch",Brühe klarer,Fond immer braun,B,Fonds
+23,6,Hollandaise: Welche Temp. nicht überschreiten?,55°C,65°C,75°C,85°C,B,Saucen
+23,7,Was ist Demi-Glace?,Weiße Sauce,Reduzierter brauner Fond mit Espagnole,Kalte Sauce,Dessert,B,Saucen
+23,8,Béarnaise: Welche Zutaten?,"Estragon, Schalotten, Pfeffer, Eigelb, Butter","Dill, Zwiebeln, Sahne","Petersilie, Knoblauch, Öl","Basilikum, Tomaten, Parmesan",A,Saucen
+23,9,Kalbsfond: Wie lange köcheln?,1 Std,3 Std,6-8 Std,12 Std,C,Fonds
+23,10,Was bedeutet 'Monter au beurre'?,Butter schmelzen,Kalte Butter einschlagen für Glanz,Butter klären,Butter braun werden lassen,B,Saucen
+23,11,Velouté + Eigelb/Sahne ergibt?,Suprême,Allemande,Parisienne,Normande,B,Saucen
+23,12,Was ist Mirepoix?,Sauce,"Würzgemüse grob geschnitten (Karotten, Sellerie, Zwiebeln)",Kräuterbund,Garnitur,B,Klassische Küche
+23,13,Fischfond: Wie ansetzen?,"Mit kaltem Wasser, langsam erhitzen",Mit kochendem Wasser übergießen,Gräten anrösten,Mit Milch,A,Fonds
+23,14,Was ist Bouquet garni?,Gemüsebeilage,"Kräutersträußchen (Thymian, Lorbeer, Petersilie)",Sauce,Dessert,B,Klassische Küche
+23,15,Hollandaise: Ideale Konsistenz?,Flüssig wie Wasser,Dick wie Mayo,"Cremig, sämig, leicht fließend (nappierend)",Fest wie Butter,C,Saucen
+24,1,"Gast mit Nussallergie, Sie verwenden Haselnussöl. Wie handeln?","Weglassen, nichts sagen","Gast informieren, Alternative anbieten","Ist verarbeitet, sicher",Kleine Menge ok,B,Allergien
+24,2,Kühlanlage fällt im Service aus. Was tun mit verderblichen Produkten?,Sofort verarbeiten oder entsorgen,Warten,Bei Raumtemp lagern,Einfrieren,A,Praxis
+24,3,"Gast beschwert sich, Steak zu roh (hatte medium bestellt). Wie reagieren?",Sagen es ist korrekt,"Entschuldigen, zurücknehmen, nachgaren",Ignorieren,Diskutieren,B,Praxis
+24,4,"Kollege fasst ohne Handschuhe rohen Fisch, dann Salat an. Was tun?",Nichts,"Sofort auf Kreuzkontamination hinweisen, Salat entsorgen",Später melden,Wegsehen,B,Praxis
+24,5,Gast fragt nach glutenfreien Optionen. Welche Beilage?,Nudeln,Couscous,Kartoffeln,Bulgur,C,Allergien
+24,6,Sie schneiden sich beim Arbeiten. Erste Maßnahme?,Weiterarbeiten,"Wunde versorgen, blaues Pflaster, Handschuh, bei tiefer Wunde Arzt",Kurz mit Wasser,Geschirrtuch,B,Praxis
+24,7,"Schwangere fragt, was sie nicht essen soll. Was abraten?",Durchgebratenes Fleisch,"Rohmilchkäse, rohe Eier, rohes Fleisch/Fisch",Gekochtes Gemüse,Pasteurisierte Milch,B,Allergien
+24,8,Messer fällt herunter. Wie reagieren?,Schnell auffangen,"Fallen lassen, zurücktreten, aufheben, reinigen",Mit Fuß stoppen,Ignorieren,B,Praxis
+24,9,"Gast mit Laktoseintoleranz, Sauce enthält Sahne. Wie handeln?",Verschweigen,"Ehrlich informieren, Alternative anbieten",Nur wenig Sahne sagen,Behaupten keine Milch,B,Allergien
+24,10,Spülmaschine wäscht unter 60°C. Was tun?,Weiter benutzen,"Sofort melden, prüfen lassen, ggf. Handspülung",Länger laufen lassen,Ignorieren,B,Praxis
+24,11,Gast bestellt veganes Gericht. Welche Zutat ist NICHT vegan?,Olivenöl,Honig,Kartoffeln,Gemüsebrühe,B,Allergien
+24,12,Kühlschrank: Rohes Hähnchen über fertigen Desserts. Was ist falsch?,Rohes Fleisch gehört UNTER Fertigware (Tropfgefahr),Alles ok,Hähnchen sollte wärmer,Desserts nicht im Kühlschrank,A,Praxis
+24,13,Gast mit Histaminintoleranz bestellt Fisch. Welcher problematisch?,Frischer Kabeljau,Thunfisch aus Dose,Frischer Zander,Frische Forelle,B,Allergien
+24,14,Buffet für 2 Std: Wie Lebensmittelsicherheit?,Alles Raumtemp,"Kalte auf Eis, warme über 65°C",Nur kalte,Alle 3 Std wechseln,B,Praxis
+24,15,"Gast mit Zöliakie, Pommes aus Fritteuse mit paniertem Fisch. Was sagen?",Pommes sind glutenfrei,"Nein, Kreuzkontamination durch Panade, separate Fritteuse nötig",Nur kleine Menge,Öl filtern reicht,B,Allergien
+25,1,Nach welchem Prinzip LM im Lager ausgeben?,LIFO,"FIFO (First In, First Out)",Nach Größe,Nach Farbe,B,Lagerhaltung
+25,2,TK-Produkte: Welche Lagertemperatur?,-12°C,-15°C,-18°C oder kälter,-10°C,C,Lagerhaltung
+25,3,Heißes Öl spritzt auf Hand. Erste Hilfe?,Mit Butter,Sofort 10-15 Min unter kaltem Wasser kühlen,Mit Eis,Pflaster,B,Arbeitssicherheit
+25,4,Schwere Lasten richtig heben?,"Mit geradem Rücken, aus den Beinen",Mit rundem Rücken,Nur Arme,Ruckartig,A,Arbeitssicherheit
+25,5,Trockenlager: Optimale Luftfeuchtigkeit?,30-40%,50-60%,70-80%,90-100%,B,Lagerhaltung
+25,6,Kühlschrank: Reihenfolge von oben nach unten?,Rohes Fleisch - Fertigware - Gemüse,Fertigware - Milch - Rohes Fleisch/Fisch (unten),Durcheinander,Nur nach MHD,B,Lagerhaltung
+25,7,Wo befindet sich Feuerlöscher typischerweise?,Keller,Gut sichtbar bei Ausgängen/Fluchtwegen,Büro,Lager,B,Arbeitssicherheit
+25,8,Geöffnete Konserven im Kühlschrank: Wie lange haltbar?,1 Woche,2-3 Tage (anderes Gefäß),Unbegrenzt,1 Tag,B,Lagerhaltung
+25,9,Fettbrand: Was tun?,Mit Wasser,"Mit Decke oder Deckel ersticken, NIE Wasser",Pusten,Fett weggießen,B,Arbeitssicherheit
+25,10,PSA bei Reinigungsmitteln?,Nur Handschuhe,"Handschuhe, ggf. Brille, Schürze",Keine,Nur Mundschutz,B,Arbeitssicherheit
+25,11,LM im Trockenlager: Wie lagern?,Auf Boden,Mind. 15 cm über Boden auf Regalen,In Sonne,An Wand,B,Lagerhaltung
+25,12,Kollege erleidet Stromunfall. Erste Maßnahme?,Sofort anfassen,Stromquelle ausschalten/Person mit nicht-leitendem Gegenstand trennen,Wasser drauf,Warten,B,Arbeitssicherheit
+25,13,Lebensmittelmotten-Vorbeugung?,Verpackungen offen,"Trockenwaren luftdicht, regelmäßig kontrollieren",Dunkel und feucht,Nur kalt,B,Lagerhaltung
+25,14,Welche Schuhe in Küche?,Offene Sandalen,"Geschlossene, rutschfeste Sicherheitsschuhe",Normale Turnschuhe,Hausschuhe,B,Arbeitssicherheit
+25,15,Kartoffeln lagern: Was beachten?,Hell und warm,"Dunkel, kühl (8-12°C), luftig (Keimbildung/Solanin vermeiden)",Im Kühlschrank,In Plastiktüten,B,Lagerhaltung
+26,1,Welcher Fisch hat höchsten Omega-3-Gehalt/100g?,Kabeljau,Makrele,Zander,Seelachs,B,Warenkunde Expert
+26,2,Sous-vide Hähnchenbrust: Temp/Zeit für Sicherheit?,"60°C, 30 Min","65°C, 60 Min","70°C, 30 Min","55°C, 2 Std",B,Garmethoden Expert
+26,3,Glucose vs Fructose: Blutzuckerspiegel?,Kein Unterschied,Fructose erhöht langsamer,Glucose langsamer,Keine Wirkung,B,Nährwerte Expert
+26,4,Bananen: Optimale Lagertemp für Reifung?,5°C,12-15°C,20°C,0°C,B,Lagerung Expert
+26,5,Wildlachs vs Zuchtlachs: Nährwerte?,Kein Unterschied,"Wild weniger Fett, mehr Protein, beide reich Omega-3",Zucht kein Omega-3,Wild ungesund,B,Warenkunde Expert
+27,1,Was ist Reverse Searing?,Normal braten,"Fleisch erst niedrig Ofen, dann scharf anbraten",Nur roh,Mit Wasser,B,Garmethoden Expert
+27,2,Bei welcher Temp karamellisiert Zucker?,80°C,120°C,160-180°C,200°C,C,Garmethoden Expert
+27,3,Was bedeutet 'Confit'?,Rohes Fleisch,Langsam in Fett bei niedriger Temp (80-90°C) garen,Schnell frittieren,Räuchern,B,Garmethoden Expert
+27,4,'Saignant' Steak: Kerntemp?,48-50°C,54-56°C,60°C,65°C,A,Garmethoden Expert
+27,5,Vorteil Niedertemperaturgaren?,Schneller,"Schonend, gleichmäßig, weniger Saftverlust",Höherer Geschmack,Keine,B,Garmethoden Expert
+28,1,Von welcher Muttersauce wird Sauce Mornay abgeleitet?,Hollandaise,Béchamel (+ Käse),Espagnole,Tomate,B,Saucen Expert
+28,2,Was ist Gastrique?,Kalte Sauce,Reduktion aus Zucker/Essig für Süß-Sauer,Suppe,Fond,B,Saucen Expert
+28,3,Beurre Blanc: Max. Temperatur?,50°C,70°C,85°C,100°C,B,Saucen Expert
+28,4,Unterschied Fumet/Fond?,Kein,Fumet ist konzentrierter Fischfond (kürzer gekocht),Fumet aus Fleisch,Fond süß,B,Fonds Expert
+28,5,Sauce Soubise: Von welcher Muttersauce?,Velouté,Béchamel (+ Zwiebelpüree),Hollandaise,Espagnole,B,Saucen Expert
+29,1,Gast allergisch Nüsse/Milch/Eier. Welches Dessert sicher?,Tiramisu,Sorbet aus Früchten (ohne Milch/Ei),Crème brûlée,Mousse au Chocolat,B,Multi-Allergen Expert
+29,2,5-Gänge-Menü: Klassische Reihenfolge?,Suppe-Fisch-Fleisch-Käse-Dessert,"Amuse, Vorspeise, Suppe, Hauptgang, Dessert",Dessert zuerst,Nur Hauptgang,B,Menüplanung Expert
+29,3,Gast Zöliakie + Laktoseintoleranz. Welche Beilage?,Nudeln mit Sahne,Kartoffelpüree mit Butter,Reis mit Olivenöl,Brot mit Käse,C,Multi-Allergen Expert
+29,4,Wareneinsatz für profitable Kalkulation?,Beliebig,Idealerweise 30-35% vom Verkaufspreis,80%,10%,B,Kalkulation Expert
+29,5,Veganer Gast: Welche Zutat problematisch?,Gemüsebrühe,Gelatine (aus tierischem Kollagen),Olivenöl,Kartoffeln,B,Multi-Allergen Expert
+30,1,Unterschied Parmentier/Hachis?,Kein,"Parmentier mit Kartoffelpüree überbacken, Hachis Hackfleisch",Parmentier ist Suppe,Hachis ist Dessert,B,Chefkoch-Wissen
+30,2,'Blue' Steak: Kerntemperatur?,42-45°C,50°C,55°C,60°C,A,Chefkoch-Wissen
+30,3,"Gast: histaminarm, laktosefrei, glutenfrei. Was bieten?",Lachstatar mit Brot,Frisches gegrilltes Hähnchen mit Reis und Gemüse,Reifer Käse,Thunfischsalat,B,Chefkoch-Wissen
+30,4,Was ist Sauce Nantua?,Tomatensauce,Béchamel mit Flusskrebsbutter,Hollandaise-Variante,Kalte Mayo,B,Saucen Expert
+30,5,Was ist 'Mise en place' und warum essentiell?,Saubermachen,Alles an seinem Platz - Vorbereitung vor Service für Effizienz,Tisch decken,Kochen,B,Chefkoch-Wissen
