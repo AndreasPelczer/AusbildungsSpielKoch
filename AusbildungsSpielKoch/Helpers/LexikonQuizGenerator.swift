@@ -665,7 +665,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "HACCP-Kontrolle: Bei welcher Temperatur muss „\(methode.name)" durchgeführt werden?",
+                text: "HACCP-Kontrolle: Bei welcher Temperatur muss "\(methode.name)" durchgeführt werden?",
                 correct: methode.temperatur,
                 wrong: wrong,
                 erklaerung: "Korrekte HACCP-Temperatur für \(methode.name): \(methode.temperatur). Temperaturkontrolle ist essentiell für Lebensmittelsicherheit."
@@ -681,7 +681,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Wareneingang: „\(produkt.name)" ist eingetroffen. Wie MUSS es sofort gelagert werden?",
+                text: "Wareneingang: "\(produkt.name)" ist eingetroffen. Wie MUSS es sofort gelagert werden?",
                 correct: shortenText(produkt.lagerung, maxLength: 70),
                 wrong: wrong,
                 erklaerung: "Sofortige Lagerung nach Wareneingang: \(produkt.lagerung). Kühlkette nicht unterbrechen!"
@@ -696,7 +696,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Allergenkennzeichnung für „\(produkt.name)" – welches Allergen MUSS deklariert werden?",
+                text: "Allergenkennzeichnung für "\(produkt.name)" – welches Allergen MUSS deklariert werden?",
                 correct: produkt.allergene,
                 wrong: wrong,
                 erklaerung: "\(produkt.name) enthält: \(produkt.allergene). EU-Verordnung 1169/2011 verlangt Kennzeichnung der 14 Hauptallergene."
@@ -720,7 +720,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welches Garmedium verwendet „\(methode.name)"?",
+                text: "Welches Garmedium verwendet "\(methode.name)"?",
                 correct: methode.medium,
                 wrong: wrong,
                 erklaerung: "\(methode.name) verwendet \(methode.medium) bei \(methode.temperatur)."
@@ -776,7 +776,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Für „\(geeignet)" – welche Garmethode ist optimal?",
+                text: "Für "\(geeignet)" – welche Garmethode ist optimal?",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung: "\(methode.name) ist besonders geeignet für: \(methode.geeignet_fuer.joined(separator: ", "))."
@@ -800,7 +800,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Was ist die klassische Basis von „\(sauce.name)"?",
+                text: "Was ist die klassische Basis von "\(sauce.name)"?",
                 correct: sauce.basis,
                 wrong: wrong,
                 erklaerung: "\(sauce.name) basiert auf: \(sauce.basis). Muttersaucen sind die Grundlage der klassischen Küche."
@@ -821,7 +821,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "„\(ableitung)" ist eine Ableitung von welcher Muttersoße?",
+                text: ""\(ableitung)" ist eine Ableitung von welcher Muttersoße?",
                 correct: mutter.name,
                 wrong: Array(wrong.prefix(3)),
                 erklaerung: "\(ableitung) leitet sich ab von \(mutter.name). Ableitungen: \(mutter.ableitungen)."
@@ -836,7 +836,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Wofür wird „\(fond.name)" klassisch verwendet?",
+                text: "Wofür wird "\(fond.name)" klassisch verwendet?",
                 correct: fond.verwendung,
                 wrong: wrong,
                 erklaerung: "\(fond.name) wird verwendet für: \(fond.verwendung)."
@@ -850,7 +850,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Sauce passt klassisch zu „\(sauce.verwendung)"?",
+                text: "Welche Sauce passt klassisch zu "\(sauce.verwendung)"?",
                 correct: sauce.name,
                 wrong: wrong,
                 erklaerung: "\(sauce.name) ist die klassische Wahl für: \(sauce.verwendung)."
@@ -903,7 +903,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Garmethode ist NICHT geeignet für „\(nichtGeeignet)"?",
+                text: "Welche Garmethode ist NICHT geeignet für "\(nichtGeeignet)"?",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung: "\(methode.name) ist nicht geeignet für \(nichtGeeignet). Stattdessen verwenden: \(methode.geeignet_fuer.prefix(2).joined(separator: ", "))."
@@ -920,7 +920,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Praxissituation: „\(tipp)" – Welche Garmethode wird beschrieben?",
+                text: "Praxissituation: "\(tipp)" – Welche Garmethode wird beschrieben?",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung: "Praxistipp für \(methode.name): \(methode.praxistipps)"
@@ -937,7 +937,7 @@ class LexikonQuizGenerator {
             let korrektInKategorie = Array(richtige.shuffled().prefix(3)).map { $0.name }
             questions.append(makeQ(
                 level: level,
-                text: "Fehler beim Sortieren: Welches Produkt gehört NICHT zu „\(kategorie)"?",
+                text: "Fehler beim Sortieren: Welches Produkt gehört NICHT zu "\(kategorie)"?",
                 correct: intruder.name,
                 wrong: korrektInKategorie,
                 erklaerung: "\(intruder.name) gehört zu \(intruder.kategorie), nicht zu \(kategorie)."
@@ -968,7 +968,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Lagerung ist RICHTIG für „\(produkt.name)"?",
+                text: "Welche Lagerung ist RICHTIG für "\(produkt.name)"?",
                 correct: richtig,
                 wrong: wrong,
                 erklaerung: "Richtige Lagerung: \(produkt.lagerung)"
@@ -989,7 +989,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Zu welchem Typ gehört „\(methode.name)"?",
+                text: "Zu welchem Typ gehört "\(methode.name)"?",
                 correct: vereinfacht,
                 wrong: Array(wrong.prefix(3)),
                 erklaerung: "\(methode.name) ist eine \(methode.typ)."
@@ -1004,7 +1004,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Typische Beispiele: „\(methode.beispiele)" – Welche Garmethode?",
+                text: "Typische Beispiele: "\(methode.beispiele)" – Welche Garmethode?",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung: "Beispiele für \(methode.name): \(methode.beispiele)."
@@ -1019,10 +1019,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welcher Typ ist „\(sauce.name)"?",
+                text: "Welcher Typ ist "\(sauce.name)"?",
                 correct: sauce.typ,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) ist vom Typ „\(sauce.typ)". Basis: \(sauce.basis)."
+                erklaerung: "\(sauce.name) ist vom Typ "\(sauce.typ)". Basis: \(sauce.basis)."
             ))
         }
 
@@ -1049,7 +1049,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Nährwerte von „\(produkt.name)" pro 100g?",
+                text: "EXPERTE: Nährwerte von "\(produkt.name)" pro 100g?",
                 correct: korrekt,
                 wrong: falscheWerte,
                 erklaerung: "\(produkt.name): \(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiweiß, \(produkt.naehrwerte.kohlenhydrate)g Kohlenhydrate."
@@ -1063,7 +1063,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Welches Allergen enthält „\(produkt.name)" exakt?",
+                text: "EXPERTE: Welches Allergen enthält "\(produkt.name)" exakt?",
                 correct: produkt.allergene,
                 wrong: wrong,
                 erklaerung: "\(produkt.name) enthält: \(produkt.allergene). 14 Hauptallergene müssen gekennzeichnet werden."
@@ -1080,7 +1080,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Temperatur und Medium für „\(methode.name)"?",
+                text: "EXPERTE: Temperatur und Medium für "\(methode.name)"?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(methode.name): \(methode.temperatur) mit \(methode.medium)."
@@ -1099,7 +1099,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Basis und Ableitungen von „\(sauce.name)"?",
+                text: "EXPERTE: Basis und Ableitungen von "\(sauce.name)"?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(sauce.name): Basis \(sauce.basis), Ableitungen: \(sauce.ableitungen)."
@@ -1159,7 +1159,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Für was ist „\(methode.name)" geeignet bzw. NICHT geeignet?",
+                text: "EXPERTE: Für was ist "\(methode.name)" geeignet bzw. NICHT geeignet?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(methode.name): Geeignet für \(methode.geeignet_fuer.joined(separator: ", ")). NICHT geeignet für \(methode.nicht_geeignet_fuer.joined(separator: ", "))."
@@ -1180,7 +1180,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Temperatur und Praxistipp für „\(methode.name)"?",
+                text: "EXPERTE: Temperatur und Praxistipp für "\(methode.name)"?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(methode.name) bei \(methode.temperatur). Praxistipp: \(methode.praxistipps)"
@@ -1194,7 +1194,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Perfekte Sauce für „\(sauce.verwendung)"?",
+                text: "EXPERTE: Perfekte Sauce für "\(sauce.verwendung)"?",
                 correct: sauce.name,
                 wrong: wrong,
                 erklaerung: "\(sauce.name) ist die klassische Wahl für \(sauce.verwendung). Basis: \(sauce.basis)."
@@ -1339,7 +1339,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Gast mit \(allergenName)-Allergie – wie ersetzt du „\(produkt.name)"?",
+                text: "MEISTER: Gast mit \(allergenName)-Allergie – wie ersetzt du "\(produkt.name)"?",
                 correct: korrekt,
                 wrong: falscheErsaetze,
                 erklaerung: "Bei \(allergenName)-Allergie: \(ersatz) ist eine sichere Alternative zu \(produkt.name)."
@@ -1377,7 +1377,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Optimale Temperatur und Medium für „\(methode.name)"?",
+                text: "MEISTER: Optimale Temperatur und Medium für "\(methode.name)"?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(methode.name) arbeitet optimal bei \(methode.temperatur) mit \(methode.medium). Praxistipp: \(firstSentence(methode.praxistipps))"
@@ -1411,7 +1411,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Optimale Zubereitung für „\(geeignet)"? (Garmethode + Sauce)",
+                text: "MEISTER: Optimale Zubereitung für "\(geeignet)"? (Garmethode + Sauce)",
                 correct: korrekt,
                 wrong: Array(falsche.prefix(3)),
                 erklaerung: "\(methode.name) bei \(methode.temperatur) eignet sich perfekt für \(geeignet). Klassische Sauce: \(passendeSauce.name)."
@@ -1428,7 +1428,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Allergene, Kalorien UND Lagerung von „\(produkt.name)"?",
+                text: "MEISTER: Allergene, Kalorien UND Lagerung von "\(produkt.name)"?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(produkt.name): Allergene: \(produkt.allergene), \(produkt.naehrwerte.kcal) kcal/100g, Lagerung: \(produkt.lagerung)."
@@ -1446,7 +1446,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Basis, Ableitungen UND Verwendung von „\(sauce.name)"?",
+                text: "MEISTER: Basis, Ableitungen UND Verwendung von "\(sauce.name)"?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(sauce.name): Basis \(sauce.basis), Ableitungen: \(sauce.ableitungen), Verwendung: \(sauce.verwendung)."
@@ -1467,7 +1467,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Typ, Temperatur, Medium UND Praxistipp für „\(methode.name)"?",
+                text: "MEISTER: Typ, Temperatur, Medium UND Praxistipp für "\(methode.name)"?",
                 correct: korrekt,
                 wrong: Array(falsche),
                 erklaerung: "\(methode.name): \(methode.typ), \(methode.temperatur), \(methode.medium). Praxistipp: \(methode.praxistipps)"
