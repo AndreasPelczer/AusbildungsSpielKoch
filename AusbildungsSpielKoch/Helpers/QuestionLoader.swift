@@ -34,7 +34,7 @@ class QuestionLoader {
             #endif
         }
 
-        // 2. Generierte Fragen aus Lexikon-Daten (Level 12–20)
+        // 2. Generierte Fragen aus Lexikon-Daten (Level 12–30)
         for level in LexikonQuizGenerator.generatedLevels.sorted() {
             let generated = LexikonQuizGenerator.generateQuestions(forLevel: level)
             questions.append(contentsOf: generated)
