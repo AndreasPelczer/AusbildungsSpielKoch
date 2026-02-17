@@ -5,6 +5,13 @@
 
 ---
 
+> **HINWEIS: V3 (Schulversion) existiert jetzt als eigenes Repo!**
+> Repo: `AndreasPelczer/Matjes-Schule`
+> Die V3 ist eine eigenstaendige App fuer Berufsschulen/Ausbilder mit CloudKit-Backend.
+> Dieses Repo (AusbildungsSpielKoch) bleibt die V1/V2 Single-User-App.
+
+---
+
 ## 1. Projekt-Überblick
 
 | Feld | Wert |
