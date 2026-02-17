@@ -29,6 +29,13 @@ struct MainTabView: View {
                 Text("Lexikon")
             }
             .tag(1)
+
+            BuchReaderView()
+                .tabItem {
+                    Image(systemName: "text.book.closed.fill")
+                    Text("Buch")
+                }
+                .tag(2)
         }
         .tint(.orange)
     }
