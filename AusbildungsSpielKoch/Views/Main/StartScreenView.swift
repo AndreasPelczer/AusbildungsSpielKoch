@@ -46,8 +46,8 @@ struct StartScreenView: View {
         HalbjahrConfig(number: 2, title: "2. Halbjahr", subtitle: "Warenkunde", icon: "2.circle.fill", color: .blue, levelRange: 6...10, unlockHint: "Level 5 abschlie\u{00DF}en"),
         HalbjahrConfig(number: 3, title: "3. Halbjahr", subtitle: "Vertiefung", icon: "3.circle.fill", color: .purple, levelRange: 11...15, unlockHint: "Level 10 abschlie\u{00DF}en"),
         HalbjahrConfig(number: 4, title: "4. Halbjahr", subtitle: "Anwenden & Bewerten", icon: "4.circle.fill", color: .orange, levelRange: 16...20, unlockHint: "Commis-Pr\u{00FC}fung bestehen"),
-        HalbjahrConfig(number: 5, title: "5. Halbjahr", subtitle: "Pr\u{00FC}fungsvorbereitung", icon: "5.circle.fill", color: .cyan, levelRange: 21...25, unlockHint: "Level 20 abschlie\u{00DF}en", isComingSoon: true),
-        HalbjahrConfig(number: 6, title: "6. Halbjahr", subtitle: "Meisterklasse", icon: "6.circle.fill", color: .red, levelRange: 26...30, unlockHint: "Level 25 abschlie\u{00DF}en", isComingSoon: true),
+        HalbjahrConfig(number: 5, title: "5. Halbjahr", subtitle: "Pr\u{00FC}fungsvorbereitung", icon: "5.circle.fill", color: .cyan, levelRange: 21...25, unlockHint: "Level 20 abschlie\u{00DF}en"),
+        HalbjahrConfig(number: 6, title: "6. Halbjahr", subtitle: "Meisterklasse", icon: "6.circle.fill", color: .red, levelRange: 26...30, unlockHint: "Level 25 abschlie\u{00DF}en"),
     ]
 
     private var availableLevels: Set<Int> {
