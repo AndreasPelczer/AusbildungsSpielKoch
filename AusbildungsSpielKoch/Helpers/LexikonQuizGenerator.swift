@@ -91,7 +91,7 @@ class LexikonQuizGenerator {
                 text: "Welches dieser Lebensmittel geh\u{00F6}rt zur Kategorie \u{201E}\(kategorie)\u{201C}?",
                 correct: produkt.name,
                 wrong: wrong,
-                erklaerung: "\(produkt.name) geh\u{00F6}rt zur Kategorie \(kategorie). \(firstSentence(produkt.beschreibung))"
+                erklaerung:  \(produkt.name) geh\u{00F6}rt zur Kategorie \(kategorie). \(firstSentence(produkt.beschreibung))
             ))
         }
 
@@ -107,7 +107,7 @@ class LexikonQuizGenerator {
                 text: "Um welches Produkt handelt es sich?\n\u{201E}\(beschr)\u{201C}",
                 correct: produkt.name,
                 wrong: wrong,
-                erklaerung: "\(produkt.name): \(beschr)"
+                erklaerung:  \(produkt.name): \(beschr)
             ))
         }
 
@@ -131,7 +131,7 @@ class LexikonQuizGenerator {
                 text: "Welche Garmethode verwendet \u{201E}\(methode.medium)\u{201C} als Garmedium?",
                 correct: methode.name,
                 wrong: wrong,
-                erklaerung: "\(methode.name) arbeitet mit \(methode.medium) bei \(methode.temperatur)."
+                erklaerung:  \(methode.name) arbeitet mit \(methode.medium) bei \(methode.temperatur)."
             ))
         }
 
@@ -147,7 +147,7 @@ class LexikonQuizGenerator {
                 text: "Welche Garmethode wird hier beschrieben?\n\u{201E}\(beschr)\u{201C}",
                 correct: methode.name,
                 wrong: wrong,
-                erklaerung: "\(methode.name): \(beschr)"
+                erklaerung:  \(methode.name): \(beschr)
             ))
         }
 
@@ -161,7 +161,7 @@ class LexikonQuizGenerator {
                 text: "Welche Sauce hat diese Basis?\n\u{201E}\(sauce.basis)\u{201C}",
                 correct: sauce.name,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) basiert auf: \(sauce.basis)."
+                erklaerung:  \(sauce.name) basiert auf: \(sauce.basis)."
             ))
         }
 
@@ -184,7 +184,7 @@ class LexikonQuizGenerator {
                 text: "Zu welcher Warenkunde-Kategorie geh\u{00F6}rt \u{201E}\(produkt.name)\u{201C}?",
                 correct: produkt.kategorie,
                 wrong: wrong,
-                erklaerung: "\(produkt.name) geh\u{00F6}rt zur Kategorie \(produkt.kategorie)."
+                erklaerung:  \(produkt.name) geh\u{00F6}rt zur Kategorie \(produkt.kategorie)."
             ))
         }
 
@@ -200,7 +200,7 @@ class LexikonQuizGenerator {
                 text: "Welches Produkt geh\u{00F6}rt NICHT in die Kategorie \u{201E}\(kategorie)\u{201C}?",
                 correct: intruder.name,
                 wrong: korrektInKategorie,
-                erklaerung: "\(intruder.name) geh\u{00F6}rt zur Kategorie \(intruder.kategorie), nicht zu \(kategorie)."
+                erklaerung:  \(intruder.name) geh\u{00F6}rt zur Kategorie \(intruder.kategorie), nicht zu \(kategorie)."
             ))
         }
 
@@ -229,7 +229,7 @@ class LexikonQuizGenerator {
                 text: "Welcher Typ Garmethode ist \u{201E}\(methode.name)\u{201C}?",
                 correct: vereinfacht,
                 wrong: Array(wrong.prefix(3)),
-                erklaerung: "\(methode.name) ist eine \(methode.typ). Sie arbeitet mit \(methode.medium) bei \(methode.temperatur)."
+                erklaerung:  \(methode.name) ist eine \(methode.typ). Sie arbeitet mit \(methode.medium) bei \(methode.temperatur)."
             ))
         }
 
@@ -244,7 +244,7 @@ class LexikonQuizGenerator {
                 text: "Welcher Typ Sauce ist \u{201E}\(sauce.name)\u{201C}?",
                 correct: sauce.typ,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) ist vom Typ \u{201E}\(sauce.typ)\u{201C}. Basis: \(sauce.basis)."
+                erklaerung:  \(sauce.name) ist vom Typ \u{201E}\(sauce.typ)\u{201C}. Basis: \(sauce.basis)."
             ))
         }
 
@@ -285,7 +285,7 @@ class LexikonQuizGenerator {
                 text: "Wie wird \u{201E}\(produkt.name)\u{201C} richtig gelagert?",
                 correct: shortenText(produkt.lagerung, maxLength: 80),
                 wrong: wrong,
-                erklaerung: "Lagerung von \(produkt.name): \(produkt.lagerung)"
+                erklaerung: "Lagerung von \(produkt.name): \(produkt.lagerung)
             ))
         }
 
@@ -293,9 +293,9 @@ class LexikonQuizGenerator {
         let mitAllergenen = produkte.filter { !$0.allergene.isEmpty }
         let alleAllergene = Array(Set(mitAllergenen.map { $0.allergene }))
         let extraAllergene = [
-            "Gluten (Hauptallergen Nr. 1)", "Erdnuss (Hauptallergen Nr. 5)",
-            "Soja (Hauptallergen Nr. 6)", "Schalenfrüchte (Hauptallergen Nr. 8)",
-            "Lupine (Hauptallergen Nr. 12)", "Sesam (Hauptallergen Nr. 11)"
+            "Gluten (Hauptallergen Nr. 1), "Erdnuss (Hauptallergen Nr. 5),
+            "Soja (Hauptallergen Nr. 6), "Schalenfrüchte (Hauptallergen Nr. 8),
+            "Lupine (Hauptallergen Nr. 12), "Sesam (Hauptallergen Nr. 11)
         ]
         for produkt in mitAllergenen.shuffled().prefix(10) {
             var wrong = pickRandom(from: alleAllergene, not: produkt.allergene, count: 3)
@@ -309,25 +309,25 @@ class LexikonQuizGenerator {
                 text: "Welches Allergen enth\u{00E4}lt \u{201E}\(produkt.name)\u{201C}?",
                 correct: produkt.allergene,
                 wrong: Array(wrong.prefix(3)),
-                erklaerung: "\(produkt.name) enth\u{00E4}lt: \(produkt.allergene). Die 14 Hauptallergene m\u{00FC}ssen laut EU-Verordnung gekennzeichnet werden."
+                erklaerung:  \(produkt.name) enth\u{00E4}lt: \(produkt.allergene). Die 14 Hauptallergene m\u{00FC}ssen laut EU-Verordnung gekennzeichnet werden."
             ))
         }
 
         // Template C: Nährwerte (kcal)
         for produkt in produkte.shuffled().prefix(10) {
-            let korrekt = "\(produkt.naehrwerte.kcal) kcal pro 100g"
+            let korrekt =  \(produkt.naehrwerte.kcal) kcal pro 100g"
             let falscheWerte = [
                 produkt.naehrwerte.kcal + 120,
                 max(produkt.naehrwerte.kcal - 40, 5),
                 produkt.naehrwerte.kcal + 250
-            ].map { "\($0) kcal pro 100g" }
+            ].map {  \($0) kcal pro 100g" }
 
             questions.append(makeQ(
                 level: level,
                 text: "Wie viel Energie hat \u{201E}\(produkt.name)\u{201C} ungef\u{00E4}hr pro 100g?",
                 correct: korrekt,
                 wrong: falscheWerte,
-                erklaerung: "\(produkt.name) hat \(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiwei\u{00DF} und \(produkt.naehrwerte.kohlenhydrate)g Kohlenhydrate pro 100g."
+                erklaerung:  \(produkt.name) hat \(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiwei\u{00DF} und \(produkt.naehrwerte.kohlenhydrate)g Kohlenhydrate pro 100g."
             ))
         }
 
@@ -352,7 +352,7 @@ class LexikonQuizGenerator {
                 text: "Bei welcher Temperatur wird \u{201E}\(methode.name)\u{201C} durchgef\u{00FC}hrt?",
                 correct: methode.temperatur,
                 wrong: wrong,
-                erklaerung: "\(methode.name) arbeitet bei \(methode.temperatur) mit \(methode.medium) als Garmedium."
+                erklaerung:  \(methode.name) arbeitet bei \(methode.temperatur) mit \(methode.medium) als Garmedium."
             ))
         }
 
@@ -366,7 +366,7 @@ class LexikonQuizGenerator {
                 text: "Welches Garmedium verwendet \u{201E}\(methode.name)\u{201C}?",
                 correct: methode.medium,
                 wrong: wrong,
-                erklaerung: "\(methode.name) verwendet \(methode.medium) als Garmedium bei \(methode.temperatur)."
+                erklaerung:  \(methode.name) verwendet \(methode.medium) als Garmedium bei \(methode.temperatur)."
             ))
         }
 
@@ -380,7 +380,7 @@ class LexikonQuizGenerator {
                 text: "Was ist die Basis von \u{201E}\(sauce.name)\u{201C}?",
                 correct: sauce.basis,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) (\(sauce.typ)) basiert auf: \(sauce.basis)."
+                erklaerung:  \(sauce.name) (\(sauce.typ)) basiert auf: \(sauce.basis)."
             ))
         }
 
@@ -395,7 +395,7 @@ class LexikonQuizGenerator {
                 text: "Wof\u{00FC}r wird \u{201E}\(sauce.name)\u{201C} typischerweise verwendet?",
                 correct: sauce.verwendung,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) wird verwendet f\u{00FC}r: \(sauce.verwendung)."
+                erklaerung:  \(sauce.name) wird verwendet f\u{00FC}r: \(sauce.verwendung)."
             ))
         }
 
@@ -420,7 +420,7 @@ class LexikonQuizGenerator {
                     text: "Du m\u{00F6}chtest \u{201E}\(geeignet)\u{201C} zubereiten. Welche Garmethode eignet sich besonders?",
                     correct: methode.name,
                     wrong: wrong,
-                    erklaerung: "\(methode.name) eignet sich besonders f\u{00FC}r: \(methode.geeignet_fuer.joined(separator: ", ")). \(firstSentence(methode.praxistipps))"
+                    erklaerung:  \(methode.name) eignet sich besonders f\u{00FC}r: \(methode.geeignet_fuer.joined(separator: ", ")). \(firstSentence(methode.praxistipps))
                 ))
             }
         }
@@ -448,7 +448,7 @@ class LexikonQuizGenerator {
                 text: "Ein Gast hat eine \(allergenName)-Allergie. Welches Produkt darfst du NICHT verwenden?",
                 correct: gefaehrlich.name,
                 wrong: Array(sichere),
-                erklaerung: "\(gefaehrlich.name) enth\u{00E4}lt \(gefaehrlich.allergene). Bei Allergien muss dies dem Gast mitgeteilt werden (EU-Verordnung 1169/2011)."
+                erklaerung:  \(gefaehrlich.name) enth\u{00E4}lt \(gefaehrlich.allergene). Bei Allergien muss dies dem Gast mitgeteilt werden (EU-Verordnung 1169/2011)."
             ))
         }
 
@@ -462,7 +462,7 @@ class LexikonQuizGenerator {
                 text: "Du brauchst eine Sauce f\u{00FC}r \u{201E}\(sauce.verwendung)\u{201C}. Welche w\u{00E4}hlst du?",
                 correct: sauce.name,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) wird klassisch verwendet f\u{00FC}r: \(sauce.verwendung)."
+                erklaerung:  \(sauce.name) wird klassisch verwendet f\u{00FC}r: \(sauce.verwendung)."
             ))
         }
 
@@ -491,7 +491,7 @@ class LexikonQuizGenerator {
                 text: "Die Ableitungen \u{201E}\(mutter.ableitungen)\u{201C} basieren auf welcher Mutterso\u{00DF}e?",
                 correct: mutter.name,
                 wrong: Array(wrong.prefix(3)),
-                erklaerung: "\(mutter.name) (\(mutter.typ)) ist die Basis f\u{00FC}r: \(mutter.ableitungen)."
+                erklaerung:  \(mutter.name) (\(mutter.typ)) ist die Basis f\u{00FC}r: \(mutter.ableitungen)."
             ))
         }
 
@@ -508,7 +508,7 @@ class LexikonQuizGenerator {
                 text: "F\u{00FC}r welche Garmethode gilt dieser Praxistipp?\n\u{201E}\(tipp)\u{201C}",
                 correct: methode.name,
                 wrong: wrong,
-                erklaerung: "Praxistipp f\u{00FC}r \(methode.name): \(methode.praxistipps)"
+                erklaerung: "Praxistipp f\u{00FC}r \(methode.name): \(methode.praxistipps)
             ))
         }
 
@@ -519,7 +519,7 @@ class LexikonQuizGenerator {
             ("Welche Sauce geh\u{00F6}rt klassisch zu gegrilltem Steak?", "B\u{00E9}arnaise", "B\u{00E9}arnaise ist die klassische Sauce zu gegrilltem oder kurzgebratenem Fleisch."),
             ("Welche Sauce ist die Basis f\u{00FC}r Lasagne?", "B\u{00E9}chamel", "Lasagne wird klassisch mit B\u{00E9}chamel und Bolognese geschichtet."),
             ("Aus welcher Sauce wird Sauce Mornay hergestellt?", "B\u{00E9}chamel", "Sauce Mornay = B\u{00E9}chamel + K\u{00E4}se (Gruy\u{00E8}re)."),
-            ("Welcher Fond ist die Basis f\u{00FC}r eine Fischsuppe?", "Fumet de poisson (Fischfond)", "Fischfond wird aus Fischkarkassen und Gem\u{00FC}se hergestellt. Maximal 30 Minuten kochen!")
+            ("Welcher Fond ist die Basis f\u{00FC}r eine Fischsuppe?", "Fumet de poisson (Fischfond), "Fischfond wird aus Fischkarkassen und Gem\u{00FC}se hergestellt. Maximal 30 Minuten kochen!")
         ]
         for klassik in klassiker {
             let wrong = pickRandom(from: alleSaucen, not: klassik.antwort, count: 3)
@@ -548,7 +548,7 @@ class LexikonQuizGenerator {
                 text: "Du brauchst einen Fond f\u{00FC}r \u{201E}\(fond.verwendung)\u{201C}. Welchen verwendest du?",
                 correct: fond.name,
                 wrong: Array(wrong.prefix(3)),
-                erklaerung: "\(fond.name): \(fond.verwendung). Basis: \(fond.basis)."
+                erklaerung:  \(fond.name): \(fond.verwendung). Basis: \(fond.basis)."
             ))
         }
 
@@ -576,7 +576,7 @@ class LexikonQuizGenerator {
                     text: "Welche Garmethode ist NICHT geeignet f\u{00FC}r \u{201E}\(nichtGeeignet)\u{201C}?",
                     correct: methode.name,
                     wrong: distractors,
-                    erklaerung: "\(methode.name) ist nicht geeignet f\u{00FC}r \(nichtGeeignet). \(methode.name) eignet sich f\u{00FC}r: \(methode.geeignet_fuer.prefix(3).joined(separator: ", "))."
+                    erklaerung:  \(methode.name) ist nicht geeignet f\u{00FC}r \(nichtGeeignet). \(methode.name) eignet sich f\u{00FC}r: \(methode.geeignet_fuer.prefix(3).joined(separator: ", "))."
                 ))
             }
         }
@@ -586,12 +586,12 @@ class LexikonQuizGenerator {
         for sauce in mutterSaucen {
             guard let andere = mutterSaucen.filter({ $0.name != sauce.name }).randomElement() else { continue }
 
-            let falscheAussage = "\(sauce.name) basiert auf \(andere.basis)"
-            let richtigeAussage = "\(sauce.name) basiert auf \(sauce.basis)"
-            let andereRichtige1 = "\(andere.name) basiert auf \(andere.basis)"
+            let falscheAussage =  \(sauce.name) basiert auf \(andere.basis)
+            let richtigeAussage =  \(sauce.name) basiert auf \(sauce.basis)
+            let andereRichtige1 =  \(andere.name) basiert auf \(andere.basis)
 
             let dritte = mutterSaucen.first { $0.name != sauce.name && $0.name != andere.name }
-            let andereRichtige2 = dritte.map { "\($0.name) basiert auf \($0.basis)" }
+            let andereRichtige2 = dritte.map {  \($0.name) basiert auf \($0.basis) }
                 ?? "Roux ist eine Mehlschwitze aus Butter und Mehl"
 
             questions.append(makeQ(
@@ -620,7 +620,7 @@ class LexikonQuizGenerator {
                 text: "Welche Lagerungsempfehlung ist RICHTIG f\u{00FC}r \u{201E}\(produkt.name)\u{201C}?",
                 correct: richtig,
                 wrong: wrong,
-                erklaerung: "Richtige Lagerung von \(produkt.name): \(produkt.lagerung)"
+                erklaerung: "Richtige Lagerung von \(produkt.name): \(produkt.lagerung)
             ))
         }
 
@@ -628,12 +628,12 @@ class LexikonQuizGenerator {
         for methode in garmethoden.shuffled().prefix(8) {
             guard let andere = garmethoden.filter({ $0.name != methode.name }).randomElement() else { continue }
 
-            let falscheAussage = "\(methode.name) arbeitet bei \(andere.temperatur) mit \(andere.medium)"
-            let richtigeAussage = "\(methode.name) arbeitet bei \(methode.temperatur) mit \(methode.medium)"
-            let andereRichtige = "\(andere.name) arbeitet bei \(andere.temperatur) mit \(andere.medium)"
+            let falscheAussage =  \(methode.name) arbeitet bei \(andere.temperatur) mit \(andere.medium)
+            let richtigeAussage =  \(methode.name) arbeitet bei \(methode.temperatur) mit \(methode.medium)
+            let andereRichtige =  \(andere.name) arbeitet bei \(andere.temperatur) mit \(andere.medium)
 
             let dritte = garmethoden.first { $0.name != methode.name && $0.name != andere.name }
-            let dritteRichtige = dritte.map { "\($0.name) arbeitet bei \($0.temperatur) mit \($0.medium)" }
+            let dritteRichtige = dritte.map {  \($0.name) arbeitet bei \($0.temperatur) mit \($0.medium) }
                 ?? "Beim Kochen gehen N\u{00E4}hrstoffe ins Wasser \u{00FC}ber"
 
             questions.append(makeQ(
@@ -665,7 +665,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "HACCP-Kontrolle: Bei welcher Temperatur muss "\(methode.name)" durchgeführt werden?",
+                text: "HACCP-Kontrolle: Bei welcher Temperatur muss  \(methode.name) durchgeführt werden?",
                 correct: methode.temperatur,
                 wrong: wrong,
                 erklaerung: "Korrekte HACCP-Temperatur für \(methode.name): \(methode.temperatur). Temperaturkontrolle ist essentiell für Lebensmittelsicherheit."
@@ -681,7 +681,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Wareneingang: "\(produkt.name)" ist eingetroffen. Wie MUSS es sofort gelagert werden?",
+                text: "Wareneingang:  \(produkt.name) ist eingetroffen. Wie MUSS es sofort gelagert werden?",
                 correct: shortenText(produkt.lagerung, maxLength: 70),
                 wrong: wrong,
                 erklaerung: "Sofortige Lagerung nach Wareneingang: \(produkt.lagerung). Kühlkette nicht unterbrechen!"
@@ -696,10 +696,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Allergenkennzeichnung für "\(produkt.name)" – welches Allergen MUSS deklariert werden?",
+                text: "Allergenkennzeichnung für  \(produkt.name) – welches Allergen MUSS deklariert werden?",
                 correct: produkt.allergene,
                 wrong: wrong,
-                erklaerung: "\(produkt.name) enthält: \(produkt.allergene). EU-Verordnung 1169/2011 verlangt Kennzeichnung der 14 Hauptallergene."
+                erklaerung:  \(produkt.name) enthält: \(produkt.allergene). EU-Verordnung 1169/2011 verlangt Kennzeichnung der 14 Hauptallergene."
             ))
         }
 
@@ -720,10 +720,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welches Garmedium verwendet "\(methode.name)"?",
+                text: "Welches Garmedium verwendet  \(methode.name)?",
                 correct: methode.medium,
                 wrong: wrong,
-                erklaerung: "\(methode.name) verwendet \(methode.medium) bei \(methode.temperatur)."
+                erklaerung:  \(methode.name) verwendet \(methode.medium) bei \(methode.temperatur)."
             ))
         }
 
@@ -732,15 +732,15 @@ class LexikonQuizGenerator {
         let niedrigkalorisch = produkte.filter { $0.naehrwerte.kcal < 100 }.shuffled()
 
         for produkt in hochkalorisch.prefix(5) {
-            let falsche = niedrigkalorisch.prefix(3).map { "\($0.name) (\($0.naehrwerte.kcal) kcal)" }
+            let falsche = niedrigkalorisch.prefix(3).map {  \($0.name) (\($0.naehrwerte.kcal) kcal) }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
                 text: "Welches Produkt hat die HÖCHSTEN Kalorien pro 100g?",
-                correct: "\(produkt.name) (\(produkt.naehrwerte.kcal) kcal)",
+                correct:  \(produkt.name) (\(produkt.naehrwerte.kcal) kcal),
                 wrong: Array(falsche),
-                erklaerung: "\(produkt.name) hat \(produkt.naehrwerte.kcal) kcal/100g – deutlich mehr als die anderen."
+                erklaerung:  \(produkt.name) hat \(produkt.naehrwerte.kcal) kcal/100g – deutlich mehr als die anderen."
             ))
         }
 
@@ -763,7 +763,7 @@ class LexikonQuizGenerator {
                 text: "Gast mit \(allergenName)-Allergie: Welches Produkt enthält das Allergen?",
                 correct: gefaehrlich.name,
                 wrong: Array(sichere),
-                erklaerung: "\(gefaehrlich.name) enthält \(gefaehrlich.allergene). Allergenkennzeichnung ist Pflicht!"
+                erklaerung:  \(gefaehrlich.name) enthält \(gefaehrlich.allergene). Allergenkennzeichnung ist Pflicht!"
             ))
         }
 
@@ -776,10 +776,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Für "\(geeignet)" – welche Garmethode ist optimal?",
+                text: "Für  \(geeignet) – welche Garmethode ist optimal?",
                 correct: methode.name,
                 wrong: wrong,
-                erklaerung: "\(methode.name) ist besonders geeignet für: \(methode.geeignet_fuer.joined(separator: ", "))."
+                erklaerung:  \(methode.name) ist besonders geeignet für: \(methode.geeignet_fuer.joined(separator: ", "))."
             ))
         }
 
@@ -800,10 +800,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Was ist die klassische Basis von "\(sauce.name)"?",
+                text: "Was ist die klassische Basis von  \(sauce.name)?",
                 correct: sauce.basis,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) basiert auf: \(sauce.basis). Muttersaucen sind die Grundlage der klassischen Küche."
+                erklaerung:  \(sauce.name) basiert auf: \(sauce.basis). Muttersaucen sind die Grundlage der klassischen Küche."
             ))
         }
 
@@ -821,10 +821,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: ""\(ableitung)" ist eine Ableitung von welcher Muttersoße?",
+                text: " \(ableitung) ist eine Ableitung von welcher Muttersoße?",
                 correct: mutter.name,
                 wrong: Array(wrong.prefix(3)),
-                erklaerung: "\(ableitung) leitet sich ab von \(mutter.name). Ableitungen: \(mutter.ableitungen)."
+                erklaerung:  \(ableitung) leitet sich ab von \(mutter.name). Ableitungen: \(mutter.ableitungen)."
             ))
         }
 
@@ -836,10 +836,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Wofür wird "\(fond.name)" klassisch verwendet?",
+                text: "Wofür wird  \(fond.name) klassisch verwendet?",
                 correct: fond.verwendung,
                 wrong: wrong,
-                erklaerung: "\(fond.name) wird verwendet für: \(fond.verwendung)."
+                erklaerung:  \(fond.name) wird verwendet für: \(fond.verwendung)."
             ))
         }
 
@@ -850,10 +850,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Sauce passt klassisch zu "\(sauce.verwendung)"?",
+                text: "Welche Sauce passt klassisch zu  \(sauce.verwendung)?",
                 correct: sauce.name,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) ist die klassische Wahl für: \(sauce.verwendung)."
+                erklaerung:  \(sauce.name) ist die klassische Wahl für: \(sauce.verwendung)."
             ))
         }
 
@@ -890,7 +890,7 @@ class LexikonQuizGenerator {
                 text: "Gast mit \(kombiName)-Allergie: Welches Produkt ist NICHT geeignet?",
                 correct: gefaehrlich.name,
                 wrong: Array(sichere),
-                erklaerung: "\(gefaehrlich.name) enthält: \(gefaehrlich.allergene). Bei mehreren Allergien besonders vorsichtig sein!"
+                erklaerung:  \(gefaehrlich.name) enthält: \(gefaehrlich.allergene). Bei mehreren Allergien besonders vorsichtig sein!"
             ))
         }
 
@@ -903,10 +903,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Garmethode ist NICHT geeignet für "\(nichtGeeignet)"?",
+                text: "Welche Garmethode ist NICHT geeignet für  \(nichtGeeignet)?",
                 correct: methode.name,
                 wrong: wrong,
-                erklaerung: "\(methode.name) ist nicht geeignet für \(nichtGeeignet). Stattdessen verwenden: \(methode.geeignet_fuer.prefix(2).joined(separator: ", "))."
+                erklaerung:  \(methode.name) ist nicht geeignet für \(nichtGeeignet). Stattdessen verwenden: \(methode.geeignet_fuer.prefix(2).joined(separator: ", "))."
             ))
         }
 
@@ -920,10 +920,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Praxissituation: "\(tipp)" – Welche Garmethode wird beschrieben?",
+                text: "Praxissituation:  \(tipp) – Welche Garmethode wird beschrieben?",
                 correct: methode.name,
                 wrong: wrong,
-                erklaerung: "Praxistipp für \(methode.name): \(methode.praxistipps)"
+                erklaerung: "Praxistipp für \(methode.name): \(methode.praxistipps)
             ))
         }
 
@@ -937,10 +937,10 @@ class LexikonQuizGenerator {
             let korrektInKategorie = Array(richtige.shuffled().prefix(3)).map { $0.name }
             questions.append(makeQ(
                 level: level,
-                text: "Fehler beim Sortieren: Welches Produkt gehört NICHT zu "\(kategorie)"?",
+                text: "Fehler beim Sortieren: Welches Produkt gehört NICHT zu  \(kategorie)?",
                 correct: intruder.name,
                 wrong: korrektInKategorie,
-                erklaerung: "\(intruder.name) gehört zu \(intruder.kategorie), nicht zu \(kategorie)."
+                erklaerung:  \(intruder.name) gehört zu \(intruder.kategorie), nicht zu \(kategorie)."
             ))
         }
 
@@ -968,10 +968,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welche Lagerung ist RICHTIG für "\(produkt.name)"?",
+                text: "Welche Lagerung ist RICHTIG für  \(produkt.name)?",
                 correct: richtig,
                 wrong: wrong,
-                erklaerung: "Richtige Lagerung: \(produkt.lagerung)"
+                erklaerung: "Richtige Lagerung: \(produkt.lagerung)
             ))
         }
 
@@ -989,10 +989,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Zu welchem Typ gehört "\(methode.name)"?",
+                text: "Zu welchem Typ gehört  \(methode.name)?",
                 correct: vereinfacht,
                 wrong: Array(wrong.prefix(3)),
-                erklaerung: "\(methode.name) ist eine \(methode.typ)."
+                erklaerung:  \(methode.name) ist eine \(methode.typ)."
             ))
         }
 
@@ -1004,7 +1004,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Typische Beispiele: "\(methode.beispiele)" – Welche Garmethode?",
+                text: "Typische Beispiele:  \(methode.beispiele) – Welche Garmethode?",
                 correct: methode.name,
                 wrong: wrong,
                 erklaerung: "Beispiele für \(methode.name): \(methode.beispiele)."
@@ -1019,10 +1019,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "Welcher Typ ist "\(sauce.name)"?",
+                text: "Welcher Typ ist  \(sauce.name)?",
                 correct: sauce.typ,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) ist vom Typ "\(sauce.typ)". Basis: \(sauce.basis)."
+                erklaerung:  \(sauce.name) ist vom Typ  \(sauce.typ). Basis: \(sauce.basis)."
             ))
         }
 
@@ -1040,19 +1040,19 @@ class LexikonQuizGenerator {
 
         // Nährwerte GENAU (Experten-Niveau)
         for produkt in produkte.shuffled().prefix(15) {
-            let korrekt = "\(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiweiß"
+            let korrekt =  \(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiweiß"
             let falscheWerte = [
-                "\(produkt.naehrwerte.kcal + 50) kcal, \(produkt.naehrwerte.fett + 2)g Fett, \(produkt.naehrwerte.eiweiss)g Eiweiß",
-                "\(produkt.naehrwerte.kcal) kcal, \(max(produkt.naehrwerte.fett - 3, 0))g Fett, \(produkt.naehrwerte.eiweiss + 5)g Eiweiß",
-                "\(produkt.naehrwerte.kcal - 30) kcal, \(produkt.naehrwerte.fett)g Fett, \(max(produkt.naehrwerte.eiweiss - 2, 0))g Eiweiß"
+                 \(produkt.naehrwerte.kcal + 50) kcal, \(produkt.naehrwerte.fett + 2)g Fett, \(produkt.naehrwerte.eiweiss)g Eiweiß",
+                 \(produkt.naehrwerte.kcal) kcal, \(max(produkt.naehrwerte.fett - 3, 0))g Fett, \(produkt.naehrwerte.eiweiss + 5)g Eiweiß",
+                 \(produkt.naehrwerte.kcal - 30) kcal, \(produkt.naehrwerte.fett)g Fett, \(max(produkt.naehrwerte.eiweiss - 2, 0))g Eiweiß"
             ]
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Nährwerte von "\(produkt.name)" pro 100g?",
+                text: "EXPERTE: Nährwerte von  \(produkt.name) pro 100g?",
                 correct: korrekt,
                 wrong: falscheWerte,
-                erklaerung: "\(produkt.name): \(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiweiß, \(produkt.naehrwerte.kohlenhydrate)g Kohlenhydrate."
+                erklaerung:  \(produkt.name): \(produkt.naehrwerte.kcal) kcal, \(produkt.naehrwerte.fett)g Fett, \(produkt.naehrwerte.eiweiss)g Eiweiß, \(produkt.naehrwerte.kohlenhydrate)g Kohlenhydrate."
             ))
         }
 
@@ -1063,27 +1063,27 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Welches Allergen enthält "\(produkt.name)" exakt?",
+                text: "EXPERTE: Welches Allergen enthält  \(produkt.name) exakt?",
                 correct: produkt.allergene,
                 wrong: wrong,
-                erklaerung: "\(produkt.name) enthält: \(produkt.allergene). 14 Hauptallergene müssen gekennzeichnet werden."
+                erklaerung:  \(produkt.name) enthält: \(produkt.allergene). 14 Hauptallergene müssen gekennzeichnet werden."
             ))
         }
 
         // Temperatur + Medium EXAKT (kein Fehler erlaubt)
         for methode in garmethoden {
-            let korrekt = "\(methode.temperatur) / \(methode.medium)"
+            let korrekt =  \(methode.temperatur) / \(methode.medium)
             let falsche = garmethoden.filter { $0.name != methode.name }.shuffled().prefix(3).map {
-                "\($0.temperatur) / \($0.medium)"
+                 \($0.temperatur) / \($0.medium)
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Temperatur und Medium für "\(methode.name)"?",
+                text: "EXPERTE: Temperatur und Medium für  \(methode.name)?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(methode.name): \(methode.temperatur) mit \(methode.medium)."
+                erklaerung:  \(methode.name): \(methode.temperatur) mit \(methode.medium)."
             ))
         }
 
@@ -1091,18 +1091,18 @@ class LexikonQuizGenerator {
         let mutterSaucen = saucen.filter { $0.typ.contains("Grundsoße") || $0.typ.contains("Muttersoße") }
         for sauce in mutterSaucen {
             guard !sauce.ableitungen.isEmpty else { continue }
-            let korrekt = "\(sauce.basis) → \(sauce.ableitungen)"
+            let korrekt =  \(sauce.basis) → \(sauce.ableitungen)
             let falsche = mutterSaucen.filter { $0.name != sauce.name }.shuffled().prefix(3).map {
-                "\($0.basis) → \($0.ableitungen)"
+                 \($0.basis) → \($0.ableitungen)
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Basis und Ableitungen von "\(sauce.name)"?",
+                text: "EXPERTE: Basis und Ableitungen von  \(sauce.name)?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(sauce.name): Basis \(sauce.basis), Ableitungen: \(sauce.ableitungen)."
+                erklaerung:  \(sauce.name): Basis \(sauce.basis), Ableitungen: \(sauce.ableitungen)."
             ))
         }
 
@@ -1139,7 +1139,7 @@ class LexikonQuizGenerator {
                 text: "EXPERTE: Gast mit \(kombiName)-Allergie – welches Produkt ist SICHER?",
                 correct: safe.name,
                 wrong: Array(wrong),
-                erklaerung: "\(safe.name) ist sicher (keine Allergene). Bei mehreren Allergien ist extreme Vorsicht geboten!"
+                erklaerung:  \(safe.name) ist sicher (keine Allergene). Bei mehreren Allergien ist extreme Vorsicht geboten!"
             ))
         }
 
@@ -1149,20 +1149,20 @@ class LexikonQuizGenerator {
             let geeignet = methode.geeignet_fuer.randomElement() ?? methode.geeignet_fuer[0]
             let nichtGeeignet = methode.nicht_geeignet_fuer.randomElement() ?? methode.nicht_geeignet_fuer[0]
 
-            let korrekt = "Geeignet für \(geeignet), NICHT für \(nichtGeeignet)"
+            let korrekt = "Geeignet für \(geeignet), NICHT für \(nichtGeeignet)
             let falsche = garmethoden.filter { $0.name != methode.name }.shuffled().prefix(3).map {
                 let g = $0.geeignet_fuer.randomElement() ?? "Fleisch"
                 let n = $0.nicht_geeignet_fuer.randomElement() ?? "Fisch"
-                return "Geeignet für \(g), NICHT für \(n)"
+                return "Geeignet für \(g), NICHT für \(n)
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Für was ist "\(methode.name)" geeignet bzw. NICHT geeignet?",
+                text: "EXPERTE: Für was ist  \(methode.name) geeignet bzw. NICHT geeignet?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(methode.name): Geeignet für \(methode.geeignet_fuer.joined(separator: ", ")). NICHT geeignet für \(methode.nicht_geeignet_fuer.joined(separator: ", "))."
+                erklaerung:  \(methode.name): Geeignet für \(methode.geeignet_fuer.joined(separator: ", ")). NICHT geeignet für \(methode.nicht_geeignet_fuer.joined(separator: ", "))."
             ))
         }
 
@@ -1172,18 +1172,18 @@ class LexikonQuizGenerator {
             let tipp = firstSentence(methode.praxistipps)
             guard !tipp.isEmpty else { continue }
 
-            let korrekt = "\(methode.temperatur) – \(tipp)"
+            let korrekt =  \(methode.temperatur) – \(tipp)
             let falsche = garmethoden.filter { $0.name != methode.name && !$0.praxistipps.isEmpty }.shuffled().prefix(3).map {
-                "\($0.temperatur) – \(firstSentence($0.praxistipps))"
+                 \($0.temperatur) – \(firstSentence($0.praxistipps))
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Temperatur und Praxistipp für "\(methode.name)"?",
+                text: "EXPERTE: Temperatur und Praxistipp für  \(methode.name)?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(methode.name) bei \(methode.temperatur). Praxistipp: \(methode.praxistipps)"
+                erklaerung:  \(methode.name) bei \(methode.temperatur). Praxistipp: \(methode.praxistipps)
             ))
         }
 
@@ -1194,10 +1194,10 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "EXPERTE: Perfekte Sauce für "\(sauce.verwendung)"?",
+                text: "EXPERTE: Perfekte Sauce für  \(sauce.verwendung)?",
                 correct: sauce.name,
                 wrong: wrong,
-                erklaerung: "\(sauce.name) ist die klassische Wahl für \(sauce.verwendung). Basis: \(sauce.basis)."
+                erklaerung:  \(sauce.name) ist die klassische Wahl für \(sauce.verwendung). Basis: \(sauce.basis)."
             ))
         }
 
@@ -1215,10 +1215,10 @@ class LexikonQuizGenerator {
             guard let andere = mutterSaucen.filter({ $0.name != sauce.name }).randomElement() else { continue }
             guard let dritte = mutterSaucen.filter({ $0.name != sauce.name && $0.name != andere.name }).randomElement() else { continue }
 
-            let falscheAussage = "\(sauce.name) basiert auf \(andere.basis) und wird verwendet für \(dritte.verwendung)"
-            let richtigeAussage1 = "\(sauce.name) basiert auf \(sauce.basis) und wird verwendet für \(sauce.verwendung)"
-            let richtigeAussage2 = "\(andere.name) basiert auf \(andere.basis) und wird verwendet für \(andere.verwendung)"
-            let richtigeAussage3 = "\(dritte.name) basiert auf \(dritte.basis)"
+            let falscheAussage =  \(sauce.name) basiert auf \(andere.basis) und wird verwendet für \(dritte.verwendung)
+            let richtigeAussage1 =  \(sauce.name) basiert auf \(sauce.basis) und wird verwendet für \(sauce.verwendung)
+            let richtigeAussage2 =  \(andere.name) basiert auf \(andere.basis) und wird verwendet für \(andere.verwendung)
+            let richtigeAussage3 =  \(dritte.name) basiert auf \(dritte.basis)
 
             questions.append(makeQ(
                 level: level,
@@ -1234,10 +1234,10 @@ class LexikonQuizGenerator {
             guard let andere = garmethoden.filter({ $0.name != methode.name }).randomElement() else { continue }
             guard let dritte = garmethoden.filter({ $0.name != methode.name && $0.name != andere.name }).randomElement() else { continue }
 
-            let falscheAussage = "\(methode.name) arbeitet bei \(andere.temperatur) mit \(dritte.medium)"
-            let richtigeAussage1 = "\(methode.name) arbeitet bei \(methode.temperatur) mit \(methode.medium)"
-            let richtigeAussage2 = "\(andere.name) arbeitet bei \(andere.temperatur) mit \(andere.medium)"
-            let richtigeAussage3 = "\(dritte.name) arbeitet bei \(dritte.temperatur)"
+            let falscheAussage =  \(methode.name) arbeitet bei \(andere.temperatur) mit \(dritte.medium)
+            let richtigeAussage1 =  \(methode.name) arbeitet bei \(methode.temperatur) mit \(methode.medium)
+            let richtigeAussage2 =  \(andere.name) arbeitet bei \(andere.temperatur) mit \(andere.medium)
+            let richtigeAussage3 =  \(dritte.name) arbeitet bei \(dritte.temperatur)
 
             questions.append(makeQ(
                 level: level,
@@ -1253,10 +1253,10 @@ class LexikonQuizGenerator {
         for produkt in mitAllergenen.shuffled().prefix(10) {
             guard let anderes = mitAllergenen.filter({ $0.name != produkt.name }).randomElement() else { continue }
 
-            let falscheAussage = "\(produkt.name) enthält \(anderes.allergene) und lagert bei \(shortenText(anderes.lagerung, maxLength: 40))"
-            let richtigeAussage1 = "\(produkt.name) enthält \(produkt.allergene) und lagert bei \(shortenText(produkt.lagerung, maxLength: 40))"
-            let richtigeAussage2 = "\(anderes.name) enthält \(anderes.allergene)"
-            let richtigeAussage3 = "\(produkt.name) enthält \(produkt.allergene)"
+            let falscheAussage =  \(produkt.name) enthält \(anderes.allergene) und lagert bei \(shortenText(anderes.lagerung, maxLength: 40))
+            let richtigeAussage1 =  \(produkt.name) enthält \(produkt.allergene) und lagert bei \(shortenText(produkt.lagerung, maxLength: 40))
+            let richtigeAussage2 =  \(anderes.name) enthält \(anderes.allergene)
+            let richtigeAussage3 =  \(produkt.name) enthält \(produkt.allergene)
 
             questions.append(makeQ(
                 level: level,
@@ -1273,10 +1273,10 @@ class LexikonQuizGenerator {
             guard let falscheKat = kategorien.filter({ $0 != produkt.kategorie }).randomElement() else { continue }
             guard let anderes = produkte.filter({ $0.kategorie == produkt.kategorie && $0.name != produkt.name }).randomElement() else { continue }
 
-            let falscheAussage = "\(produkt.name) gehört zur Kategorie \(falscheKat)"
-            let richtigeAussage1 = "\(produkt.name) gehört zur Kategorie \(produkt.kategorie)"
-            let richtigeAussage2 = "\(anderes.name) gehört zur Kategorie \(produkt.kategorie)"
-            let richtigeAussage3 = "\(produkt.name) ist ein Lebensmittel"
+            let falscheAussage =  \(produkt.name) gehört zur Kategorie \(falscheKat)
+            let richtigeAussage1 =  \(produkt.name) gehört zur Kategorie \(produkt.kategorie)
+            let richtigeAussage2 =  \(anderes.name) gehört zur Kategorie \(produkt.kategorie)
+            let richtigeAussage3 =  \(produkt.name) ist ein Lebensmittel"
 
             questions.append(makeQ(
                 level: level,
@@ -1303,7 +1303,7 @@ class LexikonQuizGenerator {
             ("3-Gänge-Menü mit Fisch als Hauptgang", "Pochieren", "Pochieren ist schonend für Fisch und erhält Aroma und Textur."),
             ("Vegetarisches Menü mit knackigem Gemüse", "Dämpfen", "Dämpfen erhält Vitamine, Farbe und Biss von Gemüse."),
             ("Festliches Fleischgericht mit Kruste", "Braten", "Braten erzeugt die gewünschte Kruste durch Maillard-Reaktion."),
-            ("Asiatisches Menü mit schneller Zubereitung", "Pfannenrühren (Stir-Fry)", "Pfannenrühren ist perfekt für schnelle, aromatische asiatische Gerichte.")
+            ("Asiatisches Menü mit schneller Zubereitung", "Pfannenrühren (Stir-Fry), "Pfannenrühren ist perfekt für schnelle, aromatische asiatische Gerichte.")
         ]
 
         for szenario in menuSzenarien {
@@ -1330,7 +1330,7 @@ class LexikonQuizGenerator {
             let betroffene = mitAllergenen.filter { $0.allergene.contains(suchbegriff) }
             guard let produkt = betroffene.randomElement() else { continue }
 
-            let korrekt = "Ersetze \(produkt.name) durch \(ersatz)"
+            let korrekt = "Ersetze \(produkt.name) durch \(ersatz)
             let falscheErsaetze = [
                 "Ersetze \(produkt.name) durch normales Mehl",
                 "Ersetze \(produkt.name) durch Kuhmilch",
@@ -1339,7 +1339,7 @@ class LexikonQuizGenerator {
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Gast mit \(allergenName)-Allergie – wie ersetzt du "\(produkt.name)"?",
+                text: "MEISTER: Gast mit \(allergenName)-Allergie – wie ersetzt du  \(produkt.name)?",
                 correct: korrekt,
                 wrong: falscheErsaetze,
                 erklaerung: "Bei \(allergenName)-Allergie: \(ersatz) ist eine sichere Alternative zu \(produkt.name)."
@@ -1369,18 +1369,18 @@ class LexikonQuizGenerator {
 
         // Temperatur-Optimierung: Welche Temperatur für welches Ergebnis?
         for methode in garmethoden.shuffled().prefix(10) {
-            let korrekt = "\(methode.temperatur) → \(methode.medium)"
+            let korrekt =  \(methode.temperatur) → \(methode.medium)
             let falsche = garmethoden.filter { $0.name != methode.name }.shuffled().prefix(3).map {
-                "\($0.temperatur) → \($0.medium)"
+                 \($0.temperatur) → \($0.medium)
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Optimale Temperatur und Medium für "\(methode.name)"?",
+                text: "MEISTER: Optimale Temperatur und Medium für  \(methode.name)?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(methode.name) arbeitet optimal bei \(methode.temperatur) mit \(methode.medium). Praxistipp: \(firstSentence(methode.praxistipps))"
+                erklaerung:  \(methode.name) arbeitet optimal bei \(methode.temperatur) mit \(methode.medium). Praxistipp: \(firstSentence(methode.praxistipps))
             ))
         }
 
@@ -1402,54 +1402,54 @@ class LexikonQuizGenerator {
             let geeignet = methode.geeignet_fuer.randomElement() ?? methode.geeignet_fuer[0]
             guard let passendeSauce = saucen.filter({ $0.verwendung.contains(geeignet) || $0.verwendung.contains("Fleisch") }).randomElement() else { continue }
 
-            let korrekt = "\(methode.name) bei \(methode.temperatur) + \(passendeSauce.name)"
+            let korrekt =  \(methode.name) bei \(methode.temperatur) + \(passendeSauce.name)
             let falsche = garmethoden.filter { $0.name != methode.name }.shuffled().prefix(3).map {
                 guard let andereSauce = saucen.randomElement() else { return "" }
-                return "\($0.name) bei \($0.temperatur) + \(andereSauce.name)"
+                return  \($0.name) bei \($0.temperatur) + \(andereSauce.name)
             }.filter { !$0.isEmpty }
             guard falsche.count >= 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Optimale Zubereitung für "\(geeignet)"? (Garmethode + Sauce)",
+                text: "MEISTER: Optimale Zubereitung für  \(geeignet)? (Garmethode + Sauce),
                 correct: korrekt,
                 wrong: Array(falsche.prefix(3)),
-                erklaerung: "\(methode.name) bei \(methode.temperatur) eignet sich perfekt für \(geeignet). Klassische Sauce: \(passendeSauce.name)."
+                erklaerung:  \(methode.name) bei \(methode.temperatur) eignet sich perfekt für \(geeignet). Klassische Sauce: \(passendeSauce.name)."
             ))
         }
 
         // MEISTER: Mehrfach-Allergen + Nährwerte
         for produkt in mitAllergenen.shuffled().prefix(8) {
-            let korrekt = "\(produkt.allergene) / \(produkt.naehrwerte.kcal) kcal / \(shortenText(produkt.lagerung, maxLength: 30))"
+            let korrekt =  \(produkt.allergene) / \(produkt.naehrwerte.kcal) kcal / \(shortenText(produkt.lagerung, maxLength: 30))
             let falsche = mitAllergenen.filter { $0.name != produkt.name }.shuffled().prefix(3).map {
-                "\($0.allergene) / \($0.naehrwerte.kcal) kcal / \(shortenText($0.lagerung, maxLength: 30))"
+                 \($0.allergene) / \($0.naehrwerte.kcal) kcal / \(shortenText($0.lagerung, maxLength: 30))
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Allergene, Kalorien UND Lagerung von "\(produkt.name)"?",
+                text: "MEISTER: Allergene, Kalorien UND Lagerung von  \(produkt.name)?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(produkt.name): Allergene: \(produkt.allergene), \(produkt.naehrwerte.kcal) kcal/100g, Lagerung: \(produkt.lagerung)."
+                erklaerung:  \(produkt.name): Allergene: \(produkt.allergene), \(produkt.naehrwerte.kcal) kcal/100g, Lagerung: \(produkt.lagerung)."
             ))
         }
 
         // MEISTER: Muttersauce + Ableitungen + Verwendung
         for sauce in mutterSaucen.shuffled().prefix(8) {
             guard !sauce.ableitungen.isEmpty else { continue }
-            let korrekt = "\(sauce.basis) → \(sauce.ableitungen) → \(sauce.verwendung)"
+            let korrekt =  \(sauce.basis) → \(sauce.ableitungen) → \(sauce.verwendung)
             let falsche = mutterSaucen.filter { $0.name != sauce.name && !$0.ableitungen.isEmpty }.shuffled().prefix(3).map {
-                "\($0.basis) → \($0.ableitungen) → \($0.verwendung)"
+                 \($0.basis) → \($0.ableitungen) → \($0.verwendung)
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Basis, Ableitungen UND Verwendung von "\(sauce.name)"?",
+                text: "MEISTER: Basis, Ableitungen UND Verwendung von  \(sauce.name)?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(sauce.name): Basis \(sauce.basis), Ableitungen: \(sauce.ableitungen), Verwendung: \(sauce.verwendung)."
+                erklaerung:  \(sauce.name): Basis \(sauce.basis), Ableitungen: \(sauce.ableitungen), Verwendung: \(sauce.verwendung)."
             ))
         }
 
@@ -1459,18 +1459,18 @@ class LexikonQuizGenerator {
             let tipp = firstSentence(methode.praxistipps)
             guard !tipp.isEmpty else { continue }
 
-            let korrekt = "\(simplifyGarmethodenTyp(methode.typ)) / \(methode.temperatur) / \(methode.medium) / \(tipp)"
+            let korrekt =  \(simplifyGarmethodenTyp(methode.typ)) / \(methode.temperatur) / \(methode.medium) / \(tipp)
             let falsche = garmethoden.filter { $0.name != methode.name && !$0.praxistipps.isEmpty }.shuffled().prefix(3).map {
-                "\(simplifyGarmethodenTyp($0.typ)) / \($0.temperatur) / \($0.medium) / \(firstSentence($0.praxistipps))"
+                 \(simplifyGarmethodenTyp($0.typ)) / \($0.temperatur) / \($0.medium) / \(firstSentence($0.praxistipps))
             }
             guard falsche.count == 3 else { continue }
 
             questions.append(makeQ(
                 level: level,
-                text: "MEISTER: Typ, Temperatur, Medium UND Praxistipp für "\(methode.name)"?",
+                text: "MEISTER: Typ, Temperatur, Medium UND Praxistipp für  \(methode.name)?",
                 correct: korrekt,
                 wrong: Array(falsche),
-                erklaerung: "\(methode.name): \(methode.typ), \(methode.temperatur), \(methode.medium). Praxistipp: \(methode.praxistipps)"
+                erklaerung:  \(methode.name): \(methode.typ), \(methode.temperatur), \(methode.medium). Praxistipp: \(methode.praxistipps)
             ))
         }
 
@@ -1480,10 +1480,10 @@ class LexikonQuizGenerator {
             guard let anderes = produkte.filter({ $0.name != produkt.name && !$0.allergene.isEmpty }).randomElement() else { continue }
             guard let drittes = produkte.filter({ $0.name != produkt.name && $0.name != anderes.name }).randomElement() else { continue }
 
-            let falscheAussage = "\(produkt.name) (\(produkt.kategorie)) enthält \(anderes.allergene) und hat \(drittes.naehrwerte.kcal) kcal"
-            let richtigeAussage1 = "\(produkt.name) (\(produkt.kategorie)) enthält \(produkt.allergene) und hat \(produkt.naehrwerte.kcal) kcal"
-            let richtigeAussage2 = "\(anderes.name) enthält \(anderes.allergene)"
-            let richtigeAussage3 = "\(produkt.name) gehört zur Kategorie \(produkt.kategorie)"
+            let falscheAussage =  \(produkt.name) (\(produkt.kategorie)) enthält \(anderes.allergene) und hat \(drittes.naehrwerte.kcal) kcal"
+            let richtigeAussage1 =  \(produkt.name) (\(produkt.kategorie)) enthält \(produkt.allergene) und hat \(produkt.naehrwerte.kcal) kcal"
+            let richtigeAussage2 =  \(anderes.name) enthält \(anderes.allergene)
+            let richtigeAussage3 =  \(produkt.name) gehört zur Kategorie \(produkt.kategorie)
 
             questions.append(makeQ(
                 level: level,
