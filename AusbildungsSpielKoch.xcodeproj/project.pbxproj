@@ -27,6 +27,8 @@
 		1A77C2072F41E0A100253E73 /* AusbildungsSpielKoch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AusbildungsSpielKoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A77C2162F41E0A200253E73 /* AusbildungsSpielKochTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AusbildungsSpielKochTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A77C2202F41E0A200253E73 /* AusbildungsSpielKochUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AusbildungsSpielKochUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AACCCC82F44813100381304 /* Matjes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Matjes.xcodeproj; sourceTree = "<group>"; };
+		1AACCCF72F44813100381304 /* AusbildungsSpielKoch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AusbildungsSpielKoch.xcodeproj; sourceTree = "<group>"; };
 		1AB36AB12F428CFE009DED40 /* Matjes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Matjes.xcodeproj; sourceTree = "<group>"; };
 		1AB36ADD2F428CFE009DED40 /* AusbildungsSpielKoch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AusbildungsSpielKoch.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,16 @@
 				1A77C2162F41E0A200253E73 /* AusbildungsSpielKochTests.xctest */,
 				1A77C2202F41E0A200253E73 /* AusbildungsSpielKochUITests.xctest */,
 			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AACCCFB2F44813100381304 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AACCCFD2F44813100381304 /* Products */ = {
+			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -212,8 +224,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 1AACCCFD2F44813100381304 /* Products */;
+					ProjectRef = 1AACCCF72F44813100381304 /* AusbildungsSpielKoch.xcodeproj */;
+				},
+				{
 					ProductGroup = 1AB36AE22F428CFE009DED40 /* Products */;
 					ProjectRef = 1AB36ADD2F428CFE009DED40 /* AusbildungsSpielKoch.xcodeproj */;
+				},
+				{
+					ProductGroup = 1AACCCFB2F44813100381304 /* Products */;
+					ProjectRef = 1AACCCC82F44813100381304 /* Matjes.xcodeproj */;
 				},
 				{
 					ProductGroup = 1AB36AE02F428CFE009DED40 /* Products */;
